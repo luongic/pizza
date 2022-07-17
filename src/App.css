@@ -64,6 +64,11 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 ul {
   list-style-type: none;
 }
@@ -196,6 +201,7 @@ Navbar
   cursor: pointer;
   display: flex;
   align-items: center;
+  /* flex: 1; */
 }
 
 .navbar-item a{
