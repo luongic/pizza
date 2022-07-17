@@ -133,6 +133,90 @@ p {
   }
 }
 
+/* 
+=============
+Navbar
+===========
+*/
+
+.navbar{
+  height: 80px;
+  position: fixed;
+  top: 0;
+  background-color: var(--clr-main);
+  display: flex;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.navbar-phone{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
+.navbar-phone__icon{
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--clr-white);
+  border-radius: 50%;
+  color: var(--clr-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-phone__order{
+
+}
+
+.navbar-phone__title{
+  font-size: .9rem;
+}
+
+.navbar-phone__number{
+  font-weight: 700;
+}
+
+
+.navbar-list{
+  width: 100%;
+  display: flex;
+  color: var(--clr-white);
+  align-items: center;
+  justify-content: space-around;
+  flex: 5;
+}
+
+.navbar-item{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item a{
+  color: var(--clr-white);
+}
+
+.navbar-item img{
+  width: 60px;
+  filter: invert(1);
+}
+
+.navbar-cart{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
+
 /*
 =============== 
 Menu
@@ -140,14 +224,16 @@ Menu
 */
 
 .menu {
-  margin-top: 5rem;
+  margin-top: 7rem;
   margin-bottom: 5rem;
 }
 .brand{
   color: var(--clr-main);
+  
 }
 .title {
   text-align: center;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 .underline {
@@ -258,3 +344,4 @@ Menu
     height: 150px;
   }
 }
+/* N */
