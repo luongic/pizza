@@ -181,8 +181,8 @@ Navbar
   justify-content: center;
 }
 
-.navbar-phone__order{
-
+.navbar-phone:hover i{
+  animation: phone linear .6s;
 }
 
 .navbar-phone__title{
@@ -191,6 +191,7 @@ Navbar
 
 .navbar-phone__number{
   font-weight: 700;
+  color: var(--clr-white);
 }
 
 
@@ -431,4 +432,18 @@ Menu
     height: 150px;
   }
 }
-/* N */
+/* Animation */
+
+@keyframes phone{
+  0%,20%, 40%, 100% {
+    transform: rotate(0);
+  }
+  10%, 50%{
+    transform: rotate(35deg);
+
+  }
+  30%, 70%{
+    transform: rotate(-35deg);
+
+  }
+}

@@ -8,7 +8,7 @@ function Navbar () {
             <div className='navbar-phone__icon'><i className="fa-solid fa-phone"></i></div>
             <div className='navbar-phone__order'>
                 <div className='navbar-phone__title'>Order Now</div>
-                <div className='navbar-phone__number'>1900 1822</div>
+                <a href='tel:19001822' className='navbar-phone__number'>1900 1822</a>
             </div>
         </div>
         <ul className='navbar-list'>
