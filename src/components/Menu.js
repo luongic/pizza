@@ -1,4 +1,3 @@
-
 import React, { Fragment, useState } from 'react';
 import Products from './Products'
 import Category from './Category'
@@ -7,18 +6,17 @@ import items from '../data/menu'
 
 const Menu = () => {
 
-    const [menuItem, setMenuItem] = useState(items);
-  // const [categories, setCategories] = useState([]);
+  const [menuItem, setMenuItem] = useState(items);
 
-    const filterItems = (category) =>{
-        if (category === 'all'){
-        setMenuItem(items)
-        }
-        else{
-        const newItems = items.filter((item) => item.category === category)
-        setMenuItem(newItems)
-        }
-    }
+  const filterItems = (category) =>{
+      if (category === 'all'){
+      setMenuItem(items)
+      }
+      else{
+      const newItems = items.filter((item) => item.category === category)
+      setMenuItem(newItems)
+      }
+  }
 
   return (
     <main>

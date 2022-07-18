@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Menu from './components/Menu';
 import Meber from './components/Member';
 import Home from './components/Home';
@@ -32,6 +33,7 @@ function App() {
         <Route path='/tracking' element={<Tracking />} />
         <Route path='/member' element={<Meber />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
