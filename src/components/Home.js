@@ -51,7 +51,7 @@ function Slider() {
       return <div className={classes} key={item.id}>
         <img src={item.img} alt={item.title} className="slide-photo" />
         <button className='slide-btn'>
-          <Link to='/menu' filterItems = {'promotions'}>Mua ngay</Link>
+          <Link to='/menu' >Mua ngay</Link>
         </button>
       </div>
     })}
