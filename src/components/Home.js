@@ -2,16 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import items from '../data/promotions'
-import filterItems from './Menu'
-
-function Home() {
-    return <div className='home'>
-      <Slider/>
-    </div>
-    
-;
-}
-
 
 function Slider() {
   const [index, setIndex] = useState(0)
@@ -28,7 +18,7 @@ function Slider() {
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1)
-    }, 3000)
+    }, 4200)
     return () => clearInterval(slider )
   }, [index])
 
@@ -65,7 +55,11 @@ function Slider() {
 }
 
 
-
+function Home() {
+  return <div className='home'>
+    <Slider/>
+  </div>;
+}
 
 export default Home;
 
