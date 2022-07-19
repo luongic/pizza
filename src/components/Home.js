@@ -162,7 +162,7 @@ function Delivery() {
 }
 
 
-function Method () {
+function OrderMethod () {
   const [method, setMethod] = useState('pickup')
 
   const methods = [
@@ -200,7 +200,7 @@ function Method () {
 function Home() {
   return <div className='home'>
     <Slider />
-    <Method />
+    <OrderMethod />
   </div>;
 }
 

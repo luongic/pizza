@@ -373,9 +373,10 @@ HOME PAGE
 .method{
   min-width: 500px;
   min-height: 300px;
-  border: 1px solid black;
+  /* border: 1px solid rgb(101, 101, 101); */
   border-radius: 20px;
   padding-top: 10px;
+  box-shadow: 0 0 16px ;
 }
 
 .method-top{
@@ -399,8 +400,8 @@ HOME PAGE
 } 
 
 .method-top__item.active{
-  background-color: var(--clr-green-light);
-  color: var(--clr-white);
+  /* background-color: var(--clr-green-light); */
+  color: var(--clr-main);
 }
 
 .method-top__item > i{
@@ -480,6 +481,8 @@ HOME PAGE
   justify-content: center;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 
