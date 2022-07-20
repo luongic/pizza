@@ -674,10 +674,6 @@ FOOTER
   list-style: none;
 }
 
-.footer__list-item{
-
-}
-
 .footer__list-item-link{
   display: flex;
   text-decoration: none;
@@ -717,9 +713,6 @@ FOOTER
   margin-left: 12px;
 }
 
-.footer__download-app-img{
-}
-
 .footer__pay{
   margin-bottom: 30px;
 }
@@ -747,7 +740,6 @@ FOOTER
 .footer__copyright{
   font-size: .8rem;
   text-align: left;
-  margin-bottom: 45px;
   flex: 1;
 }
 
@@ -757,7 +749,7 @@ FOOTER
 
 .footer__copyright-text a{
   text-decoration: none;
-  font-size: .9rem;
+  font-size: .8rem;
   color: var(--clr-white);
   float: right;
 }

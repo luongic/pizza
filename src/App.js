@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from 'react';
-import { Routes, Route, Router } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -12,7 +12,7 @@ import Scrolltop from './components/Scrolltop';
 
 
 function App() {
-  const [menuItem, setMenuItem] = useState(items);
+  // const [menuItem, setMenuItem] = useState(items);
   // const [categories, setCategories] = useState([]);
 
   // const filterItems = (category) =>{

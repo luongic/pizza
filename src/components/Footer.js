@@ -120,10 +120,10 @@ function Footer() {
 
                 <div className="footer__bottom">                  
                     <div className="footer__copyright">
+                        <p className="footer__copyright-text">Công ty TNHH Pizza Việt Nam | Số ĐKKD: 0303902751</p>
                         <p className="footer__copyright-text">Địa chỉ: Số 1-3-5 đường D2 Khu dân cư phức hợp sông Sài Gòn, số 92 Nguyễn Hữu Cảnh, phường 22, quận Bình Thạnh, TP. Hồ Chí Minh.</p>
-                        <p className="footer__copyright-text">Tổng đài hỗ trợ: 19001822 - Email: customerservice@pizzahut.vn | Số ĐKKD: 0303902751</p>
+                        <p className="footer__copyright-text">Tổng đài hỗ trợ: 19001822 - Email: customerservice@pizzahut.vn. © 2022 - Bản quyền thuộc về Công ty TNHH Pizza Việt Nam</p>
                         <p className="footer__copyright-text"></p>
-                        <p className="footer__copyright-text">© 2022 - Bản quyền thuộc về Công ty TNHH Pizza Việt Nam</p>
                     </div>
 
 
@@ -140,8 +140,6 @@ function Footer() {
                         </ul>
                     </div>
                 </div>
-                
-                
             </div>
     </div>;
 }
