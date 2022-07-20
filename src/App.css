@@ -273,6 +273,68 @@ Navbar
   margin-right: 10px;
 }
 
+
+/* 
+==============
+OVERLAY
+==============
+ */
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(34, 34, 34, 0.59);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container{
+  width: 330px;
+  padding: 10px;
+  background-color: var(--clr-white);
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.modal-close{
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.modal-img{
+  width: 100%;
+  height: inherit;
+  border-radius: 10px;
+}
+
+.modal-btn{
+  background-color: var(--clr-green-dark);
+  color: var(--clr-white);
+  border-radius: var(--radius);
+  margin-top: 4px;
+  font-size: .9rem;
+  padding: 6px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+
 /* 
 ==============
 HOME PAGE
@@ -426,12 +488,11 @@ HOME PAGE
 } 
 
 .method-top__item.active{
-  /* background-color: var(--clr-green-light); */
   color: var(--clr-main);
-  font-weight: 900;
 }
 
-.method-top__item > i{
+.method-top__item-img{
+  width: 35px;
   margin-right: 4px;
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar'
@@ -8,12 +8,21 @@ import Meber from './components/Member';
 import Home from './components/Home';
 import Tracking from './components/Tracking';
 import Scrolltop from './components/Scrolltop';
+import Overlay from './components/Overlay';
 
 
 function App() {
+  const [isActive, setActive] = useState(true)
+
+  const close = () =>{
+    setActive(false)
+  }
+
   return (
     <div className='App'>
       <Navbar />
+
+      {isActive && <Overlay close = {close}/>}
 
       <Scrolltop>
         <Routes>

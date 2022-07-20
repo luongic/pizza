@@ -11,13 +11,17 @@ function OrderMethod () {
         type: 'Giao hàng tận nơi',
         icon: 'fa-solid fa-motorcycle',
         setMethod: 'deli',
-        _class: 'method-top__item'
+        _class: 'method-top__item',
+        imgDisable: '/img/deli.png',
+        img: '/img/deli_active.gif'
       },
       {
-        type: 'Đến lấy',
+        type: 'Mua mang về',
         icon: 'fa-solid fa-hand-fist',
         setMethod: 'pickup',
-        _class: 'method-top__item'
+        _class: 'method-top__item',
+        imgDisable: '/img/pickup.png',
+        img: '/img/pickup_active.gif'
       },
     ]
   
@@ -27,7 +31,9 @@ function OrderMethod () {
   
           {methods.map((item, index) => {
             return <div className={method === item.setMethod ? 'method-top__item active' : 'method-top__item'} onClick={() => setMethod(item.setMethod)} key={index} >
-              <i className={item.icon}></i> {item.type}
+              {/* <i className={item.icon}></i>  */}
+              <img src={method === item.setMethod ? item.img : item.imgDisable} className='method-top__item-img'/>
+              <div className='method-top__item-text'>{item.type}</div>
             </div>
           })}
         </div>
