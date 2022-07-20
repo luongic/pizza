@@ -56,114 +56,114 @@ function Slider() {
 
 function Pickup() {
   return <div className='method-content'>
-  <div className='method-content__city'>
-    <div className='method-label' >Thành phố: </div>
-    <select className='selection__add' name="cars" id="cars">
-      <option value="0">...</option>
-      <option value="hanoi">Hà Nội</option>
-      <option value="saigon">TP Hồ Chí Minh</option>
-      <option value="danang">Đà Nẵng</option>
-    </select>
-  </div>
+    <div className='method-content__city'>
+      <div className='method-label' >Thành phố: </div>
+      <select className='selection__add' name="cars" id="cars">
+        <option value="0">...</option>
+        <option value="hanoi">Hà Nội</option>
+        <option value="saigon">TP Hồ Chí Minh</option>
+        <option value="danang">Đà Nẵng</option>
+      </select>
+    </div>
 
-  <div className='method-content__district'>
-    <div className='method-label'>Quận, Huyện: </div>
-    <select className='selection__add' name="cars" id="cars">
-      <option value="0">...</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-    </select>
-  </div>
+    <div className='method-content__district'>
+      <div className='method-label'>Quận, Huyện: </div>
+      <select className='selection__add' name="cars" id="cars">
+        <option value="0">...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
 
-  <div className='method-content__subdistrict'>
-    <div className='method-label'>Phường: </div>
-    <select className='selection__add' name="cars" id="cars">
-      <option value="0">...</option>
-      <option value="tp">Tân Phong</option>
-      <option value="tq">Tân Quy</option>
-      <option value="pm">Phú Mỹ</option>
-      <option value="th">Tân Hưng</option>
-      <option value="tk">Tân Kiểng</option>
-      <option value="pt">Phú Thuận</option>
-      <option value="bt">Bình Thuận</option>
-    </select>
-  </div>
+    <div className='method-content__subdistrict'>
+      <div className='method-label'>Phường: </div>
+      <select className='selection__add' name="cars" id="cars">
+        <option value="0">...</option>
+        <option value="tp">Tân Phong</option>
+        <option value="tq">Tân Quy</option>
+        <option value="pm">Phú Mỹ</option>
+        <option value="th">Tân Hưng</option>
+        <option value="tk">Tân Kiểng</option>
+        <option value="pt">Phú Thuận</option>
+        <option value="bt">Bình Thuận</option>
+      </select>
+    </div>
 
-  <div className='method-content__subdistrict'>
-    <div className='method-label'>Chọn cửa hàng: </div>
-    <select className='selection__add' name="cars" id="cars">
-      <option value="0">...</option>
-      <option value="tp">Pizza Hut Sky Garden</option>
-      <option value="tq">Pizza Hut Lotte mart</option>
-    </select>
-  </div>
+    <div className='method-content__subdistrict'>
+      <div className='method-label'>Chọn cửa hàng: </div>
+      <select className='selection__add' name="cars" id="cars">
+        <option value="0">...</option>
+        <option value="tp">Pizza Hut Sky Garden</option>
+        <option value="tq">Pizza Hut Lotte mart</option>
+      </select>
+    </div>
 
-  <div className='method-btn' >
-    Bắt đầu đặt hàng
-  </div>
+    <div className='method-btn' >
+      <Link to='/menu' >Bắt đầu đặt hàng</Link>
+    </div>
 
-</div>;
+  </div>;
 }
 
 function Delivery() {
   return <div className='method-content'>
-  <div className='method-content__city'>
-    <div className='method-label' >Thành phố: </div>
-    <select className='selection__add' name="cars" id="cars">
-      <option value="0">...</option>
-      <option value="hanoi">Hà Nội</option>
-      <option value="saigon">TP Hồ Chí Minh</option>
-      <option value="danang">Đà Nẵng</option>
-    </select>
-  </div>
+    <div className='method-content__city'>
+      <div className='method-label' >Thành phố: </div>
+      <select className='selection__add' name="cars" id="cars">
+        <option value="0">...</option>
+        <option value="hanoi">Hà Nội</option>
+        <option value="saigon">TP Hồ Chí Minh</option>
+        <option value="danang">Đà Nẵng</option>
+      </select>
+    </div>
 
-  <div className='method-content__district'>
-    <div className='method-label'>Quận, Huyện: </div>
-    <select className='selection__add' name="cars" id="cars">
-      <option value="0">...</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-    </select>
-  </div>
+    <div className='method-content__district'>
+      <div className='method-label'>Quận, Huyện: </div>
+      <select className='selection__add' name="cars" id="cars">
+        <option value="0">...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
 
-  <div className='method-content__subdistrict'>
-    <div className='method-label'>Phường: </div>
-    <select className='selection__add' name="cars" id="cars">
-      <option value="0">...</option>
-      <option value="tp">Tân Phong</option>
-      <option value="tq">Tân Quy</option>
-      <option value="pm">Phú Mỹ</option>
-      <option value="th">Tân Hưng</option>
-      <option value="tk">Tân Kiểng</option>
-      <option value="pt">Phú Thuận</option>
-      <option value="bt">Bình Thuận</option>
-    </select>
-  </div>
+    <div className='method-content__subdistrict'>
+      <div className='method-label'>Phường: </div>
+      <select className='selection__add' name="cars" id="cars">
+        <option value="0">...</option>
+        <option value="tp">Tân Phong</option>
+        <option value="tq">Tân Quy</option>
+        <option value="pm">Phú Mỹ</option>
+        <option value="th">Tân Hưng</option>
+        <option value="tk">Tân Kiểng</option>
+        <option value="pt">Phú Thuận</option>
+        <option value="bt">Bình Thuận</option>
+      </select>
+    </div>
 
-  <div className='method-content__address' >
-    <input type="text" className='method-content__address-number' placeholder='Số nhà và tên đường. VD: 32 Nguyễn Thị Thâp' />
-  </div>
+    <div className='method-content__address' >
+      <input type="text" className='method-content__address-number' placeholder='Số nhà và tên đường. VD: 32 Nguyễn Thị Thâp' />
+    </div>
 
-  <div className='method-btn' >
-    Bắt đầu đặt hàng
-  </div>
+    <div className='method-btn' >
+      <Link to='/menu' >Bắt đầu đặt hàng</Link>
+    </div>
 
-</div>;
+  </div>;
 }
 
 
 function OrderMethod () {
-  const [method, setMethod] = useState('pickup')
+  const [method, setMethod] = useState('deli')
 
   const methods = [
     {
@@ -193,6 +193,12 @@ function OrderMethod () {
 
       {method === 'deli' ? <Delivery /> : <Pickup />} 
     </div>
+  </div>
+}
+
+function Recommend() {
+  return <div className='contain'>
+
   </div>
 }
 
