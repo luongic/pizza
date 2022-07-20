@@ -14,7 +14,7 @@ const Menu = () => {
       }
       else{
       const newItems = items.filter((item) => item.category === category)
-      setMenuItem(newItems)
+        setMenuItem(newItems)
       }
   }
 
