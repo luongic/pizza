@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import Products from './Products'
 import Category from './Category'
 import items from '../data/menu'

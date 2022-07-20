@@ -291,6 +291,7 @@ HOME PAGE
   position: relative;
   width: 100%;
   height: 430px;
+  overflow: hidden;
 }
 
 .slide-item{
@@ -382,7 +383,8 @@ HOME PAGE
 }
 
 .method{
-  min-width: 500px;
+  /* min-width: 390px; */
+  width: 500px;
   min-height: 300px;
   /* border: 1px solid rgb(101, 101, 101); */
   border-radius: 20px;
@@ -633,7 +635,7 @@ Menu
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .item-btn{
@@ -645,7 +647,16 @@ Menu
   border: none;
   font-size: 1rem;
 }
+@media screen and (max-width: 500px) {
+  .btn-container {
+    overflow: auto;
+    justify-content: flex-start;
+  }
 
+  .filter-btn {
+    width: 100px;
+  }
+}
 
 /* 
 ===============
@@ -762,7 +773,7 @@ FOOTER
   padding-left: 0;
   list-style: none;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 

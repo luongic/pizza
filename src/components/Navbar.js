@@ -15,7 +15,7 @@ function Navbar () {
             <ActiveNavbar to="/"><i className="fa-solid fa-house"></i> Trang Chủ</ActiveNavbar>
             <ActiveNavbar to="/menu"><i className="fa-solid fa-list"></i> Menu</ActiveNavbar>
             <li className='navbar-item'>
-                <img src='/img/logo.png' />
+                <img src='/img/logo.png' alt='logoPizzaHut'/>
             </li>
             <ActiveNavbar to="/tracking"><i className="fa-solid fa-magnifying-glass"></i> Theo dõi đơn hàng</ActiveNavbar>
             <ActiveNavbar to="/member"><i className="fa-solid fa-user"></i> Thành viên</ActiveNavbar>

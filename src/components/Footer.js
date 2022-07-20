@@ -22,7 +22,7 @@ function Footer() {
                         <h3 className="footer__heading mt-16">Cần sự hỗ trợ</h3>
                         <ul className="footer__list">
                             <li className="footer__list-item">
-                                <a href="" className="footer__list-item-link">19001822</a>
+                                <a href="phoneto:19001822" className="footer__list-item-link">19001822</a>
                             </li>
                         </ul>
                     </div>

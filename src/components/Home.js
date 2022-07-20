@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import items from '../data/promotions'
+import stores from '../data/stores';
 
 function Slider() {
   const [index, setIndex] = useState(0)
@@ -55,42 +56,66 @@ function Slider() {
 }
 
 function Pickup() {
+
+  const [city, setCity] = useState()
+  const [dist, setDist] = useState()
+  const [subdistricts, setSubdist] = useState()
+
+  const cities = [...new Set(stores.map((store) => store.city))]
+
+  const cityChange = () =>{
+    setCity(document.querySelector('#city').value)
+  }
+
+  const selectCity = stores.filter((store) => store.city === city)
+  const districts = [...new Set(selectCity.map((selcet) => selcet.district))]
+  
+  const disChange = () =>{
+    setDist(document.querySelector('#district').value)
+  }
+
+  const selectDis = stores.filter((store) => (store.district === dist && store.city === city))
+  const subdis = [...new Set(selectDis.map((dist) => dist.subdis))]
+
+  const subChange = () =>{
+    setSubdist(document.querySelector('#subdis').value)
+  }
+
+  const selectSub = stores.filter((store) => (store.subdis === subdistricts && store.district === dist))
+  const storelist = [...new Set(selectSub.map((dist) => dist.name))]
+
   return <div className='method-content'>
     <div className='method-content__city'>
       <div className='method-label' >Thành phố: </div>
-      <select className='selection__add' name="cars" id="cars">
+      <select className='selection__add' id='city' onChange={() => cityChange()}>
         <option value="0">...</option>
-        <option value="hanoi">Hà Nội</option>
-        <option value="saigon">TP Hồ Chí Minh</option>
-        <option value="danang">Đà Nẵng</option>
+
+        {cities.map((city, index) => {
+          return <option value={city} key={index} >{city}</option>
+        })}
       </select>
+
     </div>
 
     <div className='method-content__district'>
       <div className='method-label'>Quận, Huyện: </div>
-      <select className='selection__add' name="cars" id="cars">
+      <select className='selection__add' id='district' onChange={() => disChange()}>
         <option value="0">...</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
+        
+        {districts.map((district, index) => {
+          return <option value={district} key={index} >{district}</option>
+        })}
       </select>
     </div>
 
     <div className='method-content__subdistrict'>
       <div className='method-label'>Phường: </div>
-      <select className='selection__add' name="cars" id="cars">
+      <select className='selection__add' id='subdis' onChange={() => subChange()}>
         <option value="0">...</option>
-        <option value="tp">Tân Phong</option>
-        <option value="tq">Tân Quy</option>
-        <option value="pm">Phú Mỹ</option>
-        <option value="th">Tân Hưng</option>
-        <option value="tk">Tân Kiểng</option>
-        <option value="pt">Phú Thuận</option>
-        <option value="bt">Bình Thuận</option>
+        
+        {subdis.map((sub, index) => {
+          return <option value={sub} key={index} >{sub}</option>
+        })}
       </select>
     </div>
 
@@ -98,8 +123,10 @@ function Pickup() {
       <div className='method-label'>Chọn cửa hàng: </div>
       <select className='selection__add' name="cars" id="cars">
         <option value="0">...</option>
-        <option value="tp">Pizza Hut Sky Garden</option>
-        <option value="tq">Pizza Hut Lotte mart</option>
+        
+        {storelist.map((sub, index) => {
+          return <option value={sub} key={index} >{sub}</option>
+        })}
       </select>
     </div>
 
@@ -111,42 +138,66 @@ function Pickup() {
 }
 
 function Delivery() {
+
+  const [city, setCity] = useState()
+  const [dist, setDist] = useState()
+  const [subdistricts, setSubdist] = useState()
+
+  const cities = [...new Set(stores.map((store) => store.city))]
+
+  const cityChange = () =>{
+    setCity(document.querySelector('#city').value)
+  }
+
+  const selectCity = stores.filter((store) => store.city === city)
+  const districts = [...new Set(selectCity.map((selcet) => selcet.district))]
+  
+  const disChange = () =>{
+    setDist(document.querySelector('#district').value)
+  }
+
+  const selectDis = stores.filter((store) => (store.district === dist && store.city === city))
+  const subdis = [...new Set(selectDis.map((dist) => dist.subdis))]
+
+  const subChange = () =>{
+    setSubdist(document.querySelector('#subdis').value)
+  }
+
+  const selectSub = stores.filter((store) => (store.subdis === subdistricts && store.district === dist))
+  const storelist = [...new Set(selectSub.map((dist) => dist.name))]
+
   return <div className='method-content'>
     <div className='method-content__city'>
       <div className='method-label' >Thành phố: </div>
-      <select className='selection__add' name="cars" id="cars">
+      <select className='selection__add' id='city' onChange={() => cityChange()}>
         <option value="0">...</option>
-        <option value="hanoi">Hà Nội</option>
-        <option value="saigon">TP Hồ Chí Minh</option>
-        <option value="danang">Đà Nẵng</option>
+
+        {cities.map((city, index) => {
+          return <option value={city} key={index} >{city}</option>
+        })}
       </select>
+
     </div>
 
     <div className='method-content__district'>
       <div className='method-label'>Quận, Huyện: </div>
-      <select className='selection__add' name="cars" id="cars">
+      <select className='selection__add' id='district' onChange={() => disChange()}>
         <option value="0">...</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
+        
+        {districts.map((district, index) => {
+          return <option value={district} key={index} >{district}</option>
+        })}
       </select>
     </div>
 
     <div className='method-content__subdistrict'>
       <div className='method-label'>Phường: </div>
-      <select className='selection__add' name="cars" id="cars">
+      <select className='selection__add' id='subdis' onChange={() => subChange()}>
         <option value="0">...</option>
-        <option value="tp">Tân Phong</option>
-        <option value="tq">Tân Quy</option>
-        <option value="pm">Phú Mỹ</option>
-        <option value="th">Tân Hưng</option>
-        <option value="tk">Tân Kiểng</option>
-        <option value="pt">Phú Thuận</option>
-        <option value="bt">Bình Thuận</option>
+        
+        {subdis.map((sub, index) => {
+          return <option value={sub} key={index} >{sub}</option>
+        })}
       </select>
     </div>
 
