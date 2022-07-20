@@ -6,11 +6,11 @@ import Slider from './Slider';
 import OrderMethod from './OrderMethod';
 
 
-function Recommend() {
-  return <div className='contain'>
+// function Recommend() {
+//   return <div className='contain'>
 
-  </div>
-}
+//   </div>
+// }
 
 function Home() {
   return <div className='home'>

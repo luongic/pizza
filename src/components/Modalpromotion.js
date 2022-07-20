@@ -1,4 +1,3 @@
-import {useState} from 'react'
 
 function Modalpromotion({close}) {
     return <div className="modal-container">
