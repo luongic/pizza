@@ -68,7 +68,7 @@ function Delivery() {
       </div>
   
       <div className='method-content__address' >
-        <input type="text" className='method-content__address-number' placeholder='Số nhà và tên đường. VD: 32 Nguyễn Thị Thâp' />
+        <input type="text" className='method-content__address-number' placeholder='Số nhà và tên đường. VD: 32 Nguyễn Thị Thập' />
       </div>
   
       <div className='method-btn' >
