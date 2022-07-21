@@ -1,20 +1,17 @@
 import React, { Fragment, useState } from 'react';
 import Modalproduct from './Modalproduct';
 
-import items from '../data/menu'
-
-
 const Products = ({items}) => {
 
   const [isActive, setActive] = useState(false)
 
   const handleClick = (id) => {
-    // const selectItem = items.filter((item) => item.id === id)
     setActive(true)
     setID(id)
   }
 
   const addTocart = (id) => {
+
   }
 
   const close = () => {
@@ -41,14 +38,15 @@ const Products = ({items}) => {
                 </header>
                 <p className='item-text'>{desc}</p>
                 <div className='item-bottom'>
-                  <button className='item-btn' onClick={category === 'Pizza' ? ()=> handleClick(id) : ()=> addTocart(id)} >{category === 'Pizza' ? 'Tùy chọn' : 'Thêm vào giỏ hàng'}</button>
+                  {category === 'Pizza' ? <button className='item-btn' onClick={()=> handleClick(id)} >Tùy chọn</button> : <button className='item-btn' onClick={()=> addTocart(id)} >Thêm vào giỏ hàng</button>}
+
                 </div>
                 
             </div>
         </article>
     })}
   </div>
-  {isActive && <Modalproduct id = {id} close = {close}  />}
+  {isActive && <Modalproduct id = {id} close = {close} />}
   </Fragment>);
 };
 

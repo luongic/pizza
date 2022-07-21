@@ -735,6 +735,7 @@ MODAL PRODUCT
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
  }
 
  .modal-product__content{
@@ -781,6 +782,8 @@ MODAL PRODUCT
 }
 
 .modal-product__info{
+  width: 620px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
@@ -800,6 +803,20 @@ MODAL PRODUCT
   border-bottom: 2px solid #e0e0e0;
 }
 
+.modal-product__info-content{
+  margin-top: 80px;
+  margin-bottom: 50px;
+  width: 100%;
+  overflow-y: scroll;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-product__info-content::-webkit-scrollbar {
+  display: none;
+}
+
 .modal-product__btn-price{
   display: flex;
   align-items: center;
@@ -807,7 +824,7 @@ MODAL PRODUCT
 }
 
 .modal-product__text{
-  margin-top: 90px;
+  margin-top: 10px;
 }
 
 .size-list__text{
@@ -819,11 +836,90 @@ MODAL PRODUCT
 .size-list__contain{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .size-list__size{
+  width: 33.3333%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
 
+.size-list__size-contain{
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--clr-green-dark);
+  border-radius: 10px;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.size-list__size-contain.active{
+  opacity: 1;
+}
+
+.size-list__size-img{
+  width: 50px;
+  height: inherit;
+  object-fit: contain;
+}
+
+.size-list__size-text{
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--clr-green-dark);
+}
+
+
+.modal-product__crust-list{
+  flex: 1;
+}
+
+.crust-list__text{
+  color: var(--clr-black);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.crust-list__contain{
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.crust-list__crust-contain{
+  display: flex;
+  opacity: 0.4;
+  cursor: pointer;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 4px 0;
+}
+
+.crust-list__crust-contain.active{
+  opacity: 1;
+  font-weight: 700;
+}
+.crust-list__crust{
+
+}
+
+.crust-list__crust-img{
+  width: 60px;
+  height: inherit;
+}
+
+.crust-list__crust-text{
+  text-transform: capitalize;
+  color: var(--clr-green-dark);
+  margin-left: 10px;
 }
 
 
@@ -845,6 +941,8 @@ MODAL PRODUCT
   border-radius: 10px;
   width: 100%;
   cursor: pointer;
+  position: absolute;
+  bottom: 0;
 }
 
 

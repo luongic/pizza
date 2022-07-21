@@ -7,7 +7,7 @@ function Delivery() {
 
     const [city, setCity] = useState()
     const [dist, setDist] = useState()
-    const [subdistricts, setSubdist] = useState()
+    // const [subdistricts, setSubdist] = useState()
   
     const cities = [...new Set(stores.map((store) => store.city))]
   
@@ -26,11 +26,11 @@ function Delivery() {
     const subdis = [...new Set(selectDis.map((dist) => dist.subdis))]
   
     const subChange = () =>{
-      setSubdist(document.querySelector('#subdis').value)
+      // setSubdist(document.querySelector('#subdis').value)
     }
   
-    const selectSub = stores.filter((store) => (store.subdis === subdistricts && store.district === dist))
-    const storelist = [...new Set(selectSub.map((dist) => dist.name))]
+    // const selectSub = stores.filter((store) => (store.subdis === subdistricts && store.district === dist))
+    // const storelist = [...new Set(selectSub.map((dist) => dist.name))]
   
     return <div className='method-content'>
       <div className='method-content__city'>
