@@ -12,13 +12,9 @@ function Modalproduct({id, close}) {
 
     const handleSize = (size) =>{
         setSizeget(size)
+
         if (size === 'Nhỏ'){
-            if (crustget === 'viền xúc xích' || crustget === 'viền phô mai'){
-                setPrice(selectItem[0].price[0]+ 69)
-            }
-            else{
-                setPrice(selectItem[0].price[0])
-            }
+            setPrice(selectItem[0].price[0])
         }
         else if (size === 'Vừa'){
             if (crustget === 'viền xúc xích' || crustget === 'viền phô mai'){
@@ -28,7 +24,7 @@ function Modalproduct({id, close}) {
                 setPrice(selectItem[0].price[1])
             }
         }
-        else {
+        else if(size === 'Lớn'){
             if (crustget === 'viền xúc xích' || crustget === 'viền phô mai'){
                 setPrice(selectItem[0].price[2]+ 89)
             }
@@ -39,13 +35,9 @@ function Modalproduct({id, close}) {
     }
 
     const handleCrust = (crust) =>{
-
         setCrustget(crust)
         if (crust === 'viền xúc xích' || crust === 'viền phô mai'){
-            if (sizeget === 'Nhỏ'){
-                setPrice(selectItem[0].price[0]+ 69)
-            }
-            else if (sizeget === 'Vừa'){
+            if (sizeget === 'Vừa'){
                 setPrice(selectItem[0].price[1]+ 69)
             }
             else {
@@ -53,10 +45,7 @@ function Modalproduct({id, close}) {
             }
         }
         else {
-            if (sizeget === 'Nhỏ'){
-                setPrice(selectItem[0].price[0])
-            }
-            else if (sizeget === 'Vừa'){
+            if (sizeget === 'Vừa'){
                 setPrice(selectItem[0].price[1])
             }
             else {
@@ -311,7 +300,9 @@ function Modalproduct({id, close}) {
                         
                     </div>
 
-                    <button className='modal-product__btn' >
+                    <button className='modal-product__btn' onClick={()=>{
+                        console.log('thêm vào giỏ hàng: ', selectItem[0].title, 'size: ', sizeget, 'vien: ', crustget, 'tong cong: ', price)}}
+                         >
                             <span>{price}.000₫</span>
                             
                             <span>Thêm vào giỏ hàng</span>
