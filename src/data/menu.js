@@ -56,8 +56,8 @@ const menu = [
         title: 'pizza hai vị',
         category: 'Pizza',
         size: ['Vừa', 'Lớn'],
-      
-      crust: ['đế mỏng giòn','đế kéo tay truyền thống','đế giòn xốp','viền xúc xích','viền phô mai'],  price: [249, 289],
+        crust: ['đế mỏng giòn','đế kéo tay truyền thống','đế giòn xốp','viền xúc xích','viền phô mai'],  
+        price: [109, 249, 289],
         img: '/img/Pizza_Hai_Vi.jpg',
         desc : `Cùng thưởng thức 2 loại nhân phủ thơm ngon trên cùng 1 bánh pizza. Half Half - vị ngon nhân đôi.`,
     },

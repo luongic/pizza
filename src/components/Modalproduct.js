@@ -13,13 +13,55 @@ function Modalproduct({id, close}) {
     const handleSize = (size) =>{
         setSizeget(size)
         if (size === 'Nhỏ'){
-            setPrice(selectItem[0].price[0])
+            if (crustget === 'viền xúc xích' || crustget === 'viền phô mai'){
+                setPrice(selectItem[0].price[0]+ 69)
+            }
+            else{
+                setPrice(selectItem[0].price[0])
+            }
         }
         else if (size === 'Vừa'){
-            setPrice(selectItem[0].price[1])
+            if (crustget === 'viền xúc xích' || crustget === 'viền phô mai'){
+                setPrice(selectItem[0].price[1]+ 69)
+            }
+            else{
+                setPrice(selectItem[0].price[1])
+            }
         }
         else {
-            setPrice(selectItem[0].price[2])
+            if (crustget === 'viền xúc xích' || crustget === 'viền phô mai'){
+                setPrice(selectItem[0].price[2]+ 89)
+            }
+            else{
+                setPrice(selectItem[0].price[2])
+            }
+        }
+    }
+
+    const handleCrust = (crust) =>{
+
+        setCrustget(crust)
+        if (crust === 'viền xúc xích' || crust === 'viền phô mai'){
+            if (sizeget === 'Nhỏ'){
+                setPrice(selectItem[0].price[0]+ 69)
+            }
+            else if (sizeget === 'Vừa'){
+                setPrice(selectItem[0].price[1]+ 69)
+            }
+            else {
+                setPrice(selectItem[0].price[2]+ 89)
+            }
+        }
+        else {
+            if (sizeget === 'Nhỏ'){
+                setPrice(selectItem[0].price[0])
+            }
+            else if (sizeget === 'Vừa'){
+                setPrice(selectItem[0].price[1])
+            }
+            else {
+                setPrice(selectItem[0].price[2])
+            }
         }
     }
 
@@ -109,97 +151,158 @@ function Modalproduct({id, close}) {
                             <div className='crust-list__contain'>
 
                                 {crusts.map((crust, index) => { 
-                                    if (crust === 'đế mỏng giòn'){
-                                        if (crustget === crust) {
-                                            return <div className='crust-list__crust' key={index} >
-                                                <div className='crust-list__crust-contain active'>
+
+                                    if (sizeget === 'Nhỏ'){
+                                        if (crust === 'đế mỏng giòn'){
+                                            if (crustget === crust) {
+                                                return <div className='crust-list__crust' key={index} >
+                                                    <div className='crust-list__crust-contain active'>
+                                                        <img src='/img/C_T.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                        <div className='crust-list__crust-text' >{crust}</div>
+                                                    </div>
+                                                </div>;
+                                            }
+                                            else {
+                                                return <div className='crust-list__crust' key={index} onClick={() => handleCrust(crust)} >
+                                                <div className='crust-list__crust-contain'>
                                                     <img src='/img/C_T.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
                                                     <div className='crust-list__crust-text' >{crust}</div>
                                                 </div>
                                             </div>;
+                                            }                                    
                                         }
-                                        else {
-                                            return <div className='crust-list__crust' key={index} onClick={() => setCrustget(crust)} >
-                                            <div className='crust-list__crust-contain'>
-                                                <img src='/img/C_T.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
-                                                <div className='crust-list__crust-text' >{crust}</div>
-                                            </div>
-                                        </div>;
-                                        }                                    
-                                    }
-                                    else if (crust === 'đế kéo tay truyền thống'){
-                                        if (crustget === crust) {
-                                            return <div className='crust-list__crust' key={index} >
-                                                <div className='crust-list__crust-contain active'>
+                                        else if (crust === 'đế kéo tay truyền thống'){
+                                            if (crustget === crust) {
+                                                return <div className='crust-list__crust' key={index} >
+                                                    <div className='crust-list__crust-contain active'>
+                                                        <img src='/img/C_HT.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                        <div className='crust-list__crust-text' >{crust}</div>
+                                                    </div>
+                                                </div>;
+                                            }
+                                            else {
+                                                return <div className='crust-list__crust' key={index} onClick={() => handleCrust(crust)} >
+                                                <div className='crust-list__crust-contain'>
                                                     <img src='/img/C_HT.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
                                                     <div className='crust-list__crust-text' >{crust}</div>
                                                 </div>
                                             </div>;
+                                            }         
                                         }
-                                        else {
-                                            return <div className='crust-list__crust' key={index} onClick={() => setCrustget(crust)} >
-                                            <div className='crust-list__crust-contain'>
-                                                <img src='/img/C_HT.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
-                                                <div className='crust-list__crust-text' >{crust}</div>
-                                            </div>
-                                        </div>;
-                                        }         
-                                    }
-                                    else if (crust === 'đế giòn xốp'){
-                                        if (crustget === crust) {
-                                            return <div className='crust-list__crust' key={index} >
-                                                <div className='crust-list__crust-contain active'>
+                                        else if (crust === 'đế giòn xốp'){
+                                            if (crustget === crust) {
+                                                return <div className='crust-list__crust' key={index} >
+                                                    <div className='crust-list__crust-contain active'>
+                                                        <img src='/img/C_P.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                        <div className='crust-list__crust-text' >{crust}</div>
+                                                    </div>
+                                                </div>;
+                                            }
+                                            else {
+                                                return <div className='crust-list__crust' key={index} onClick={() => handleCrust(crust)} >
+                                                <div className='crust-list__crust-contain'>
                                                     <img src='/img/C_P.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
                                                     <div className='crust-list__crust-text' >{crust}</div>
                                                 </div>
                                             </div>;
+                                            }         
                                         }
-                                        else {
-                                            return <div className='crust-list__crust' key={index} onClick={() => setCrustget(crust)} >
-                                            <div className='crust-list__crust-contain'>
-                                                <img src='/img/C_P.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
-                                                <div className='crust-list__crust-text' >{crust}</div>
-                                            </div>
-                                        </div>;
-                                        }         
                                     }
-                                    else if (crust === 'viền xúc xích'){
-                                        if (crustget === crust) {
-                                            return <div className='crust-list__crust' key={index} >
-                                                <div className='crust-list__crust-contain active'>
+                                    else{
+                                        if (crust === 'đế mỏng giòn'){
+                                            if (crustget === crust) {
+                                                return <div className='crust-list__crust' key={index} >
+                                                    <div className='crust-list__crust-contain active'>
+                                                        <img src='/img/C_T.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                        <div className='crust-list__crust-text' >{crust}</div>
+                                                    </div>
+                                                </div>;
+                                            }
+                                            else {
+                                                return <div className='crust-list__crust' key={index} onClick={() => handleCrust(crust)} >
+                                                <div className='crust-list__crust-contain'>
+                                                    <img src='/img/C_T.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                    <div className='crust-list__crust-text' >{crust}</div>
+                                                </div>
+                                            </div>;
+                                            }                                    
+                                        }
+                                        else if (crust === 'đế kéo tay truyền thống'){
+                                            if (crustget === crust) {
+                                                return <div className='crust-list__crust' key={index} >
+                                                    <div className='crust-list__crust-contain active'>
+                                                        <img src='/img/C_HT.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                        <div className='crust-list__crust-text' >{crust}</div>
+                                                    </div>
+                                                </div>;
+                                            }
+                                            else {
+                                                return <div className='crust-list__crust' key={index} onClick={() => handleCrust(crust)} >
+                                                <div className='crust-list__crust-contain'>
+                                                    <img src='/img/C_HT.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                    <div className='crust-list__crust-text' >{crust}</div>
+                                                </div>
+                                            </div>;
+                                            }         
+                                        }
+                                        else if (crust === 'đế giòn xốp'){
+                                            if (crustget === crust) {
+                                                return <div className='crust-list__crust' key={index} >
+                                                    <div className='crust-list__crust-contain active'>
+                                                        <img src='/img/C_P.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                        <div className='crust-list__crust-text' >{crust}</div>
+                                                    </div>
+                                                </div>;
+                                            }
+                                            else {
+                                                return <div className='crust-list__crust' key={index} onClick={() => handleCrust(crust)} >
+                                                <div className='crust-list__crust-contain'>
+                                                    <img src='/img/C_P.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                    <div className='crust-list__crust-text' >{crust}</div>
+                                                </div>
+                                            </div>;
+                                            }         
+                                        }
+                                        else if (crust === 'viền xúc xích'){
+                                            if (crustget === crust) {
+                                                return <div className='crust-list__crust' key={index} >
+                                                    <div className='crust-list__crust-contain active'>
+                                                        <img src='/img/C_SCP.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                        <div className='crust-list__crust-text' >{crust}</div>
+                                                    </div>
+                                                </div>;
+                                            }
+                                            else {
+                                                return <div className='crust-list__crust' key={index} onClick={() => handleCrust(crust)} >
+                                                <div className='crust-list__crust-contain'>
                                                     <img src='/img/C_SCP.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
                                                     <div className='crust-list__crust-text' >{crust}</div>
                                                 </div>
                                             </div>;
+                                            }         
                                         }
-                                        else {
-                                            return <div className='crust-list__crust' key={index} onClick={() => setCrustget(crust)} >
-                                            <div className='crust-list__crust-contain'>
-                                                <img src='/img/C_SCP.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
-                                                <div className='crust-list__crust-text' >{crust}</div>
-                                            </div>
-                                        </div>;
-                                        }         
-                                    }
-                                    
-                                    else{
-                                        if (crustget === crust) {
-                                            return <div className='crust-list__crust' key={index} >
-                                                <div className='crust-list__crust-contain active'>
+                                        
+                                        else{
+                                            if (crustget === crust) {
+                                                return <div className='crust-list__crust' key={index} >
+                                                    <div className='crust-list__crust-contain active'>
+                                                        <img src='/img/C_CCP.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
+                                                        <div className='crust-list__crust-text' >{crust}</div>
+                                                    </div>
+                                                </div>;
+                                            }
+                                            else {
+                                                return <div className='crust-list__crust' key={index} onClick={() => handleCrust(crust)} >
+                                                <div className='crust-list__crust-contain'>
                                                     <img src='/img/C_CCP.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
                                                     <div className='crust-list__crust-text' >{crust}</div>
                                                 </div>
                                             </div>;
+                                            }         
                                         }
-                                        else {
-                                            return <div className='crust-list__crust' key={index} onClick={() => setCrustget(crust)} >
-                                            <div className='crust-list__crust-contain'>
-                                                <img src='/img/C_CCP.jpg' alt='pizzacrusts' className='crust-list__crust-img' />
-                                                <div className='crust-list__crust-text' >{crust}</div>
-                                            </div>
-                                        </div>;
-                                        }         
                                     }
+
+                                    
                                 })}
 
                             </div>
