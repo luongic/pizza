@@ -720,6 +720,135 @@ Menu
 }
 
 /* 
+=============
+MODAL PRODUCT
+=============
+ */
+
+ .modal-product{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(34, 34, 34, 0.681);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .modal-product__content{
+  background-color: var(--clr-white);
+  padding: 10px;
+  border-radius: var(--radius);
+  position: relative;
+  width: 960px;
+  height: 590px;
+ }
+
+ .modal-product__close{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+ }
+
+
+.modal-product__item{
+  display: flex;
+  height: 100%;
+
+}
+
+.modal-product__photo{
+  width: 320px;
+}
+
+.modal-product__photo-img{
+  width: 100%;
+  height: inherit;
+  width: 580px;
+  height: 320px;
+  object-fit: cover;
+  transform: rotate(-90deg) translateX(-22%) translateY(-43%);
+}
+
+.modal-product__info{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  position: relative;
+}
+
+.modal-product__name{
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  font-size: 2.4rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--clr-white);
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.modal-product__btn-price{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-product__text{
+  margin-top: 90px;
+}
+
+.size-list__text{
+  color: var(--clr-black);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.size-list__contain{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.size-list__size{
+
+}
+
+
+.modal-product__bottom{
+
+}
+
+.modal-product__btn{
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-green-dark);
+  color: var(--clr-white);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+
+/* 
 ===============
 FOOTER
 ===============
