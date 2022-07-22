@@ -745,6 +745,18 @@ MODAL PRODUCT
   position: relative;
   width: 960px;
   height: 590px;
+  animation: slideTop .4s ease;
+ }
+
+ @keyframes slideTop {
+  from{
+    transform: translateX(-100%);
+    opacity: .6;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
  }
 
  .modal-product__close{
