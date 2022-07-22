@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import items from '../data/menu'
 
 function Modalproduct({id, close}) {
@@ -7,55 +7,57 @@ function Modalproduct({id, close}) {
 
     const [sizeget, setSizeget] = useState(selectItem[0].size[0])
     const [crustget, setCrustget] = useState(selectItem[0].crust[0])
-
     const [price, setPrice] = useState(selectItem[0].price[0])
+
+    const sizes = selectItem[0].size;
+    const crusts = selectItem[0].crust;
 
     const handleSize = (size) =>{
         setSizeget(size)
-
-        if (size === 'Nhỏ'){
-            setPrice(selectItem[0].price[0])
-        }
-        else if (size === 'Vừa'){
-            if (crustget === 'viền xúc xích' || crustget === 'viền phô mai'){
-                setPrice(selectItem[0].price[1]+ 69)
-            }
-            else{
-                setPrice(selectItem[0].price[1])
-            }
-        }
-        else if(size === 'Lớn'){
-            if (crustget === 'viền xúc xích' || crustget === 'viền phô mai'){
-                setPrice(selectItem[0].price[2]+ 89)
-            }
-            else{
-                setPrice(selectItem[0].price[2])
-            }
-        }
     }
 
     const handleCrust = (crust) =>{
         setCrustget(crust)
-        if (crust === 'viền xúc xích' || crust === 'viền phô mai'){
-            if (sizeget === 'Vừa'){
+        // if (crust === 'viền xúc xích' || crust === 'viền phô mai'){
+        //     if (sizeget === 'Vừa'){
+        //         setPrice(selectItem[0].price[1]+ 69)
+        //     }
+        //     else {
+        //         setPrice(selectItem[0].price[2]+ 89)
+        //     }
+        // }
+        // else {
+        //     if (sizeget === 'Vừa'){
+        //         setPrice(selectItem[0].price[1])
+        //     }
+        //     else {
+        //         setPrice(selectItem[0].price[2])
+        //     }
+        // }
+    }
+
+    useEffect(() => {
+        if (sizeget === 'Nhỏ'){
+            setPrice(selectItem[0].price[0])
+        }
+        else if (sizeget === 'Vừa'){
+            if (crustget === 'viền xúc xích' || crustget === 'viền phô mai'){
                 setPrice(selectItem[0].price[1]+ 69)
             }
-            else {
-                setPrice(selectItem[0].price[2]+ 89)
-            }
-        }
-        else {
-            if (sizeget === 'Vừa'){
+            else{
                 setPrice(selectItem[0].price[1])
             }
-            else {
+        }
+        else if(sizeget === 'Lớn'){
+            if (crustget === 'viền xúc xích' || crustget === 'viền phô mai'){
+                setPrice(selectItem[0].price[2]+ 89)
+            }
+            else{
                 setPrice(selectItem[0].price[2])
             }
         }
-    }
+    },[sizeget, crustget])
 
-    const sizes = selectItem[0].size;
-    const crusts = selectItem[0].crust;
 
     return <div className='modal-product'>
         <div className='modal-product__content'>
@@ -291,7 +293,7 @@ function Modalproduct({id, close}) {
                                         }
                                     }
 
-                                    
+                                    return ;
                                 })}
 
                             </div>
@@ -301,7 +303,7 @@ function Modalproduct({id, close}) {
                     </div>
 
                     <button className='modal-product__btn' onClick={()=>{
-                        console.log('thêm vào giỏ hàng: ', selectItem[0].title, 'size: ', sizeget, 'vien: ', crustget, 'tong cong: ', price)}}
+                        console.log('thêm vào giỏ hàng: ', selectItem[0].title,  '\n size: ', sizeget, '\n vien: ', crustget, '\n tong cong: ', price)}}
                          >
                             <span>{price}.000₫</span>
                             
