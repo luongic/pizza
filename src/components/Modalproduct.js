@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import items from '../data/menu'
+import addToCart from '../functions/addToCart';
+import toast from '../functions/toast';
 
 function Modalproduct({id, close}) {
 
@@ -11,30 +13,6 @@ function Modalproduct({id, close}) {
 
     const sizes = selectItem[0].size;
     const crusts = selectItem[0].crust;
-
-    const handleSize = (size) =>{
-        setSizeget(size)
-    }
-
-    const handleCrust = (crust) =>{
-        setCrustget(crust)
-        // if (crust === 'viền xúc xích' || crust === 'viền phô mai'){
-        //     if (sizeget === 'Vừa'){
-        //         setPrice(selectItem[0].price[1]+ 69)
-        //     }
-        //     else {
-        //         setPrice(selectItem[0].price[2]+ 89)
-        //     }
-        // }
-        // else {
-        //     if (sizeget === 'Vừa'){
-        //         setPrice(selectItem[0].price[1])
-        //     }
-        //     else {
-        //         setPrice(selectItem[0].price[2])
-        //     }
-        // }
-    }
 
     useEffect(() => {
         if (sizeget === 'Nhỏ'){
@@ -56,7 +34,26 @@ function Modalproduct({id, close}) {
                 setPrice(selectItem[0].price[2])
             }
         }
-    },[sizeget, crustget])
+    },[sizeget, crustget, selectItem])
+
+    const handleSize = (size) =>{
+        setSizeget(size)
+    }
+
+    const handleCrust = (crust) =>{
+        setCrustget(crust)
+    }
+
+    const handleModalbtn = (title, size, crust, price)=>{
+        addToCart(title, size, crust, price)
+        close()
+        toast({
+            title: "Thêm vào giỏ hàng thành công",
+            message: `${title} / size: ${size} / ${crust}`,
+            type: "success",
+            duration: 3000
+          })
+    }
 
 
     return <div className='modal-product'>
@@ -140,7 +137,7 @@ function Modalproduct({id, close}) {
                             <div className='crust-list__text'>Chọn đế viền</div>
 
                             <div className='crust-list__contain'>
-
+                                {/* eslint-disable-next-line */}
                                 {crusts.map((crust, index) => { 
 
                                     if (sizeget === 'Nhỏ'){
@@ -292,24 +289,20 @@ function Modalproduct({id, close}) {
                                             }         
                                         }
                                     }
-
-                                    return ;
+                                    
                                 })}
 
                             </div>
-                        </div>
-                        <div className='modal-product__bottom'>
+                        </div>   
                         
                     </div>
-
-                    <button className='modal-product__btn' onClick={()=>{
-                        console.log('thêm vào giỏ hàng: ', selectItem[0].title,  '\n size: ', sizeget, '\n vien: ', crustget, '\n tong cong: ', price)}}
-                         >
-                            <span>{price}.000₫</span>
-                            
-                            <span>Thêm vào giỏ hàng</span>
-                        </button>
-                    </div>
+                    
+                    <button className='modal-product__btn' onClick={ () => handleModalbtn( selectItem[0].title, sizeget, crustget, price )} >
+                        <span>{price}.000₫</span>
+                        
+                        <span>Thêm vào giỏ hàng</span>
+                    </button>
+                    
                     
                 </div>
             </div>

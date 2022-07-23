@@ -22,7 +22,7 @@ function App() {
     <div className='App'>
       <Navbar />
 
-      {isActive && <Overlay close = {close}/>}
+      {isActive && <Overlay  close = {close}/>}
 
       <Scrolltop>
         <Routes>
@@ -34,6 +34,7 @@ function App() {
       </Scrolltop>
 
       <Footer />
+      <div id="toast"></div>
     </div>
   );
 }

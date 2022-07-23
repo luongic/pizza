@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 
 import Slider from './Slider';
@@ -16,6 +15,7 @@ function Home() {
   return <div className='home'>
     <Slider />
     <OrderMethod />
+    <div id="toast"></div>
   </div>;
 }
 

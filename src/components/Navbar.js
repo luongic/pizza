@@ -1,4 +1,5 @@
 import React from 'react';
+import Navcart from './Navcart';
 
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
@@ -20,7 +21,7 @@ function Navbar () {
             <ActiveNavbar to="/tracking"><i className="fa-solid fa-magnifying-glass"></i> Theo dõi đơn hàng</ActiveNavbar>
             <ActiveNavbar to="/member"><i className="fa-solid fa-user"></i> Thành viên</ActiveNavbar>
         </ul>
-        <div className='navbar-cart'><i className="fa-solid fa-cart-shopping"></i> Giỏ Hàng</div>
+        <Navcart />
     </div>;
 }
 

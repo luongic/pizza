@@ -267,6 +267,148 @@ Navbar
   justify-content: center;
   color: var(--clr-white);
   cursor: pointer;
+  position: relative;
+}
+
+.navbar-cart:hover .navbar-cart__display{
+  display: block;
+}
+
+.navbar-cart__display{
+  position: absolute;
+  width: 35vw;
+  height: 70vh;
+  top: 80px;
+  right: 40px;
+  padding: 12px;
+  background-color: #fff;
+  color: #111;
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0 0 15px rgb(110, 110, 110);
+}
+
+.navbar-cart__display::after{
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  left: 0;
+  height: 40px;
+}
+
+.navbar-cart__content{
+  height: calc(100% - 60px);
+}
+
+.navbar-cart__list{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+  overflow-y: auto;
+  height: 100%;
+  cursor: default;
+}
+
+.navbar-cart__list::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.navbar-cart__list::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.navbar-cart__list::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: var(--clr-green-dark);
+}
+
+.navbar-cart__item{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  cursor: default;
+  border-bottom: 1px solid #6e6e6eb7;
+}
+
+.navbar-cart__item-content{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.navbar-cart__item-top{
+  text-transform: capitalize;
+}
+
+.navbar-cart__item-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbar-cart__item-selection{
+  flex: 2;
+}
+
+.navbar-cart__item-size{
+  font-size: .7rem;
+}
+
+.navbar-cart__item-crust{
+  font-size: .7rem;
+  text-transform: capitalize;
+}
+
+.navbar-cart__item-quantity{
+  flex: 1;
+
+}
+
+.navbar-cart__item-price{
+  flex: 2;
+
+}
+
+.navbar-cart__item-del{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: var(--clr-main);
+}
+
+.navbar-cart__item-del i{
+  cursor: pointer;
+}
+
+.navbar-cart__btn{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 10px;
+  height: 50px;
+  line-height: 50px;
+  background-color: var(--clr-green-dark);
+  padding: 12px 10px;
+  color: var(--clr-white);
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.navbar-cart__btn-text{
+  text-transform: uppercase;
 }
 
 .navbar-cart > i{
@@ -746,6 +888,7 @@ MODAL PRODUCT
   width: 960px;
   height: 590px;
   animation: slideTop .4s ease;
+  transition: all ease .4s;
  }
 
  @keyframes slideTop {
@@ -1139,4 +1282,113 @@ FOOTER
     transform: rotate(-35deg);
 
   }
+}
+
+
+/* ======= Toast message ======== */
+
+#toast {
+  position: fixed;
+  top: 90px;
+  right: 32px;
+  z-index: 999999;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 20px 0;
+  min-width: 400px;
+  max-width: 450px;
+  border-left: 4px solid;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+  transition: all linear 0.3s;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 32px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.toast--success {
+  border-color: var(--clr-green-dark);
+}
+
+.toast--success .toast__icon {
+  color: var(--clr-green-dark);
+}
+
+.toast--info {
+  border-color: #2f86eb;
+}
+
+.toast--info .toast__icon {
+  color: #2f86eb;
+}
+
+.toast--warning {
+  border-color: #ffc021;
+}
+
+.toast--warning .toast__icon {
+  color: #ffc021;
+}
+
+.toast--error {
+  border-color: #ff623d;
+}
+
+.toast--error .toast__icon {
+  color: #ff623d;
+}
+
+.toast + .toast {
+  margin-top: 24px;
+}
+
+.toast__icon {
+  font-size: 24px;
+}
+
+.toast__icon,
+.toast__close {
+  padding: 0 16px;
+}
+
+.toast__body {
+  flex-grow: 1;
+}
+
+.toast__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.toast__msg {
+  font-size: .9rem;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+.toast__close {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
