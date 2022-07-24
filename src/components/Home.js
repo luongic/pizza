@@ -15,7 +15,6 @@ function Home() {
   return <div className='home'>
     <Slider />
     <OrderMethod />
-    
   </div>;
 }
 

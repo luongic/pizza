@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Tracking from './components/Tracking';
 import Scrolltop from './components/Scrolltop';
 import Overlay from './components/Overlay';
+import Payment from './components/Payment';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path='/menu' element={<Menu />} />
           <Route path='/tracking' element={<Tracking />} />
           <Route path='/member' element={<Meber />} />
+          <Route path='/payment' element={<Payment />} />
         </Routes>
       </Scrolltop>
 
