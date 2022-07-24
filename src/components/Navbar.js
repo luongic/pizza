@@ -21,7 +21,9 @@ function Navbar () {
             <ActiveNavbar to="/tracking"><i className="fa-solid fa-magnifying-glass"></i> Theo dõi đơn hàng</ActiveNavbar>
             <ActiveNavbar to="/member"><i className="fa-solid fa-user"></i> Thành viên</ActiveNavbar>
         </ul>
-        <Navcart />
+        <div className='navbar-cart'  >
+            <Navcart />
+        </div>
     </div>;
 }
 

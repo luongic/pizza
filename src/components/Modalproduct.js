@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import items from '../data/menu'
 import addToCart from '../functions/addToCart';
 import toast from '../functions/toast';
 
+import { CartContext } from "../components/CartContext";
+
 function Modalproduct({id, close}) {
+    const context = useContext(CartContext)
 
     const selectItem = items.filter((item) => item.id === id)
 
@@ -53,6 +56,8 @@ function Modalproduct({id, close}) {
             type: "success",
             duration: 3000
           })
+
+        context.setLengthCart(context.lengthCart += 1)
     }
 
 

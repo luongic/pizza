@@ -1,5 +1,7 @@
 
+
 function addToCart(title, size, crust, price) {
+    
     const getBill = ((JSON.parse(localStorage.getItem('bill'))) ?? [])
 
     const newBill = {
@@ -20,7 +22,6 @@ function addToCart(title, size, crust, price) {
     }
 
     localStorage.setItem('bill', JSON.stringify(getBill))
-
 }
 
 export default addToCart;
