@@ -286,6 +286,7 @@ Navbar
   border-radius: 10px;
   display: none;
   box-shadow: 0 0 15px rgb(110, 110, 110);
+  z-index: 99;
 }
 
 .navbar-cart__display::after{
@@ -328,12 +329,27 @@ Navbar
 	background-color: var(--clr-green-dark);
 }
 
+.navbar-cart__list-empty{
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: var(--clr-main);
+}
+
+.navbar-cart__list-empty i{
+  margin-right: 4px;
+}
+
 .navbar-cart__item{
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
   cursor: default;
   border-bottom: 1px solid #6e6e6eb7;
+  padding-bottom: 10px;
 }
 
 .navbar-cart__item-content{
@@ -367,13 +383,38 @@ Navbar
 }
 
 .navbar-cart__item-quantity{
-  flex: 1;
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
+}
 
+.navbar-cart__item-quantity-minus,
+.navbar-cart__item-quantity-plus{
+  font-size: 1.3rem;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  filter: drop-shadow(0 0 4px #a0a0a0);
+
+}
+
+.navbar-cart__item-quantity > span{
+  flex: 1;
+  padding-left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-cart__item-price{
   flex: 2;
-
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .navbar-cart__item-del{
@@ -428,7 +469,7 @@ OVERLAY
   right: 0;
   bottom: 0;
   background-color: rgba(34, 34, 34, 0.59);
-  z-index: 3;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1290,19 +1331,20 @@ FOOTER
 #toast {
   position: fixed;
   top: 90px;
-  right: 32px;
-  z-index: 999999;
+  left: 32px;
+  z-index: 98;
 }
 
 .toast {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   background-color: #fff;
   border-radius: 2px;
   padding: 20px 0;
   min-width: 400px;
   max-width: 450px;
-  border-left: 4px solid;
+  border-right: 4px solid;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
   transition: all linear 0.3s;
 }
@@ -1310,7 +1352,7 @@ FOOTER
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(calc(100% + 32px));
+    transform: translateX(calc(-100% + 32px));
   }
   to {
     opacity: 1;
