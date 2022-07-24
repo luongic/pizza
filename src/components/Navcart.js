@@ -56,7 +56,6 @@ function Navcart() {
         }
     }
 
-
     return  <><div className='navbar-cart__text'>
                     <i className="fa-solid fa-cart-shopping"></i> Giỏ Hàng
                 </div>
@@ -64,8 +63,7 @@ function Navcart() {
                 <div className='navbar-cart__display'>
                     <div className='navbar-cart__content' >
                         <ul className='navbar-cart__list'>
-
-                            {bills.length === 0 ? <div className="navbar-cart__list-empty">
+                            { (bills === null || bills.length === 0) ? <div className="navbar-cart__list-empty">
                                 <i className="fa-solid fa-face-frown"></i> bạn chưa chọn món nào</div> : 
                                 <>
                                     {bills.map((bill, index) => {
@@ -96,10 +94,9 @@ function Navcart() {
                                     })}
                                 </>
                             }
-                            
                         </ul>
                         <> 
-                                {bills.length === 0 ? <Link to='/menu' className='navbar-cart__btn' >
+                                { (bills === null || bills.length === 0) ? <Link to='/menu' className='navbar-cart__btn' >
                                 <div className="navbar-cart__btn-text"> Hãy chọn món ngay </div>
                                 </Link> : 
                                 <Link to='/payment' className='navbar-cart__btn' >

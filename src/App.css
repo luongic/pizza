@@ -276,7 +276,7 @@ Navbar
 
 .navbar-cart__display{
   position: absolute;
-  width: 35vw;
+  width: 512px;
   height: 70vh;
   top: 80px;
   right: 40px;
@@ -1165,7 +1165,7 @@ PAYMENT
 }
 
 .cart__display{
-  width: 35vw;
+  width: 512px;
   height: auto;
   margin-top: 40px;
   top: 80px;
