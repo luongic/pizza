@@ -1,10 +1,8 @@
-import Modalpromotion from "./Modalpromotion"
 
-function Overlay({close}) {
+function Overlay({children}) {
     return <div className="overlay">
-        <Modalpromotion close={close} />
+        {children}
     </div>
 }
-
 
 export default Overlay

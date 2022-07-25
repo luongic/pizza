@@ -1,10 +1,12 @@
+
 import Bill from "./Bill";
 
 function Payment() {
 
-    return( 
-    <Bill />
-    );
+    return( <>
+                <Bill />
+                
+            </>);
 }
 
 export default Payment;

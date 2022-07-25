@@ -1,8 +1,13 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useContext } from 'react';
 import Modalproduct from './Modalproduct';
+import addToCart from '../functions/addToCart';
+import toast from '../functions/toast';
+
+import { CartContext } from "../components/CartContext";
 
 const Products = ({items}) => {
 
+  const context = useContext(CartContext)
   const [isActive, setActive] = useState(false)
 
   const handleClick = (id) => {
@@ -10,9 +15,19 @@ const Products = ({items}) => {
     setID(id)
   }
 
-  const addTocart = (id) => {
 
+  const handleClick2 = (title, price) =>{
+    addToCart(title, '', '', price)
+    toast({
+      title: "Thêm vào giỏ hàng thành công",
+      message: `1x ${title} `,
+      type: "success",
+      duration: 3000
+    })
+
+    context.setLengthCart(context.lengthCart += 1)
   }
+
 
   const close = () => {
     setActive(false)
@@ -38,7 +53,8 @@ const Products = ({items}) => {
                 </header>
                 <p className='item-text'>{desc}</p>
                 <div className='item-bottom'>
-                  {category === 'Pizza' ? <button className='item-btn' onClick={()=> handleClick(id)} >Tùy chọn</button> : <button className='item-btn' onClick={()=> addTocart(id)} >Thêm vào giỏ hàng</button>}
+                  {category === 'Pizza' ? <button className='item-btn' onClick={()=> handleClick(id)} >Tùy chọn</button> : 
+                  <button className='item-btn' onClick={()=> handleClick2(title, price)} >Thêm vào giỏ hàng</button>}
 
                 </div>
                 

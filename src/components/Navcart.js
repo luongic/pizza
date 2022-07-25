@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "./CartContext";
 import { Link } from 'react-router-dom';
+import Confirmdel from "./Confirmdel";
 
 function Navcart() {
     const context = useContext(CartContext)
@@ -11,6 +12,12 @@ function Navcart() {
         setBill((JSON.parse(localStorage.getItem('bill'))))
     }, [context.lengthCart] )
     
+    const [isActive, setActive] = useState(false)
+    const [index, setIndex] = useState()
+
+    const close = () => {
+        setActive(false)
+    }
 
     let sum = 0;
 
@@ -20,16 +27,9 @@ function Navcart() {
         });
     }
 
-    function delFromcart(index){
-        const delItem = bills.slice(0,index).concat(bills.slice(index+1))
-        localStorage.setItem('bill', JSON.stringify(delItem))
-        setBill(delItem)
-    }
-
     const handleDel = index =>{
-
-        delFromcart(index)
-        context.setLengthCart(context.lengthCart -= 1)
+        setIndex(index)
+        setActive(true)
     }
 
     const handleUpdate = (method, index, title, size, crust) =>{
@@ -74,8 +74,8 @@ function Navcart() {
 
                                             <div className='navbar-cart__item-bottom'>
                                                 <div className='navbar-cart__item-selection'>
-                                                    <div className='navbar-cart__item-size'>Size: {bill.size}</div>
-                                                    <div className='navbar-cart__item-crust'>{bill.crust}</div>
+                                                    {bill.size !== '' ? <><div className='navbar-cart__item-size'>Size: {bill.size}</div>
+                                                    <div className='navbar-cart__item-crust'>{bill.crust}</div></> : <></> }
                                                 </div>
                                                 <div className='navbar-cart__item-quantity'>
                                                     <button className="navbar-cart__item-quantity-minus" disabled={bill.quantity === 1} 
@@ -109,6 +109,7 @@ function Navcart() {
                         </>
                     </div>
                 </div>
+                {isActive && <Confirmdel index = {index} close = {close} />}
                 </>;
 }
 

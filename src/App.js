@@ -10,6 +10,7 @@ import Tracking from './components/Tracking';
 import Scrolltop from './components/Scrolltop';
 import Overlay from './components/Overlay';
 import Payment from './components/Payment';
+import Modalpromotion from './components/Modalpromotion';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
     <div className='App'>
       <Navbar />
 
-      {isActive && <Overlay  close = {close}/>}
+      {isActive && <Overlay  > <Modalpromotion close={close}></Modalpromotion> </Overlay> }
 
       <Scrolltop>
         <Routes>

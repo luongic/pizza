@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "./CartContext";
+import Confirmdel from "./Confirmdel";
 
 function Bill() {
 
@@ -12,6 +13,12 @@ function Bill() {
         setBill((JSON.parse(localStorage.getItem('bill'))))
     }, [context.lengthCart] )
     
+    const [isActive, setActive] = useState(false)
+    const [index, setIndex] = useState()
+
+    const close = () => {
+        setActive(false)
+    }
 
     let sum = 0;
 
@@ -21,16 +28,15 @@ function Bill() {
         });
     }
 
-    function delFromcart(index){
-        const delItem = bills.slice(0,index).concat(bills.slice(index+1))
-        localStorage.setItem('bill', JSON.stringify(delItem))
-        setBill(delItem)
-    }
+    // function delFromcart(index){
+    //     const delItem = bills.slice(0,index).concat(bills.slice(index+1))
+    //     localStorage.setItem('bill', JSON.stringify(delItem))
+    //     setBill(delItem)
+    // }
 
     const handleDel = index =>{
-
-        delFromcart(index)
-        context.setLengthCart(context.lengthCart -= 1)
+        setIndex(index)
+        setActive(true)
     }
 
     const handleUpdate = (method, index, title, size, crust) =>{
@@ -55,7 +61,8 @@ function Bill() {
             context.setLengthCart(context.lengthCart += 1)
         }
     }
-    return <div className="payment" >
+    return <>
+            <div className="payment" >
                 <div className="payment-text" >Đơn hàng của bạn</div>
                 <div className='cart__display'>
                     <div className='cart__content' >
@@ -72,8 +79,8 @@ function Bill() {
 
                                             <div className='cart__item-bottom'>
                                                 <div className='cart__item-selection'>
-                                                    <div className='cart__item-size'>Size: {bill.size}</div>
-                                                    <div className='cart__item-crust'>{bill.crust}</div>
+                                                    {bill.size !== '' ? <><div className='cart__item-size'>Size: {bill.size}</div>
+                                                    <div className='cart__item-crust'>{bill.crust}</div></> : <></> }
                                                 </div>
                                                 <div className='cart__item-quantity'>
                                                     <button className="cart__item-quantity-minus" disabled={bill.quantity === 1} 
@@ -90,14 +97,16 @@ function Bill() {
                                         </div>
                                     </li>;
                                     })}
-                                    <div className="cart__total">Tổng tiền là: {sum.toLocaleString('en-US')},000₫</div>
+                                    <div className="cart__total">Tổng cộng: {sum.toLocaleString('en-US')},000₫</div>
                                 </div>
                             }
                             
                         </ul>
                     </div>
                 </div>
-            </div>;
+            </div>
+            {isActive && <Confirmdel index = {index} close = {close} />}
+            </> ;
 }
 
 export default Bill;

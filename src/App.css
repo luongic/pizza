@@ -1104,9 +1104,6 @@ MODAL PRODUCT
   opacity: 1;
   font-weight: 700;
 }
-.crust-list__crust{
-
-}
 
 .crust-list__crust-img{
   width: 60px;
@@ -1120,9 +1117,6 @@ MODAL PRODUCT
 }
 
 
-.modal-product__bottom{
-
-}
 
 .modal-product__btn{
   justify-self: flex-end;
@@ -1291,6 +1285,114 @@ PAYMENT
   align-items: center;
   justify-content: flex-end;
 }
+
+/* 
+=============
+Confirm Deleted Dish
+=============
+ */
+
+ .confirm-container{
+  background-color: var(--clr-white);
+  padding: 10px;
+  border-radius: var(--radius);
+  position: relative;
+  width: 360px;
+  height: unset;
+  animation: slideTop .4s ease;
+  transition: all ease .4s;
+ }
+
+ .confirm-close{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center
+ }
+
+ .confirm__heading{
+  color: var(--clr-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+ }
+
+ .confirm__content{
+  color: var(--clr-black);
+  margin: 10px;
+ }
+
+ .confirm__content-name{
+  text-transform: uppercase;
+  font-size: 1.6rem;
+ }
+
+ .confirm__content-info{
+  display: flex;
+  
+ }
+
+ .confirm__content-size,
+ .confirm__content-crust
+ {
+  font-size: 1.2rem;
+ }
+
+ .confirm__content-crust{
+  text-transform: capitalize;
+  margin-left: 8px;
+ }
+
+ .confirm__content-quantity{
+  font-size: .9rem;
+ }
+
+ .confirm__btn-contain{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+ }
+
+ .confirm-btn-no,
+ .confirm-btn-yes{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 12px 10px;
+  color: var(--clr-white);
+  cursor: pointer;
+ }
+
+ .confirm-btn-no{
+  border: 2px solid rgb(146, 146, 146);
+  margin-right: 10px;
+  color: var(--clr-green-dark);
+  font-weight: 500;
+ }
+ .confirm-btn-no:hover{
+  border: 2px solid var(--clr-main);
+  color: var(--clr-main);
+  transition: all .5s ease;
+ }
+ .confirm-btn-yes{
+  background-color: var(--clr-green-dark);
+ }
+
+
 
 /* 
 ===============
@@ -1476,7 +1578,10 @@ FOOTER
 }
 
 
-/* ======= Toast message ======== */
+/* 
+======= 
+Toast message 
+======== */
 
 #toast {
   position: fixed;

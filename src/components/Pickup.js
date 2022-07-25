@@ -44,6 +44,7 @@ function Pickup() {
       <div className='method-content__city'>
         <div className='method-label' >Thành phố: </div>
         <select className='selection__add' id='city' onClick={() => cityChange()}>
+          <option value="0"></option>
   
           {cities.map((city, index) => {
             return <option value={city} key={index} >{city}</option>
@@ -55,6 +56,7 @@ function Pickup() {
       <div className='method-content__district'>
         <div className='method-label'>Quận, Huyện: </div>
         <select className='selection__add' id='district' onClick={() => disChange()}>
+          <option value="0"></option>
           
           {districts.map((district, index) => {
             return <option value={district} key={index} >{district}</option>
@@ -65,6 +67,7 @@ function Pickup() {
       <div className='method-content__subdistrict'>
         <div className='method-label'>Phường: </div>
         <select className='selection__add' id='subdis' onClick={() => subChange()}>
+          <option value="0"></option>
           
           {subdis.map((sub, index) => {
             return <option value={sub} key={index} >{sub}</option>
@@ -75,7 +78,7 @@ function Pickup() {
       <div className='method-content__subdistrict'>
         <div className='method-label'>Chọn cửa hàng: </div>
         <select className='selection__add' name="cars" id="cars">
-          
+          <option value="0"></option>
           {storelist.map((sub, index) => {
             return <option value={sub} key={index} >{sub}</option>
           })}
