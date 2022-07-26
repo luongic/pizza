@@ -1,7 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import items from '../data/menu'
 import addToCart from '../functions/addToCart';
-import toast from '../functions/toast';
 
 import { CartContext } from "../components/CartContext";
 
@@ -50,12 +49,6 @@ function Modalproduct({id, close}) {
     const handleModalbtn = (title, size, crust, price)=>{
         addToCart(title, size, crust, price)
         close()
-        toast({
-            title: "Thêm vào giỏ hàng thành công",
-            message: `${title} / size: ${size} / ${crust}`,
-            type: "success",
-            duration: 3000
-          })
 
         context.setLengthCart(context.lengthCart += 1)
     }
