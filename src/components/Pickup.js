@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import stores from '../data/stores';
+import saveAddress from '../functions/saveAddress';
 
 function Pickup() {
 
@@ -45,6 +46,7 @@ function Pickup() {
     const storelist = [...new Set(selectSub.map((dist) => dist.name))]
 
     // History
+
     const [old, setOld] = useState('old')
 
 
@@ -66,10 +68,74 @@ function Pickup() {
       const getsubdis = document.querySelector('#subdis').value
       const getstore = document.querySelector('#store').value
       console.log(getstore, getsubdis, getdistrict, getcity);
+
+      saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
     }
+
+    const oldAddress = ((JSON.parse(localStorage.getItem('pickup'))) ?? [])
+
+    console.log(oldAddress.length === 0);
+
+    if (oldAddress.length === 0){
+      return <div className='method-content'>
+      <div className='method-content__city'>
+        <div className='method-label' >Thành phố: </div>
+        <select className='selection__add' id='city' onClick={() => cityChange()}>
+          <option value="0"></option>
   
-    return <>
-          {old === 'new' ? <></> : <>
+          {cities.map((city, index) => {
+            return <option value={city} key={index} >{city}</option>
+          })}
+        </select>
+  
+      </div>
+  
+      <div className='method-content__district'>
+        <div className='method-label'>Quận, Huyện: </div>
+        <select className='selection__add' id='district' onClick={() => disChange()}>
+          <option value="0"></option>
+          
+          {districts.map((district, index) => {
+            return <option value={district} key={index} >{district}</option>
+          })}
+        </select>
+      </div>
+  
+      <div className='method-content__subdistrict'>
+        <div className='method-label'>Phường: </div>
+        <select className='selection__add' id='subdis' onClick={() => subChange()}>
+          <option value="0"></option>
+          
+          {subdis.map((sub, index) => {
+            return <option value={sub} key={index} >{sub}</option>
+          })}
+        </select>
+      </div>
+  
+      <div className='method-content__subdistrict'>
+        <div className='method-label'>Chọn cửa hàng: </div>
+        <select className='selection__add' id="store" onChange={() => setChoose(true)}>
+          <option value="0"></option>
+          {storelist.map((sub, index) => {
+            return <option value={sub} key={index} >{sub}</option>
+          })}
+        </select>
+      </div>
+
+      { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
+        <Link to='/menu' >Bắt đầu đặt hàng</Link>
+      </div> : <button className='method-btn-disable' disabled >
+        Bạn chưa chọn cửa hàng
+      </button> }
+
+    </div>
+    }
+    else{
+      const store = stores.filter((store) => (store.name === oldAddress.store ))
+      return <>
+          {old === 'new' ? <>
+
+          </> : <>
             <div className='method-content__history'>
               <div className='method-content__history-heading'>
                 Cửa hàng lần trước bạn chọn là: 
@@ -77,10 +143,10 @@ function Pickup() {
 
               <div className='method-content__history-address'>
                 <div className='method-content__history-name'>
-                  Pizza Hut Skygarden
+                  {store[0].name}
                 </div>
                 <div className='method-content__history-full-address'>
-                  1024 Nguyễn Văn Linh, Phường Tân Phong, Quận 7, TP HCM
+                  {store[0].address}, {store[0].subdis}, {store[0].district}, {store[0].city}
                 </div>
               </div>
 
@@ -156,6 +222,10 @@ function Pickup() {
 
           
     </>;
+    }
+    
+  
+    
   }
 
 export default Pickup
