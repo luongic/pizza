@@ -167,10 +167,10 @@ function Pickup({close}) {
                 </div> */}
                 {getpath === '/' ? 
                 <div className='method-content__history-btn-old' onClick={() => handleOldclick()} >
-                  <Link to='/menu' >Chọn của hàng này</Link>
+                  <Link to='/menu' >Chọn cửa hàng này</Link>
                 </div> : 
                 <div className='method-content__history-btn-old' onClick={() => handleOldclick()} >
-                 <div className='method-btn-modal'>Chọn của hàng này</div>
+                 <div className='method-btn-modal'>Chọn cửa hàng này</div>
                 </div>}
 
                 <div className='method-content__history-btn-new' onClick={() => handleNewclick()} >
