@@ -67,14 +67,11 @@ function Pickup() {
       const getdistrict = document.querySelector('#district').value
       const getsubdis = document.querySelector('#subdis').value
       const getstore = document.querySelector('#store').value
-      console.log(getstore, getsubdis, getdistrict, getcity);
 
       saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
     }
 
     const oldAddress = ((JSON.parse(localStorage.getItem('pickup'))) ?? [])
-
-    console.log(oldAddress.length === 0);
 
     if (oldAddress.length === 0){
       return <div className='method-content'>

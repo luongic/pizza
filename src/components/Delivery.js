@@ -46,7 +46,6 @@ function Delivery() {
       const getcity = document.querySelector('#city').value
       const getdistrict = document.querySelector('#district').value
       const getdetail = document.querySelector('#address').value
-      console.log(getdetail, getdistrict, getcity);
       saveAddress('deli', getcity, getdistrict, '', '',getdetail)
     }
 
@@ -59,7 +58,7 @@ function Delivery() {
     const oldAddress = ((JSON.parse(localStorage.getItem('deli'))) ?? [])
 
   
-    return <> {oldAddress === [] ? <div className='method-content'>
+    return <> {oldAddress.length === 0 ? <div className='method-content'>
     <div className='method-content__city'>
       <div className='method-label' >Thành phố: </div>
       <select className='selection__add' id='city' onClick={() => cityChange()}>
