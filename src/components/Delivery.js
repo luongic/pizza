@@ -31,7 +31,7 @@ function Delivery() {
 
 
     const handleOldclick = () => {
-      
+      localStorage.setItem('method', 'deli')
     }
 
     const handleNewclick = () => {
@@ -47,6 +47,7 @@ function Delivery() {
       const getdistrict = document.querySelector('#district').value
       const getdetail = document.querySelector('#address').value
       saveAddress('deli', getcity, getdistrict, '', '',getdetail)
+      localStorage.setItem('method', 'deli')
     }
 
     const inputChange = () => {

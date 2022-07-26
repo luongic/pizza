@@ -51,7 +51,7 @@ function Pickup() {
 
 
     const handleOldclick = () => {
-      
+      localStorage.setItem('method', 'pickup')
     }
 
     const handleNewclick = () => {
@@ -69,6 +69,7 @@ function Pickup() {
       const getstore = document.querySelector('#store').value
 
       saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
+      localStorage.setItem('method', 'pickup')
     }
 
     const oldAddress = ((JSON.parse(localStorage.getItem('pickup'))) ?? [])
