@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import stores from '../data/stores';
 import saveAddress from '../functions/saveAddress';
 
-function Delivery() {
+function Delivery({close}) {
 
     const [city, setCity] = useState()
   
@@ -22,6 +22,10 @@ function Delivery() {
     const selectCity = stores.filter((store) => store.city === city)
     const districts = [...new Set(selectCity.map((selcet) => selcet.district))]
 
+    // check path
+    const location = useLocation()
+    const getpath = location.pathname
+
     // History
 
     const [old, setOld] = useState('old')
@@ -32,6 +36,7 @@ function Delivery() {
 
     const handleOldclick = () => {
       localStorage.setItem('method', 'deli')
+      close()
     }
 
     const handleNewclick = () => {
@@ -48,7 +53,8 @@ function Delivery() {
       const getdetail = document.querySelector('#address').value
       saveAddress('deli', getcity, getdistrict, '', '',getdetail)
       localStorage.setItem('method', 'deli')
-    }
+      close()
+    } 
 
     const inputChange = () => {
       if (citySelected && disSelected && document.querySelector('.method-content__address-number').value !== ''){
@@ -89,7 +95,10 @@ function Delivery() {
     </div>
 
     { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
-      <Link onClick={() => handleMethod()}  to='/menu' >Bắt đầu đặt hàng</Link>
+      {getpath === '/' ? <Link to='/menu'  >Bắt đầu đặt hàng</Link> : 
+      <div className='method-btn-modal' onClick={() => handleMethod()} >Bắt đầu đặt hàng</div>
+      }
+      
     </div> : <button className='method-btn-disable' disabled >
       Bạn chưa chọn địa chỉ
     </button> }        
@@ -110,9 +119,17 @@ function Delivery() {
               </div>
 
               <div className='method-content__history-btn-contain'>
+
+                {/* <div className='method-content__history-btn-old' onClick={() => handleOldclick()} >
+                  <Link to='/menu' >Sử dụng địa chỉ này</Link>
+                </div> */}
+                {getpath === '/' ? 
                 <div className='method-content__history-btn-old' onClick={() => handleOldclick()} >
                   <Link to='/menu' >Sử dụng địa chỉ này</Link>
-                </div>
+                </div> : 
+                <div className='method-content__history-btn-old' onClick={() => handleOldclick()} >
+                 <div className='method-btn-modal'>Sử dụng địa chỉ này</div>
+                </div>}
 
                 <div className='method-content__history-btn-new' onClick={() => handleNewclick()} >
                   Chọn một địa chỉ khác
@@ -153,7 +170,8 @@ function Delivery() {
             </div>
 
             { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
-              <Link onClick={() => handleMethod()}  to='/menu' >Bắt đầu đặt hàng</Link>
+            {getpath === '/' ? <Link onClick={() => handleMethod()}  to='/menu'  >Bắt đầu đặt hàng</Link> : 
+                <div className='method-btn-modal' onClick={() => handleMethod()} >Bắt đầu đặt hàng</div>}
             </div> : <button className='method-btn-disable' disabled >
               Bạn chưa chọn địa chỉ
             </button> }        

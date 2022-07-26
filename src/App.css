@@ -637,6 +637,7 @@ HOME PAGE
   padding-top: 10px;
   box-shadow: 0 0 16px ;
   margin-bottom: 20px;
+  background-color: var(--clr-white);
 }
 
 .method-top{
@@ -1225,11 +1226,83 @@ PAYMENT
  */
 .payment{
   width: 100%;
+  margin-top: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 110px;
+}
+
+.payment__add{
+  width: 512px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.payment__add-heading{
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--clr-green-dark);
+  font-weight: 500;
+}
+.payment__add-name{
+  margin-top: 10px;
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  color: var(--clr-main);
+  font-weight: 500;
+}
+.payment__add-detail{
+
+}
+
+.payment__add-btn{
+  align-self: end;
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: var(--clr-green-dark);
+  color: var(--clr-white);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.payment__modal-container{
+  width: unset;
+  padding: 10px;
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.payment__modal-close{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.method-btn-modal{
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-bill{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .payment-text{

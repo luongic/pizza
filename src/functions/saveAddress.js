@@ -11,10 +11,9 @@ function saveAddress(type, city, dis, subdis, store, detail) {
             detail: detail
         }
 
-        
-    
         localStorage.setItem('pickup', JSON.stringify(newAddress))
     }
+    
     else {
         const newAddress = {
             type: type,
@@ -26,8 +25,6 @@ function saveAddress(type, city, dis, subdis, store, detail) {
         localStorage.setItem('deli', JSON.stringify(newAddress))
     }
 
-    
- 
 }
 
 export default saveAddress;

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Delivery from './Delivery';
 import Pickup from './Pickup';
 
-function OrderMethod () {
+function OrderMethod ({close}) {
     const [method, setMethod] = useState('pickup')
   
     const methods = [
@@ -32,13 +32,13 @@ function OrderMethod () {
           {methods.map((item, index) => {
             return <div className={method === item.setMethod ? 'method-top__item active' : 'method-top__item'} onClick={() => setMethod(item.setMethod)} key={index} >
               {/* <i className={item.icon}></i>  */}
-              <img src={method === item.setMethod ? item.img : item.imgDisable} className='method-top__item-img'/>
+              <img src={method === item.setMethod ? item.img : item.imgDisable} className='method-top__item-img' alt='pizzahut'/>
               <div className='method-top__item-text'>{item.type}</div>
             </div>
           })}
         </div>
   
-        {method === 'deli' ? <Delivery /> : <Pickup />} 
+        {method === 'deli' ? <Delivery close={close} /> : <Pickup close={close} />} 
       </div>
     </div>
   }

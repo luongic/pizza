@@ -8,7 +8,7 @@ function CartProvider({children}) {
 
     const cartValue = {
         lengthCart,
-        setLengthCart
+        setLengthCart,
     }
 
     return (

@@ -62,7 +62,7 @@ function Bill() {
         }
     }
     return <>
-            <div className="payment" >
+            <div className="payment-bill" >
                 <div className="payment-text" >Đơn hàng của bạn</div>
                 <div className='cart__display'>
                     <div className='cart__content' >

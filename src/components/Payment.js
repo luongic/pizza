@@ -1,10 +1,15 @@
 
+
+import Addressconfirm from "./Addressconfirm";
 import Bill from "./Bill";
 
 function Payment() {
 
     return( <>
-                <Bill />
+                <div className="payment">
+                    <Addressconfirm />
+                    <Bill />
+                </div>
                 
             </>);
 }

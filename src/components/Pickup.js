@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import stores from '../data/stores';
 import saveAddress from '../functions/saveAddress';
 
-function Pickup() {
+function Pickup({close}) {
 
     const [city, setCity] = useState()
     const [dist, setDist] = useState()
@@ -45,6 +45,10 @@ function Pickup() {
     const selectSub = stores.filter((store) => (store.subdis === subdistricts && store.district === dist))
     const storelist = [...new Set(selectSub.map((dist) => dist.name))]
 
+    // check path
+    const location = useLocation()
+    const getpath = location.pathname
+
     // History
 
     const [old, setOld] = useState('old')
@@ -52,6 +56,10 @@ function Pickup() {
 
     const handleOldclick = () => {
       localStorage.setItem('method', 'pickup')
+      if (getpath === '/payment'){
+        close()
+      }
+      
     }
 
     const handleNewclick = () => {
@@ -70,6 +78,9 @@ function Pickup() {
 
       saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
       localStorage.setItem('method', 'pickup')
+      if (getpath === '/payment'){
+        close()
+      }
     }
 
     const oldAddress = ((JSON.parse(localStorage.getItem('pickup'))) ?? [])
@@ -121,8 +132,10 @@ function Pickup() {
       </div>
 
       { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
-        <Link to='/menu' >Bắt đầu đặt hàng</Link>
-      </div> : <button className='method-btn-disable' disabled >
+          {getpath === '/' || getpath === undefined ? <Link to='/menu'  >Bắt đầu đặt hàng Home</Link> : 
+          <div onClick={() => handleMethod()} className='method-btn-modal'>Bắt đầu đặt hàng Payment</div>}
+      </div> : 
+      <button className='method-btn-disable' disabled >
         Bạn chưa chọn cửa hàng
       </button> }
 
@@ -149,9 +162,16 @@ function Pickup() {
               </div>
 
               <div className='method-content__history-btn-contain'>
-                <div className='method-content__history-btn-old' onClick={() => handleOldclick()} >
+                {/* <div className='method-content__history-btn-old' onClick={() => handleOldclick()} >
                   <Link to='/menu' >Chọn cửa hàng này</Link>
-                </div>
+                </div> */}
+                {getpath === '/' ? 
+                <div className='method-content__history-btn-old' onClick={() => handleOldclick()} >
+                  <Link to='/menu' >Chọn của hàng này</Link>
+                </div> : 
+                <div className='method-content__history-btn-old' onClick={() => handleOldclick()} >
+                 <div className='method-btn-modal'>Chọn của hàng này</div>
+                </div>}
 
                 <div className='method-content__history-btn-new' onClick={() => handleNewclick()} >
                   Chọn cửa hàng khác
@@ -208,7 +228,8 @@ function Pickup() {
             </div>
 
             { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
-              <Link to='/menu' >Bắt đầu đặt hàng</Link>
+              {getpath === '/' || getpath === undefined ? <Link onClick={() => handleMethod()}  to='/menu'  >Bắt đầu đặt hàng Home</Link> : 
+                  <div className='method-btn-modal' onClick={() => handleMethod()} >Bắt đầu đặt hàng Payment</div>}
             </div> : <button className='method-btn-disable' disabled >
               Bạn chưa chọn cửa hàng
             </button> }
