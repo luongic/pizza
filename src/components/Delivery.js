@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { CartContext } from './CartContext';
 
 import stores from '../data/stores';
 import saveAddress from '../functions/saveAddress';
 
 function Delivery({close}) {
+    const context = useContext(CartContext)
 
     const [city, setCity] = useState()
   
@@ -37,6 +39,7 @@ function Delivery({close}) {
     const handleOldclick = () => {
       localStorage.setItem('method', 'deli')
       close()
+      context.setMethod('deli')
     }
 
     const handleNewclick = () => {
@@ -58,6 +61,7 @@ function Delivery({close}) {
 
       saveAddress('deli', getcity, getdistrict, '', '',getdetail)
       localStorage.setItem('method', 'deli')
+      context.setMethod('deli')
     } 
 
     const handleMethod = () => {
@@ -71,7 +75,7 @@ function Delivery({close}) {
 
       saveAddress('deli', getcity, getdistrict, '', '',getdetail)
       localStorage.setItem('method', 'deli')
-      // close()
+      context.setMethod('deli')
     } 
 
     const inputChange = () => {

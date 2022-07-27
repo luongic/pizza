@@ -7,6 +7,7 @@ function CartProvider({children}) {
     const [lengthCart, setLengthCart] = useState(0)
     const [total, setTotal] = useState(0)
     const [voucher, setVoucher] = useState(0)
+    const [method, setMethod] = useState(((localStorage.getItem('method'))) ?? [])
     
 
     const cartValue = {
@@ -15,7 +16,9 @@ function CartProvider({children}) {
         total,
         setTotal,
         voucher,
-        setVoucher
+        setVoucher,
+        method,
+        setMethod
     }
 
     return (

@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+
+import { CartContext } from './CartContext';
 
 import stores from '../data/stores';
 import saveAddress from '../functions/saveAddress';
 
 function Pickup({close}) {
+
+    const context = useContext(CartContext)
 
     const [city, setCity] = useState()
     const [dist, setDist] = useState()
@@ -59,6 +63,7 @@ function Pickup({close}) {
       if (getpath === '/payment'){
         close()
       }
+      context.setMethod('pickup')
       
     }
 
@@ -83,6 +88,7 @@ function Pickup({close}) {
 
       saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
       localStorage.setItem('method', 'pickup')
+      context.setMethod('pickup')
     }
 
     const handleMethod = () => {
@@ -97,6 +103,7 @@ function Pickup({close}) {
 
       saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
       localStorage.setItem('method', 'pickup')
+      context.setMethod('pickup')
     }
 
     const oldAddress = ((JSON.parse(localStorage.getItem('pickup'))) ?? [])

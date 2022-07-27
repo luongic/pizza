@@ -31,6 +31,7 @@ function Bill() {
 
     useEffect(() => {
         setBill((JSON.parse(localStorage.getItem('bill'))))
+        context.setMethod(((localStorage.getItem('method'))) ?? [])
 
         const voucher = document.querySelector('#voucher').value
         const percent = 10
@@ -40,6 +41,7 @@ function Bill() {
             context.setTotal(total)
             context.setVoucher(discount)
         }
+
     }, [context.lengthCart, sum, context] )
 
 
