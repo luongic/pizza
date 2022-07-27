@@ -18,10 +18,10 @@ function Voucher() {
 
     const handleVoucher = () =>{
         const voucher = document.querySelector('#voucher').value
+        const percent = 10
         if (voucher === 'Pizzahut10'){
-            const discount = (sum*10/100)
+            const discount = (sum*percent/100)
             const total = sum - discount
-            console.log(total);
             context.setTotal(total)
             context.setVoucher(discount)
         }
