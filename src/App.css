@@ -1305,6 +1305,7 @@ PAYMENT
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40px;
   
 }
 
@@ -1314,6 +1315,21 @@ PAYMENT
   color: var(--clr-green-dark);
   font-weight: 700;
 
+}
+
+.payment__recive{
+  width: 512px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--clr-green-dark);
+}
+
+.payment__recive-content{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .cart__display{

@@ -28,12 +28,6 @@ function Bill() {
         });
     }
 
-    // function delFromcart(index){
-    //     const delItem = bills.slice(0,index).concat(bills.slice(index+1))
-    //     localStorage.setItem('bill', JSON.stringify(delItem))
-    //     setBill(delItem)
-    // }
-
     const handleDel = index =>{
         setIndex(index)
         setActive(true)
