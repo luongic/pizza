@@ -51,9 +51,15 @@ function Delivery({close}) {
       const getcity = document.querySelector('#city').value
       const getdistrict = document.querySelector('#district').value
       const getdetail = document.querySelector('#address').value
+
+      if (getpath === '/payment'){
+        window.location.reload()
+        close()
+      }
+
       saveAddress('deli', getcity, getdistrict, '', '',getdetail)
       localStorage.setItem('method', 'deli')
-      close()
+      // close()
     } 
 
     const inputChange = () => {

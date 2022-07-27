@@ -1347,10 +1347,6 @@ PAYMENT
   color: var(--clr-main);
 }
 
-.cart__item i{
-  margin-right: 4px;
-}
-
 .cart__item{
   display: flex;
   flex-direction: row;
@@ -1361,7 +1357,7 @@ PAYMENT
 }
 
 .cart__item-content{
-  width: 90%;
+  width: calc(100% - 50px);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1429,6 +1425,11 @@ PAYMENT
   justify-content: center;
   flex: 1;
   color: var(--clr-main);
+  width: 50px;
+}
+
+.cart__item i{
+  
 }
 
 .cart__item-del i{
@@ -1439,6 +1440,7 @@ PAYMENT
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 50px;
 }
 
 /* 

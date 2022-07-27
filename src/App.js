@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -20,11 +20,14 @@ function App() {
     setActive(false)
   }
 
+  const location = useLocation()
+  const getpath = location.pathname
+
   return (
     <div className='App'>
       <Navbar />
 
-      {isActive && <Overlay  > <Modalpromotion close={close}></Modalpromotion> </Overlay> }
+      {(isActive && getpath === '/'  ) && <Overlay  > <Modalpromotion close={close}></Modalpromotion> </Overlay> }
 
       <Scrolltop>
         <Routes>

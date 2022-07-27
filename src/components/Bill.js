@@ -97,7 +97,7 @@ function Bill() {
                                         </div>
                                     </li>;
                                     })}
-                                    <div className="cart__total">Tổng cộng: {sum.toLocaleString('en-US')},000₫</div>
+                                    <div className="cart__total">Tổng cộng: {sum.toLocaleString('en-US')},000 ₫</div>
                                 </div>
                             }
                             

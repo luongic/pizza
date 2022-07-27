@@ -40,8 +40,7 @@ function Addressconfirm() {
         </>;
     }
     else {
-        <Addresschange close={close}></Addresschange>
-        console.log('else');
+        return <Addresschange close={close}></Addresschange>;
     }
 
     

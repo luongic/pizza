@@ -70,17 +70,20 @@ function Pickup({close}) {
 
     const [choose, setChoose] = useState(false)
 
+
     const handleMethod = () => {
       const getcity = document.querySelector('#city').value
       const getdistrict = document.querySelector('#district').value
       const getsubdis = document.querySelector('#subdis').value
       const getstore = document.querySelector('#store').value
 
-      saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
-      localStorage.setItem('method', 'pickup')
       if (getpath === '/payment'){
+        window.location.reload()
         close()
       }
+
+      saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
+      localStorage.setItem('method', 'pickup')
     }
 
     const oldAddress = ((JSON.parse(localStorage.getItem('pickup'))) ?? [])
@@ -133,7 +136,8 @@ function Pickup({close}) {
 
       { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
           {getpath === '/' || getpath === undefined ? <Link to='/menu'  >Bắt đầu đặt hàng Home</Link> : 
-          <div onClick={() => handleMethod()} className='method-btn-modal'>Bắt đầu đặt hàng Payment</div>}
+          <div className='method-btn-modal' onClick={() => handleMethod()} >Bắt đầu đặt hàng Payment NEW</div>}
+          
       </div> : 
       <button className='method-btn-disable' disabled >
         Bạn chưa chọn cửa hàng
@@ -229,7 +233,7 @@ function Pickup({close}) {
 
             { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
               {getpath === '/' || getpath === undefined ? <Link onClick={() => handleMethod()}  to='/menu'  >Bắt đầu đặt hàng Home</Link> : 
-                  <div className='method-btn-modal' onClick={() => handleMethod()} >Bắt đầu đặt hàng Payment</div>}
+                  <div className='method-btn-modal' onClick={() => handleMethod()} >Bắt đầu đặt hàng Payment OLD</div>}
             </div> : <button className='method-btn-disable' disabled >
               Bạn chưa chọn cửa hàng
             </button> }
