@@ -148,8 +148,8 @@ function Pickup({close}) {
       </div>
 
       { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
-          {getpath === '/' || getpath === undefined ? <Link to='/menu'  >Bắt đầu đặt hàng Home</Link> : 
-          <div className='method-btn-modal' onClick={() => handleMethodNew()} >Bắt đầu đặt hàng Payment NEW</div>}
+          {getpath === '/' || getpath === undefined ? <Link to='/menu'  >Bắt đầu đặt hàng</Link> : 
+          <div className='method-btn-modal' onClick={() => handleMethodNew()} >Bắt đầu đặt hàng</div>}
           
       </div> : 
       <button className='method-btn-disable' disabled >
@@ -245,8 +245,8 @@ function Pickup({close}) {
             </div>
 
             { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
-              {getpath === '/' || getpath === undefined ? <Link onClick={() => handleMethod()}  to='/menu'  >Bắt đầu đặt hàng Home</Link> : 
-                  <div className='method-btn-modal' onClick={() => handleMethod()} >Bắt đầu đặt hàng Payment OLD</div>}
+              {getpath === '/' || getpath === undefined ? <Link onClick={() => handleMethod()}  to='/menu'  >Bắt đầu đặt hàng</Link> : 
+                  <div className='method-btn-modal' onClick={() => handleMethod()} >Bắt đầu đặt hàng</div>}
             </div> : <button className='method-btn-disable' disabled >
               Bạn chưa chọn cửa hàng
             </button> }

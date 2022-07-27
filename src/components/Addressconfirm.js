@@ -21,7 +21,7 @@ function Addressconfirm() {
                 <div className="payment__add" >
                     <div className='payment__add-heading'>Cửa hàng bạn chọn là:</div>
                     <div className='payment__add-name'>{add.store}</div>
-                    <div className='payment__add-detail'>ĐC: {store.address}, {store.subdis}, {store.district}</div>
+                    <div className='payment__add-detail'>ĐC: {store.address}, {store.subdis}, {store.district}, {store.city}</div>
                     <div className='payment__add-btn' onClick={() => setActiveChange(true)}>Thay đổi</div>
 
                 </div>
