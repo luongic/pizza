@@ -26,6 +26,7 @@ function Bill() {
         bills.forEach(element => {
             sum += element.price * element.quantity;
         });
+        context.setTotal(sum)
     }
 
     const handleDel = index =>{
@@ -91,7 +92,7 @@ function Bill() {
                                         </div>
                                     </li>;
                                     })}
-                                    <div className="cart__total">Tổng cộng: {sum.toLocaleString('en-US')},000 ₫</div>
+                                    <div className="cart__total">Tổng cộng: {context.total.toLocaleString('en-US')},000 ₫</div>
                                 </div>
                             }
                             

@@ -5,10 +5,13 @@ const CartContext = createContext()
 
 function CartProvider({children}) {
     const [lengthCart, setLengthCart] = useState(0)
+    const [total, setTotal] = useState(0)
 
     const cartValue = {
         lengthCart,
         setLengthCart,
+        total,
+        setTotal
     }
 
     return (
