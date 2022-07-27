@@ -1,6 +1,7 @@
 
 import { useContext} from "react";
 import { CartContext } from "./CartContext";
+import toast from '../functions/toast';
 
 function Voucher() {
 
@@ -24,6 +25,24 @@ function Voucher() {
             const total = sum - discount
             context.setTotal(total)
             context.setVoucher(discount)
+            toast({
+                title: "Sử dụng thành công 1 Voucher",
+                message: `Bạn đã giảm được ${percent}% cho đơn hàng này `,
+                type: "info",
+                duration: 3000
+            })
+        }
+        else{
+            const discount = (0)
+            const total = sum - discount
+            context.setTotal(total)
+            context.setVoucher(discount)
+            toast({
+                title: "Voucher không hợp lệ",
+                message: `Mã nhập vào : ${voucher} không tồn tại hoặc đã được sử dụng`,
+                type: "error",
+                duration: 3000
+            })
         }
 
     }

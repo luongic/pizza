@@ -1842,11 +1842,11 @@ Toast message
 }
 
 .toast--error {
-  border-color: #ff623d;
+  border-color: var(--clr-main);
 }
 
 .toast--error .toast__icon {
-  color: #ff623d;
+  color: var(--clr-main);
 }
 
 .toast + .toast {

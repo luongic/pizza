@@ -33,8 +33,9 @@ function Bill() {
         setBill((JSON.parse(localStorage.getItem('bill'))))
 
         const voucher = document.querySelector('#voucher').value
+        const percent = 10
         if (voucher === 'Pizzahut10'){
-            const discount = (sum*10/100)
+            const discount = (sum*percent/100)
             const total = sum - discount
             context.setTotal(total)
             context.setVoucher(discount)
