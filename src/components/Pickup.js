@@ -71,7 +71,7 @@ function Pickup({close}) {
     const [choose, setChoose] = useState(false)
 
 
-    const handleMethod = () => {
+    const handleMethodNew = () => {
       const getcity = document.querySelector('#city').value
       const getdistrict = document.querySelector('#district').value
       const getsubdis = document.querySelector('#subdis').value
@@ -79,6 +79,19 @@ function Pickup({close}) {
 
       if (getpath === '/payment'){
         window.location.reload()
+      }
+
+      saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
+      localStorage.setItem('method', 'pickup')
+    }
+
+    const handleMethod = () => {
+      const getcity = document.querySelector('#city').value
+      const getdistrict = document.querySelector('#district').value
+      const getsubdis = document.querySelector('#subdis').value
+      const getstore = document.querySelector('#store').value
+
+      if (getpath === '/payment'){
         close()
       }
 
@@ -136,7 +149,7 @@ function Pickup({close}) {
 
       { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
           {getpath === '/' || getpath === undefined ? <Link to='/menu'  >Bắt đầu đặt hàng Home</Link> : 
-          <div className='method-btn-modal' onClick={() => handleMethod()} >Bắt đầu đặt hàng Payment NEW</div>}
+          <div className='method-btn-modal' onClick={() => handleMethodNew()} >Bắt đầu đặt hàng Payment NEW</div>}
           
       </div> : 
       <button className='method-btn-disable' disabled >

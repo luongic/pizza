@@ -47,13 +47,25 @@ function Delivery({close}) {
 
     const [choose, setChoose] = useState(false)
 
-    const handleMethod = () => {
+    const handleMethodNew = () => {
       const getcity = document.querySelector('#city').value
       const getdistrict = document.querySelector('#district').value
       const getdetail = document.querySelector('#address').value
 
       if (getpath === '/payment'){
         window.location.reload()
+      }
+
+      saveAddress('deli', getcity, getdistrict, '', '',getdetail)
+      localStorage.setItem('method', 'deli')
+    } 
+
+    const handleMethod = () => {
+      const getcity = document.querySelector('#city').value
+      const getdistrict = document.querySelector('#district').value
+      const getdetail = document.querySelector('#address').value
+
+      if (getpath === '/payment'){
         close()
       }
 
@@ -102,7 +114,7 @@ function Delivery({close}) {
 
     { choose === true ? <div className='method-btn' onClick={() => handleMethod()} >
       {getpath === '/' ? <Link to='/menu'  >Bắt đầu đặt hàng</Link> : 
-      <div className='method-btn-modal' onClick={() => handleMethod()} >Bắt đầu đặt hàng</div>
+      <div className='method-btn-modal' onClick={() => handleMethodNew()} >Bắt đầu đặt hàng</div>
       }
       
     </div> : <button className='method-btn-disable' disabled >
