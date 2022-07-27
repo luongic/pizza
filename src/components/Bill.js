@@ -9,6 +9,8 @@ function Bill() {
     const [click, setClick] = useState(true)
     const [bills, setBill] = useState((JSON.parse(localStorage.getItem('bill'))) ?? [])
 
+    const getmethod = (((localStorage.getItem('method'))) ?? [])
+
     useEffect(() => {
         setBill((JSON.parse(localStorage.getItem('bill'))))
     }, [context.lengthCart] )
@@ -26,8 +28,9 @@ function Bill() {
         bills.forEach(element => {
             sum += element.price * element.quantity;
         });
-        context.setTotal(sum)
+        
     }
+
 
     const handleDel = index =>{
         setIndex(index)
@@ -83,7 +86,7 @@ function Bill() {
                                                     <span>x {bill.quantity}</span> 
                                                     <button className="cart__item-quantity-plus" onClick={ () => handleUpdate('+', index, bill.title, bill.size, bill.crust, bill.quantity)} >+</button>
                                                 </div>
-                                                <div className='cart__item-price'>  <span>{(bill.quantity * bill.price).toLocaleString('en-US')},000 ₫</span> </div>
+                                                <div className='cart__item-price'>  <span>{((bill.quantity * bill.price)*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</span> </div>
                                             </div>
 
                                         </div>
@@ -92,7 +95,23 @@ function Bill() {
                                         </div>
                                     </li>;
                                     })}
-                                    <div className="cart__total">Tổng cộng: {context.total.toLocaleString('en-US')},000 ₫</div>
+                                    <div className="cart__total">Tổng đơn hàng: {(sum*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})} </div>
+                                    <div className="cart__total">Giảm giá: {((context.voucher)*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</div>
+                                    {getmethod === 'deli' ? <>
+                                    <div className="cart__total">Phí giao hàng: 22.000 VND</div>
+                                    <div className="cart__total">Tổng cộng: {context.voucher !== 0 ? (context.total*1000 + 22000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : 
+                                        (sum*1000 + 22000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})
+                                        }
+                                    </div>
+                                    </> :
+                                        <>
+                                        <div className="cart__total">Phí giao hàng: 0 VND</div>
+                                        <div className="cart__total">Tổng cộng: {context.voucher !== 0 ? (context.total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : 
+                                            (sum*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})
+                                            }
+                                        </div>
+                                        </>
+                                    }
                                 </div>
                             }
                             
