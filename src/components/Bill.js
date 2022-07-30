@@ -38,8 +38,9 @@ function Bill() {
         context.setMethod(((localStorage.getItem('method'))) ?? [])
 
         const voucher = document.querySelector('#voucher').value
-        const percent = 10
+        
         if (voucher === 'Pizzahut10'){
+            const percent = 10
             const discount = (sum*percent/100)
             const total = sum - discount + context.delifee
             context.setTotal(total)
@@ -148,7 +149,15 @@ function Bill() {
                             
                         </ul>
                     </div>
+
+                    
                 </div>
+
+                <div className='payment-bill__contain-note' >
+                    <div className='method-label'>Thêm ghi chú cho đơn hàng: </div>
+                    <input type="text" id='addressnote' className='method-content__address-number' placeholder='Ví dụ: Không cay...'/>
+                </div>
+                
             </div>
             {isActive && <Confirmdel index = {index} quantity={quantity} close = {close} />}
             </> ;

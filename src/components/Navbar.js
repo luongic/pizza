@@ -3,7 +3,9 @@ import Navcart from './Navcart';
 
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
+
 function Navbar () {
+    
     return <div className='navbar'>
         <div className='navbar-phone'>
             <div className='navbar-phone__icon'><i className="fa-solid fa-phone"></i></div>

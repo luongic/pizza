@@ -1322,13 +1322,22 @@ PAYMENT
 }
 
 .payment-bill{
-  width: 100%;
+  width: 512px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
   
+}
+
+.payment-bill__contain-note{
+  width: 100%;
+  display: flex;
+  position: relative;
+  height: 40px;
+  margin-top: 30px;
 }
 
 
