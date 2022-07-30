@@ -132,31 +132,16 @@ function Bill() {
                                         <div className="cart__total-number"></div>
                                     </div>
 
-                                    {getmethod === 'deli' ? <>
                                     <div className="cart__total">
-                                        <div className="cart__total-text">Phí giao hàng:</div>
-                                        <div className="cart__total-number">{context.delifee}.000 VND</div>
-                                    </div>
-                                    <div className="cart__total">
-                                        <div className="cart__total-text">Tổng cộng:</div>
-                                        <div className="cart__total-number" >{context.voucher !== 0 ? (context.total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : 
-                                        (sum*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})
-                                        }</div>
-                                    </div>
-                                    </> :
-                                        <>
-                                        <div className="cart__total">
                                             <div className="cart__total-text">Phí giao hàng:</div>
-                                            <div className="cart__total-number">0 VND</div>
+                                            {getmethod === 'deli' ? <div className="cart__total-number">{context.delifee}.000 VND</div> :
+                                             <div className="cart__total-number">0 VND</div>}
                                         </div>
                                         <div className="cart__total">
                                             <div className="cart__total-text">Tổng cộng:</div>
-                                            <div className="cart__total-number" id="total">{context.voucher !== 0 ? (context.total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : 
-                                            (sum*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})
-                                            }</div>
+                                            <div className="cart__total-number" id="total">{(context.total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</div>
                                         </div>
-                                        </>
-                                    }
+                                    
                                 </div>
                             }
                             
