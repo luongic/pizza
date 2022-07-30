@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import Overlay from './Overlay';
 
-function Confirmdel({index, close}) {
+function Confirmdel({index,quantity, close}) {
     const context = useContext(CartContext)
     const bills = ((JSON.parse(localStorage.getItem('bill'))) ?? [])
 
@@ -13,7 +13,7 @@ function Confirmdel({index, close}) {
 
     const handleDel = index =>{
         delFromcart(index)
-        context.setLengthCart(context.lengthCart -= 1)
+        context.setLengthCart(context.lengthCart - quantity)
         close()
     }
 

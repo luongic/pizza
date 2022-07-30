@@ -4,14 +4,18 @@ const CartContext = createContext()
 
 
 function CartProvider({children}) {
-    const [lengthCart, setLengthCart] = useState(0)
+    const bills = (JSON.parse(localStorage.getItem('bill')) ?? [])
+    const quantity = bills.reduce((accumulator, object) => {
+        return accumulator + object.quantity;
+      }, 0);
+
+    const [lengthCart, setLengthCart] = useState(bills.length !== 0 ? quantity : 0 )
     const [total, setTotal] = useState(0)
     const [voucher, setVoucher] = useState(0)
     const [method, setMethod] = useState(((localStorage.getItem('method'))) ?? [])
 
     const [delifee, setDelifee] = useState(method === 'pickup' ? 0 : 22)
 
-    
 
     const cartValue = {
         lengthCart,

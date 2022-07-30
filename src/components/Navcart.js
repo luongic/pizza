@@ -25,9 +25,13 @@ function Navcart() {
         bills.forEach(element => {
             sum += element.price * element.quantity;
         });
+        
     }
 
-    const handleDel = index =>{
+    const [quantity, setQuantity] = useState(0)
+
+    const handleDel = (index, quantity) =>{
+        setQuantity(quantity)
         setIndex(index)
         setActive(true)
     }
@@ -52,12 +56,14 @@ function Navcart() {
             }
             setClick(!click)
             localStorage.setItem('bill', JSON.stringify(bills))
-            context.setLengthCart(context.lengthCart += 1)
+            context.setLengthCart(context.lengthCart -= 1)
         }
     }
 
     return  <><div className='navbar-cart__text'>
-                    <i className="fa-solid fa-cart-shopping"></i> Giỏ Hàng
+                    <i className="fa-solid fa-cart-shopping">
+                        <div className="navbar-cart__number-count">{context.lengthCart}</div>
+                    </i> Giỏ Hàng 
                 </div>
     
                 <div className='navbar-cart__display'>
@@ -88,7 +94,7 @@ function Navcart() {
 
                                         </div>
                                         <div className='navbar-cart__item-del'>
-                                            <i className="fa-solid fa-circle-minus" onClick={() => handleDel(index) }></i>
+                                            <i className="fa-solid fa-circle-minus" onClick={() => handleDel(index, bill.quantity) }></i>
                                         </div>
                                     </li>;
                                     })}
@@ -109,7 +115,7 @@ function Navcart() {
                         </>
                     </div>
                 </div>
-                {isActive && <Confirmdel index = {index} close = {close} />}
+                {isActive && <Confirmdel index = {index} quantity={quantity} close = {close} />}
                 </>;
 }
 

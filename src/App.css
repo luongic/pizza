@@ -270,6 +270,28 @@ Navbar
   position: relative;
 }
 
+.navbar-cart__text i{
+  position: relative;
+  margin-right: 4px;
+}
+
+.navbar-cart__number-count{
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: auto;
+  padding: 0 4px;
+  height: 16px;
+  font-size: .7rem;
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--clr-main);
+}
+
 .navbar-cart:hover .navbar-cart__display{
   display: block;
 }
@@ -1524,6 +1546,11 @@ PAYMENT
 .payment__method-item.active{
   background-color: var(--clr-green-dark);
   color: var(--clr-white);
+}
+
+.payment__method-item.active .payment__method-img-contain{
+  border: 1px solid var(--clr-white);
+  background-color: var(--clr-white);
 }
 
 .payment__method-img-contain{

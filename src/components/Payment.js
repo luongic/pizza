@@ -1,5 +1,3 @@
-
-
 import Addressconfirm from "./Addressconfirm";
 import ReciverInformation from "./ReciverInformation";
 import Voucher from "./Voucher";
