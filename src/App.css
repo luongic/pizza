@@ -1522,15 +1522,6 @@ PAYMENT
 }
 
 .payment__method-item.active{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  height: 60px;
-  border: 1px solid var(--clr-green-dark);
-  border-radius: 10px;
-  box-sizing: border-box;
-  margin-bottom: 20px;
   background-color: var(--clr-green-dark);
   color: var(--clr-white);
 }

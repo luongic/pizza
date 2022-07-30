@@ -6,12 +6,7 @@ import { CartContext } from "./CartContext";
 function Paymentmethod() {
     const context = useContext(CartContext)
 
-    const totalPrice = context.total
-    const totalfee = context.delifee
-    const total = context.total
-    console.log(totalPrice);
-    console.log(totalfee);
-    console.log(total);
+    const [isActive,setActive] = useState(0)
 
     const paymethod = [
         {
@@ -41,6 +36,10 @@ function Paymentmethod() {
         },
     ]
 
+    const handleActive = index => {
+        setActive(index)
+    }
+
 
     return  <div className="payment__method" >
                 <div className='payment__add-heading'>Phương thức thanh toán: </div>
@@ -49,13 +48,13 @@ function Paymentmethod() {
 
 
                         {paymethod.map((item, index) => {
-                            return <div className="payment__method-item" key={index}>
+                            return <div className={isActive === index ? "payment__method-item active" : "payment__method-item"} key={index} onClick = {() => handleActive(index)}>
                             <div className="payment__method-img-contain">
                                 <img src={item.img} className="payment__method-img" alt="momopaymentpzh"></img>
                             </div>
                             <div className="payment__method-info">
                                 <div className="payment__method-name">Thanh toán bằng {item.method}</div>
-                                <div className="payment__method-price">{totalPrice}</div>
+                                <div className="payment__method-price">{(context.total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</div>
                             </div>
                         </div>
                         })}
