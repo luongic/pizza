@@ -139,7 +139,7 @@ function Bill() {
                                     </div>
                                     <div className="cart__total">
                                         <div className="cart__total-text">Tổng cộng:</div>
-                                        <div className="cart__total-number" >{context.voucher !== 0 ? (context.total*1000 + 22000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : 
+                                        <div className="cart__total-number" >{context.voucher !== 0 ? (context.total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : 
                                         (sum*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})
                                         }</div>
                                     </div>
