@@ -27,7 +27,7 @@ function Voucher() {
             context.setVoucher(discount)
             toast({
                 title: "Sử dụng thành công 1 Voucher",
-                message: `Bạn đã giảm được ${percent}% cho đơn hàng này `,
+                message: `Áp dụng thành công voucher ${voucher} cho đơn hàng này và giảm được ${percent}% `,
                 type: "info",
                 duration: 3000
             })

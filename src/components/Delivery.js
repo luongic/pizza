@@ -40,6 +40,7 @@ function Delivery({close}) {
       localStorage.setItem('method', 'deli')
       close()
       context.setMethod('deli')
+      context.setDelifee(22)
     }
 
     const handleNewclick = () => {
@@ -62,6 +63,7 @@ function Delivery({close}) {
       saveAddress('deli', getcity, getdistrict, '', '',getdetail)
       localStorage.setItem('method', 'deli')
       context.setMethod('deli')
+      context.setDelifee(22)
     } 
 
     const handleMethod = () => {
@@ -76,6 +78,7 @@ function Delivery({close}) {
       saveAddress('deli', getcity, getdistrict, '', '',getdetail)
       localStorage.setItem('method', 'deli')
       context.setMethod('deli')
+      context.setDelifee(22)
     } 
 
     const inputChange = () => {

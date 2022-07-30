@@ -64,6 +64,7 @@ function Pickup({close}) {
         close()
       }
       context.setMethod('pickup')
+      context.setDelifee(0)
       
     }
 
@@ -89,6 +90,7 @@ function Pickup({close}) {
       saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
       localStorage.setItem('method', 'pickup')
       context.setMethod('pickup')
+      context.setDelifee(0)
     }
 
     const handleMethod = () => {
@@ -104,6 +106,7 @@ function Pickup({close}) {
       saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
       localStorage.setItem('method', 'pickup')
       context.setMethod('pickup')
+      context.setDelifee(0)
     }
 
     const oldAddress = ((JSON.parse(localStorage.getItem('pickup'))) ?? [])

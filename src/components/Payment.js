@@ -4,6 +4,7 @@ import Addressconfirm from "./Addressconfirm";
 import ReciverInformation from "./ReciverInformation";
 import Voucher from "./Voucher";
 import Bill from "./Bill";
+import Paymentmethod from "./Paymentmethod";
 
 function Payment() {
 
@@ -13,6 +14,7 @@ function Payment() {
                     <ReciverInformation />
                     <Voucher />
                     <Bill />
+                    <Paymentmethod />
                 </div>
                 
             </>);

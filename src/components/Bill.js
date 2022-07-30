@@ -11,6 +11,8 @@ function Bill() {
 
     const getmethod = (((localStorage.getItem('method'))) ?? [])
 
+
+
     
     
     const [isActive, setActive] = useState(false)
@@ -29,6 +31,8 @@ function Bill() {
         
     }
 
+    
+
     useEffect(() => {
         setBill((JSON.parse(localStorage.getItem('bill'))))
         context.setMethod(((localStorage.getItem('method'))) ?? [])
@@ -37,10 +41,14 @@ function Bill() {
         const percent = 10
         if (voucher === 'Pizzahut10'){
             const discount = (sum*percent/100)
-            const total = sum - discount
+            const total = sum - discount + context.delifee
             context.setTotal(total)
             context.setVoucher(discount)
+            return
         }
+        const discount = context.voucher
+        const total = sum - discount + context.delifee
+        context.setTotal(total)
 
     }, [context.lengthCart, sum, context] )
 
@@ -127,11 +135,11 @@ function Bill() {
                                     {getmethod === 'deli' ? <>
                                     <div className="cart__total">
                                         <div className="cart__total-text">Phí giao hàng:</div>
-                                        <div className="cart__total-number">22.000 VND</div>
+                                        <div className="cart__total-number">{context.delifee}.000 VND</div>
                                     </div>
                                     <div className="cart__total">
                                         <div className="cart__total-text">Tổng cộng:</div>
-                                        <div className="cart__total-number">{context.voucher !== 0 ? (context.total*1000 + 22000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : 
+                                        <div className="cart__total-number" id="total">{context.voucher !== 0 ? (context.total*1000 + 22000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : 
                                         (sum*1000 + 22000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})
                                         }</div>
                                     </div>
@@ -143,7 +151,7 @@ function Bill() {
                                         </div>
                                         <div className="cart__total">
                                             <div className="cart__total-text">Tổng cộng:</div>
-                                            <div className="cart__total-number">{context.voucher !== 0 ? (context.total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : 
+                                            <div className="cart__total-number" id="total">{context.voucher !== 0 ? (context.total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'}) : 
                                             (sum*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})
                                             }</div>
                                         </div>

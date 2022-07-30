@@ -1309,6 +1309,7 @@ PAYMENT
   
 }
 
+
 .payment-text{
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -1480,6 +1481,130 @@ PAYMENT
 }
 .cart__total-number{
 
+}
+
+.payment__method{
+  width: 512px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-top: 30px;
+  border-top: 2px solid var(--clr-green-dark);
+}
+
+.payment__method-content{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.payment__method-list{
+  
+}
+
+.payment__method-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 60px;
+  border: 1px solid var(--clr-green-dark);
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.payment__method-item:last-child{
+  margin-bottom: 0;
+}
+
+.payment__method-item.active{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 60px;
+  border: 1px solid var(--clr-green-dark);
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background-color: var(--clr-green-dark);
+  color: var(--clr-white);
+}
+
+.payment__method-img-contain{
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.payment__method-img{
+  width: 100%;
+  
+}
+
+.payment__method-info{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.payment__method-name{
+
+}
+
+.payment__method-price{
+  font-size: .8rem;
+  font-weight: 500;
+}
+
+.payment__method-provision{
+  display: flex;
+}
+
+.payment__method-provision a{
+  color: blue;
+  text-decoration: underline;
+}
+
+#accept{
+  margin-right: 20px;
+}
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  transform: scale(1.5);
+  padding: 10px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked
+{
+  accent-color: var(--clr-green-dark) !important;
+}
+
+.payment__method-btn{
+  width: 100%;
+  padding: 12px 10px;
+  background-color: var(--clr-green-dark);
+  text-transform: uppercase;
+  color: var(--clr-white);
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
 }
 
 /* 
