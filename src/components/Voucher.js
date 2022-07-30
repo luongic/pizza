@@ -1,5 +1,5 @@
 
-import { useContext} from "react";
+import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import toast from '../functions/toast';
 
@@ -7,23 +7,16 @@ function Voucher() {
 
     const context = useContext(CartContext)
 
-    const bills = ((JSON.parse(localStorage.getItem('bill'))) ?? [])
+    let sum = context.total;
+ 
+    let percent = 0
 
-    let sum = 0;
-
-    if (bills !== null){
-        bills.forEach(element => {
-            sum += element.price * element.quantity;
-        });
-    }
 
     const handleVoucher = () =>{
         const voucher = document.querySelector('#voucher').value
-        const percent = 10
         if (voucher === 'Pizzahut10'){
+            percent = 10
             const discount = (sum*percent/100)
-            const total = sum - discount
-            context.setTotal(total)
             context.setVoucher(discount)
             toast({
                 title: "Sử dụng thành công 1 Voucher",
@@ -34,8 +27,6 @@ function Voucher() {
         }
         else{
             const discount = (0)
-            const total = sum - discount
-            context.setTotal(total)
             context.setVoucher(discount)
             toast({
                 title: "Voucher không hợp lệ",

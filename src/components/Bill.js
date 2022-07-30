@@ -46,7 +46,8 @@ function Bill() {
             context.setVoucher(discount)
             return
         }
-        const discount = context.voucher
+        const discount = 0
+        context.setVoucher(discount)
         const total = sum - discount + context.delifee
         context.setTotal(total)
 
