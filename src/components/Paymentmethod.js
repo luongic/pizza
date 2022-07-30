@@ -54,7 +54,8 @@ function Paymentmethod() {
                             </div>
                             <div className="payment__method-info">
                                 <div className="payment__method-name">Thanh toán bằng {item.method}</div>
-                                <div className="payment__method-price">{(context.total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</div>
+                                {isActive === index ? <div className="payment__method-price">{(context.total*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</div> :
+                                 <div className="payment__method-price">0 VND</div> }
                             </div>
                         </div>
                         })}

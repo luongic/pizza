@@ -1549,7 +1549,6 @@ PAYMENT
 }
 
 .payment__method-item.active .payment__method-img-contain{
-  border: 1px solid var(--clr-white);
   background-color: var(--clr-white);
 }
 
