@@ -1628,7 +1628,7 @@ input[type=checkbox]:checked
   text-transform: uppercase;
   color: var(--clr-white);
   border-radius: 10px;
-  margin-top: 20px;
+  margin: 20px 0;
   cursor: pointer;
   text-align: center;
 }

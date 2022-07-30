@@ -18,7 +18,7 @@ function Paymentmethod() {
         {
             method: 'Visa',
             img: '/img/visa.png',
-            discount: 7,
+            discount: 0,
         },
         {
             method: 'ATM',
