@@ -79,11 +79,8 @@ function Paymentmethod() {
                     <div className='payment__add-heading'>Phương thức thanh toán: </div>
                     <div className="payment__method-content">
                         <div className="payment__method-list" >
-
-                            
-
-                            {paymethod.map((item, index) => {
-                                
+                            {paymethod.map((item, index) => 
+                                {
                                     return (item.method === 'MOMO' ? <div key={index}></div> : 
                                     <div className={isActive === index ? "payment__method-item active" : "payment__method-item"} key={index} onClick = {() => handleActive(index)}>
                                         <div className="payment__method-img-contain">
@@ -98,7 +95,7 @@ function Paymentmethod() {
                                     </div> )
                                 }
                             
-                            ) }
+                            )}
 
                         </div>
                     </div>
