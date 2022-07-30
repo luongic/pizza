@@ -8,7 +8,8 @@ function CartProvider({children}) {
     const [total, setTotal] = useState(0)
     const [voucher, setVoucher] = useState(0)
     const [method, setMethod] = useState(((localStorage.getItem('method'))) ?? [])
-    const [delifee, setDelifee] = useState(0)
+
+    const [delifee, setDelifee] = useState(method === 'pickup' ? 0 : 22)
 
     
 
