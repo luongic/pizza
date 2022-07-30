@@ -53,11 +53,11 @@ function Bill() {
 
     }, [context.lengthCart, sum, context] )
 
-
-    const handleDel = index =>{
+    const [quantity, setQuantity] = useState(0)
+    const handleDel = (index, quantity) =>{
+        setQuantity(quantity)
         setIndex(index)
         setActive(true)
-        context.setLengthCart(context.lengthCart -= 1)
     }
 
     const handleUpdate = (method, index, title, size, crust) =>{
@@ -113,7 +113,7 @@ function Bill() {
 
                                         </div>
                                         <div className='cart__item-del'>
-                                            <i className="fa-solid fa-circle-minus" onClick={() => handleDel(index) }></i>
+                                            <i className="fa-solid fa-circle-minus" onClick={() => handleDel(index, bill.quantity) }></i>
                                         </div>
                                     </li>;
                                     })}
@@ -150,7 +150,7 @@ function Bill() {
                     </div>
                 </div>
             </div>
-            {isActive && <Confirmdel index = {index} close = {close} />}
+            {isActive && <Confirmdel index = {index} quantity={quantity} close = {close} />}
             </> ;
 }
 
