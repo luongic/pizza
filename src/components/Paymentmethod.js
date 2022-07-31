@@ -61,7 +61,7 @@ function Paymentmethod() {
             toast({
                 title: "Vui lòng nhập tên",
                 message: `Tên không được để trống`,
-                type: "error",
+                type: "warning",
                 duration: 3000
             })
             document.getElementById("name").focus()
@@ -72,7 +72,7 @@ function Paymentmethod() {
             toast({
                 title: "Vui lòng nhập số điện thoại",
                 message: `SĐT không được để trống`,
-                type: "error",
+                type: "warning",
                 duration: 3000
             })
             document.getElementById("phone").focus()
@@ -83,7 +83,7 @@ function Paymentmethod() {
             toast({
                 title: "Vui lòng nhập email",
                 message: `email không được để trống`,
-                type: "error",
+                type: "warning",
                 duration: 3000
             })
             document.getElementById("email").focus()
