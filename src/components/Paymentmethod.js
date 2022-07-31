@@ -1,6 +1,8 @@
 import { useState, useContext } from "react";
 import { CartContext } from "./CartContext";
 
+import toast from "../functions/toast";
+
 
 
 function Paymentmethod() {
@@ -51,6 +53,44 @@ function Paymentmethod() {
         }
     }
 
+    const handleSubmit = () => {
+        const name = document.getElementById("name").value
+        const phone = document.getElementById("phone").value
+        const email = document.getElementById("email").value
+        if (name === ''){
+            toast({
+                title: "Vui lòng nhập tên",
+                message: `Tên không được để trống`,
+                type: "error",
+                duration: 3000
+            })
+            document.getElementById("name").focus()
+        }
+
+        
+        else if (phone === ''){
+            toast({
+                title: "Vui lòng nhập số điện thoại",
+                message: `SĐT không được để trống`,
+                type: "error",
+                duration: 3000
+            })
+            document.getElementById("phone").focus()
+        }
+
+        
+        else if (email === ''){
+            toast({
+                title: "Vui lòng nhập email",
+                message: `email không được để trống`,
+                type: "error",
+                duration: 3000
+            })
+            document.getElementById("email").focus()
+        }
+        // console.log(name, phone, email);
+    }
+
     if (context.method === 'deli') {
         return <div className="payment__method" >
                     <div className='payment__add-heading'>Phương thức thanh toán: </div>
@@ -81,7 +121,7 @@ function Paymentmethod() {
                             <a href="https://pizzahut.vn/info?TNC">Tôi đồng ý với các điều khoản và điều kiện</a>
                         </div>
                     </div>
-                    {isChecked === true ? <button className="payment__method-btn" type="submit" >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
+                    {isChecked === true ? <button className="payment__method-btn" onClick={() => handleSubmit()} >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
                     
                 </div>
     }
@@ -116,7 +156,7 @@ function Paymentmethod() {
                             <a href="https://pizzahut.vn/info?TNC">Tôi đồng ý với các điều khoản và điều kiện</a>
                         </div>
                     </div>
-                    {isChecked === true ? <button className="payment__method-btn" type="submit" >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
+                    {isChecked === true ? <button className="payment__method-btn" onClick={() => handleSubmit()} >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
                 </div>
     }
 

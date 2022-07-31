@@ -7,7 +7,6 @@ import Paymentmethod from "./Paymentmethod";
 function Payment() {
 
     return( <>
-                <form>
                 <div className="payment">
                     <Addressconfirm />
                     <ReciverInformation />
@@ -15,8 +14,6 @@ function Payment() {
                     <Bill />
                     <Paymentmethod />
                 </div>
-                </form>
-                
             </>);
 }
 
