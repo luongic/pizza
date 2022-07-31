@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 import toast from "../functions/toast";
@@ -52,11 +53,13 @@ function Paymentmethod() {
             setIschecked(false)
         }
     }
+    const navigate = useNavigate();
 
     const handleSubmit = () => {
         const name = document.getElementById("name").value
         const phone = document.getElementById("phone").value
         const email = document.getElementById("email").value
+        
         if (name === ''){
             toast({
                 title: "Vui lòng nhập tên",
@@ -65,9 +68,9 @@ function Paymentmethod() {
                 duration: 3000
             })
             document.getElementById("name").focus()
+            return
         }
-
-        
+   
         else if (phone === ''){
             toast({
                 title: "Vui lòng nhập số điện thoại",
@@ -76,9 +79,9 @@ function Paymentmethod() {
                 duration: 3000
             })
             document.getElementById("phone").focus()
+            return
         }
-
-        
+    
         else if (email === ''){
             toast({
                 title: "Vui lòng nhập email",
@@ -87,7 +90,10 @@ function Paymentmethod() {
                 duration: 3000
             })
             document.getElementById("email").focus()
+            return
         }
+        navigate("/receipt");
+
         // console.log(name, phone, email);
     }
 
