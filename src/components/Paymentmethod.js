@@ -28,12 +28,12 @@ function Paymentmethod() {
         {
             method: 'VNPay',
             img: '/img/vnpay.png',
-            discount: 4,
+            discount: 0,
         },
         {
             method: 'MOMO',
             img: '/img/momo.png',
-            discount: 6,
+            discount: 0,
         },
     ]
 
@@ -41,11 +41,13 @@ function Paymentmethod() {
         setActive(index)
     }
 
+    const [isChecked, setIschecked] = useState(false)
+
     const handleInputCheck = e =>{
         if (e.target.checked) {
-            console.log('✅ Checkbox is checked');
+            setIschecked(true)
         } else {
-        console.log('⛔️ Checkbox is NOT checked');
+            setIschecked(false)
         }
     }
 
@@ -74,12 +76,13 @@ function Paymentmethod() {
                         </div>
                     </div>
                     <div className="payment__method-provision">
-                        <input type="checkbox" id="accept" name="provision" value="provision" onChange={e => handleInputCheck(e)} />
+                        <input type="checkbox" id="accept" name="provision" value="provision" onChange={e => handleInputCheck(e)} required/>
                         <div htmlFor="provision"> 
                             <a href="https://pizzahut.vn/info?TNC">Tôi đồng ý với các điều khoản và điều kiện</a>
                         </div>
                     </div>
-                    <button className="payment__method-btn" >Đặt hàng</button>
+                    {isChecked === true ? <button className="payment__method-btn" >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
+                    
                 </div>
     }
     else {
@@ -108,12 +111,12 @@ function Paymentmethod() {
                         </div>
                     </div>
                     <div className="payment__method-provision">
-                        <input type="checkbox" id="accept" name="provision" value="provision" onChange={e => handleInputCheck(e)} />
+                        <input type="checkbox" id="accept" name="provision" value="provision" onChange={e => handleInputCheck(e)} required/>
                         <div htmlFor="provision"> 
                             <a href="https://pizzahut.vn/info?TNC">Tôi đồng ý với các điều khoản và điều kiện</a>
                         </div>
                     </div>
-                    <button className="payment__method-btn" >Đặt hàng</button>
+                    {isChecked === true ? <button className="payment__method-btn" >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
                 </div>
     }
 

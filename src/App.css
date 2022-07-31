@@ -1674,6 +1674,20 @@ input[type=checkbox]:checked
   border: none;
 }
 
+.payment__method-btn-disable{
+  width: 100%;
+  padding: 12px 10px;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  border-radius: 10px;
+  margin: 20px 0;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-color: #8f8f8f;
+  cursor: not-allowed;
+}
+
 /* 
 =============
 Confirm Deleted Dish
