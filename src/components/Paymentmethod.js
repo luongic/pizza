@@ -81,7 +81,7 @@ function Paymentmethod() {
                             <a href="https://pizzahut.vn/info?TNC">Tôi đồng ý với các điều khoản và điều kiện</a>
                         </div>
                     </div>
-                    {isChecked === true ? <button className="payment__method-btn" >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
+                    {isChecked === true ? <button className="payment__method-btn" type="submit" >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
                     
                 </div>
     }
@@ -116,7 +116,7 @@ function Paymentmethod() {
                             <a href="https://pizzahut.vn/info?TNC">Tôi đồng ý với các điều khoản và điều kiện</a>
                         </div>
                     </div>
-                    {isChecked === true ? <button className="payment__method-btn" >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
+                    {isChecked === true ? <button className="payment__method-btn" type="submit" >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
                 </div>
     }
 

@@ -59,12 +59,13 @@ function Footer() {
                             <div className="footer__pay-row">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="" className="footer__pay-item" />
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/990px-Mastercard-logo.svg.png" alt="" className="footer__pay-item" />
-                                <img src="https://icon2.cleanpng.com/20180421/yoq/kisspng-jcb-co-ltd-logo-payment-credit-card-card-vetor-5adb21e0675f02.1600586915243104964234.jpg" alt="" className="footer__pay-item" />
+                                <img src="/img/atm.png" alt="" className="footer__pay-item" />
                             </div>
 
                             <div className="footer__pay-row">
                                 <img src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" alt="" className="footer__pay-item" />
                                 <img src="https://media.glassdoor.com/sqll/3324319/vnpay-squarelogo-1646214550713.png" alt="" className="footer__pay-item" />
+                                <img src="/img/cash.png" alt="" className="footer__pay-item" />
                             </div>
                         </div>
 
