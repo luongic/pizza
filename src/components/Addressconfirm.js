@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import stores from '../data/stores';
 import Addresschange from './Addresschange';
+import Quotetime from './Quotetime';
 
 
 function Addressconfirm() {
@@ -23,7 +24,7 @@ function Addressconfirm() {
                     <div className='payment__add-name'>{add.store}</div>
                     <div className='payment__add-detail'>ĐC: {store.address}, {store.subdis}, {store.district}, {store.city}</div>
                     <div className='payment__add-btn' onClick={() => setActiveChange(true)}>Thay đổi</div>
-
+                    <Quotetime />
                 </div>
                 {activeChange && <Addresschange close={close}></Addresschange>}
         </>

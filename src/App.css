@@ -1293,6 +1293,46 @@ PAYMENT
   margin-bottom: 20px;
 }
 
+.quotetime{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.quotetime__heading{
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.quotetime__content{
+  width: 100%;
+  display: flex;
+}
+
+.quotetime__content-wrap{
+  width: 100%;
+  display: flex;
+  position: relative;
+  height: 40px;
+  margin: 0 8px 16px;
+}
+
+.quotetime__content-wrap .selection__add{
+  width: 100%;
+  font-size: 16px;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.quotetime__content-wrap .selection__add:focus {
+  outline: 3px solid var(--clr-green-dark); 
+}
+
+.quotetime__content-wrap .selection__add option{
+  height: 40px;
+  zoom: 1.5
+}
+
 .payment__modal-container{
   width: unset;
   padding: 10px;
@@ -1631,6 +1671,7 @@ input[type=checkbox]:checked
   margin: 20px 0;
   cursor: pointer;
   text-align: center;
+  border: none;
 }
 
 /* 

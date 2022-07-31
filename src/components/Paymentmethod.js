@@ -41,6 +41,14 @@ function Paymentmethod() {
         setActive(index)
     }
 
+    const handleInputCheck = e =>{
+        if (e.target.checked) {
+            console.log('✅ Checkbox is checked');
+        } else {
+        console.log('⛔️ Checkbox is NOT checked');
+        }
+    }
+
     if (context.method === 'deli') {
         return <div className="payment__method" >
                     <div className='payment__add-heading'>Phương thức thanh toán: </div>
@@ -66,12 +74,12 @@ function Paymentmethod() {
                         </div>
                     </div>
                     <div className="payment__method-provision">
-                        <input type="checkbox" id="accept" name="provision" value="provision" />
+                        <input type="checkbox" id="accept" name="provision" value="provision" onChange={e => handleInputCheck(e)} />
                         <div htmlFor="provision"> 
                             <a href="https://pizzahut.vn/info?TNC">Tôi đồng ý với các điều khoản và điều kiện</a>
                         </div>
                     </div>
-                    <div className="payment__method-btn">Đặt hàng</div>
+                    <button className="payment__method-btn" >Đặt hàng</button>
                 </div>
     }
     else {
@@ -100,12 +108,12 @@ function Paymentmethod() {
                         </div>
                     </div>
                     <div className="payment__method-provision">
-                        <input type="checkbox" id="accept" name="provision" value="provision" />
+                        <input type="checkbox" id="accept" name="provision" value="provision" onChange={e => handleInputCheck(e)} />
                         <div htmlFor="provision"> 
                             <a href="https://pizzahut.vn/info?TNC">Tôi đồng ý với các điều khoản và điều kiện</a>
                         </div>
                     </div>
-                    <div className="payment__method-btn">Đặt hàng</div>
+                    <button className="payment__method-btn" >Đặt hàng</button>
                 </div>
     }
 
