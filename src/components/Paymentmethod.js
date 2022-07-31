@@ -92,6 +92,7 @@ function Paymentmethod() {
             document.getElementById("email").focus()
             return
         }
+        
         navigate("/receipt");
 
         // console.log(name, phone, email);
