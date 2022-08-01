@@ -8,8 +8,26 @@ function Navcart() {
     const [click, setClick] = useState(true)
     const [bills, setBill] = useState((JSON.parse(localStorage.getItem('bill'))) ?? [])
 
+    
+
     useEffect(() => {
         setBill((JSON.parse(localStorage.getItem('bill'))))
+        const iconCart = document.querySelector('#iconcart')
+        const iconCartAnimate = iconCart.animate([
+            { transform: 'rotate(0)' },
+            { transform: 'rotate(-30deg) scale(1.1)' },
+            { transform: 'rotate(0)' },
+            { transform: 'rotate(30deg) scale(1.1)' },
+            { transform: 'rotate(0)' },
+            { transform: 'rotate(-30deg) scale(1.1)' },
+            { transform: 'rotate(0)' },
+            { transform: 'rotate(30deg) scale(1.1)' },
+            { transform: 'rotate(0)' },
+        ], {
+            duration: 700,
+            iterations: 1,
+        })
+        iconCartAnimate.play()
     }, [context.lengthCart] )
     
     const [isActive, setActive] = useState(false)
@@ -61,7 +79,7 @@ function Navcart() {
     }
 
     return  <><div className='navbar-cart__text'>
-                    <i className="fa-solid fa-cart-shopping">
+                    <i className="fa-solid fa-cart-shopping" id="iconcart">
                         <div className="navbar-cart__number-count">{context.lengthCart}</div>
                     </i> Giỏ Hàng 
                 </div>
