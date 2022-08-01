@@ -24,7 +24,7 @@ function Navcart() {
             { transform: 'rotate(30deg) scale(1.1)' },
             { transform: 'rotate(0)' },
         ], {
-            duration: 700,
+            duration: 600,
             iterations: 1,
         })
         iconCartAnimate.play()

@@ -155,7 +155,7 @@ function Bill() {
 
                 <div className='payment-bill__contain-note' >
                     <div className='method-label'>Thêm ghi chú cho đơn hàng: </div>
-                    <input type="text" id='addressnote' className='method-content__address-number' placeholder='Ví dụ: Không cay...'/>
+                    <input type="text" id='billnote' className='method-content__address-number' placeholder='Ví dụ: Không cay...'/>
                 </div>
                 
             </div>

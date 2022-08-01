@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 import toast from "../functions/toast";
-
-
+import generateOrderID from "../functions/generateOrderID";
 
 function Paymentmethod() {
     const context = useContext(CartContext)
@@ -14,33 +13,39 @@ function Paymentmethod() {
 
     const paymethod = [
         {
-            method: 'tiền mặt',
+            name: 'tiền mặt',
             img: '/img/cash.png',
             discount: 0,
+            method: 'cash',
         },
         {
-            method: 'Visa',
+            name: 'Visa',
             img: '/img/visa.png',
             discount: 0,
+            method: 'visa',
         },
         {
-            method: 'ATM',
+            name: 'ATM',
             img: '/img/atm.png',
             discount: 0,
+            method: 'atm',
         },
         {
-            method: 'VNPay',
+            name: 'VNPay',
             img: '/img/vnpay.png',
             discount: 0,
+            method: 'vnpay',
         },
         {
-            method: 'MOMO',
+            name: 'MOMO',
             img: '/img/momo.png',
             discount: 0,
+            method: 'momo',
         },
     ]
 
-    const handleActive = index => {
+    const handleActive = (index, method) => {
+        context.setPaymentmethod(method)
         setActive(index)
     }
 
@@ -92,10 +97,39 @@ function Paymentmethod() {
             document.getElementById("email").focus()
             return
         }
-        
-        navigate("/receipt");
 
-        // console.log(name, phone, email);
+        else {
+            const orderID = generateOrderID()
+            const addressNote = document.querySelector('#addressnote').value
+            const billNote = document.querySelector('#billnote').value
+            const method = localStorage.getItem('method')
+            const address = document.querySelector('.payment__add-detail').textContent
+            const total = (context.total*1000)
+            const paymentmethod = context.paymentmethod
+
+            const newOrder = {
+                orderID: orderID,
+                name: name,
+                phone: phone,
+                email: email,
+                method: method,
+                address: address,
+                addressNote: addressNote,
+                billNote: billNote,
+                total: total,
+                paymentmethod: paymentmethod,
+                state: 'order', //order -> confirm -> preparing -> delivery -> done
+            }
+
+            const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
+            getOrder.push(newOrder)
+            localStorage.setItem('orders', JSON.stringify(getOrder))
+
+            console.log(newOrder);
+            // navigate("/receipt");
+        }
+        
+
     }
 
     if (context.method === 'deli') {
@@ -105,13 +139,13 @@ function Paymentmethod() {
                         <div className="payment__method-list" >
 
                             {paymethod.map((item, index) => {
-                            return <div className={isActive === index ? "payment__method-item active" : "payment__method-item"} key={index} onClick = {() => handleActive(index)}>
+                            return <div className={isActive === index ? "payment__method-item active" : "payment__method-item"} key={index} onClick = {() => handleActive(index, item.method)}>
                                         <div className="payment__method-img-contain">
                                             <img src={item.img} className="payment__method-img" alt="momopaymentpzh"></img>
                                         </div>
                                         <div className="payment__method-info">
-                                            <div className="payment__method-name"> {item.discount === 0 ? `Thanh toán bằng ${item.method} ` : 
-                                                                                                                `Thanh toán bằng ${item.method} - Giảm : ${item.discount}%` } </div>
+                                            <div className="payment__method-name"> {item.discount === 0 ? `Thanh toán bằng ${item.name} ` : 
+                                                                                                                `Thanh toán bằng ${item.name} - Giảm : ${item.discount}%` } </div>
                                             {isActive === index ? <div className="payment__method-price">{((context.total*1000)*(100 - item.discount)/100).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</div> :
                                             <div className="payment__method-price">0 VND</div> }
                                         </div>

@@ -16,6 +16,8 @@ function CartProvider({children}) {
 
     const [delifee, setDelifee] = useState(method === 'pickup' ? 0 : 22)
 
+    const [paymentmethod, setPaymentmethod] = useState('cash')
+
 
     const cartValue = {
         lengthCart,
@@ -28,6 +30,8 @@ function CartProvider({children}) {
         setMethod,
         delifee,
         setDelifee,
+        paymentmethod,
+        setPaymentmethod
     }
 
     return (
