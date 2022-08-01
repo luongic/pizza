@@ -11,6 +11,7 @@ import Scrolltop from './components/Scrolltop';
 import Overlay from './components/Overlay';
 import Payment from './components/Payment';
 import Receipt from './components/Receipt'
+import Paying from './components/Paying';
 import Modalpromotion from './components/Modalpromotion';
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route path='/member' element={<Meber />} />
           <Route path='/payment' element={<Payment />} />
           <Route path='/receipt' element={<Receipt />} />
+          <Route path='/paying/:method/:id' element={<Paying />} />
         </Routes>
       </Scrolltop>
 

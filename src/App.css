@@ -1694,6 +1694,65 @@ input[type=checkbox]:checked
 }
 
 /* 
+============
+PAYING ONLINE 
+============
+*/
+
+.paying-qr{
+  margin: 100px auto 0;
+  width: 900px;
+  border: 1px solid black;
+}
+
+.paying-qr__contain{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+.paying-qr__heading{
+  font-size: 1.4rem;
+}
+.paying-qr__content{
+  display: flex;
+}
+.paying-qr__code{
+
+}
+.paying-qr__confirm{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding-left: 16px;
+}
+.paying-qr__input{
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid rgb(133, 133, 133);
+}
+.paying-qr__btn{
+  margin-top: 16px;
+  padding: 10px 12px;
+  background-color: var(--clr-green-dark);
+  border-radius: 12px;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-white);
+  cursor: pointer;
+  width: 100%;
+}
+
+/* 
 =============
 Confirm Deleted Dish
 =============

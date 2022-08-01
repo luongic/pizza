@@ -118,15 +118,21 @@ function Paymentmethod() {
                 billNote: billNote,
                 total: total,
                 paymentmethod: paymentmethod,
-                state: 'order', //order -> confirm -> preparing -> delivery -> done
+                state: 'order', //order -> confirm -> preparing -> delivery -> done : SUCCESS
+                                //order -> confirm -> delete                        : CANCEL
             }
 
             const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
             getOrder.push(newOrder)
             localStorage.setItem('orders', JSON.stringify(getOrder))
 
-            console.log(newOrder);
-            // navigate("/receipt");
+            if (method === 'cash'){
+                navigate("/receipt");
+            }
+            else {
+                console.log(orderID);
+                navigate(`/paying/${paymentmethod}/${orderID}`)
+            }
         }
         
 
