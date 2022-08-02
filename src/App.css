@@ -1760,8 +1760,36 @@ RECEIPT
 
 .receipt{
   margin: 100px auto 0;
-  width: 1200px;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.receipt__contain{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--clr-green-dark);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.receipt__contain-heading{
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--clr-green-dark);
+  font-weight: 700;
+}
+
+.receipt__contain-text{
+
+}
+
+.receipt__contain-link a{
+  text-decoration: underline;
+}
+
 
 /* 
 =============
