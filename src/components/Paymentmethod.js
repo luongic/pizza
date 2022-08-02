@@ -100,7 +100,7 @@ function Paymentmethod() {
 
         else {
             const orderID = generateOrderID()
-            const addressNote = document.querySelector('#addressnote').value
+            const addressNote = ((document.querySelector('#addressnote')) ? document.querySelector('#addressnote').value : '')
             const billNote = document.querySelector('#billnote').value
             const method = localStorage.getItem('method')
             const address = document.querySelector('.payment__add-detail').textContent
@@ -124,8 +124,8 @@ function Paymentmethod() {
                 total: total,
                 paymentmethod: paymentmethod,
                 paymentstatus: paymentstatus,
-                state: 'order', //order -> confirm -> preparing -> delivery -> done : SUCCESS
-                                //order -> confirm -> delete                        : CANCEL
+                state: (paymentmethod === 'cash' ? 'order' : 'confirm'), //order -> confirm -> preparing -> delivery -> done : SUCCESS
+                                //order -> confirm -> cancel                        : CANCEL
             }
 
             const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
