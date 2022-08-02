@@ -1753,6 +1753,17 @@ PAYING ONLINE
 }
 
 /* 
+==================
+RECEIPT
+==================
+ */
+
+.receipt{
+  margin: 100px auto 0;
+  width: 1200px;
+}
+
+/* 
 =============
 Confirm Deleted Dish
 =============

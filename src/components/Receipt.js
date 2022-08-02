@@ -1,15 +1,15 @@
-
+import getOrderByID from "../functions/getOrderByID";
 
 function Receipt () {
-    return <main>
-    <section className='menu section'>
-      <div className='title'>
-        <h2 className='brand'>Receipt</h2>
-        <div className='underline'></div>
-      </div>
 
-    </section>
-  </main>;
+  const receipt = getOrderByID(240920)
+  
+  console.log(receipt);
+
+    return <div className="receipt">
+      <div className="receipt__contain">Đặt hàng thành công !</div>
+      <div className="receipt__contain">Đặt hàng thành công !</div>
+    </div>;
 }
 
 

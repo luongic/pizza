@@ -106,6 +106,7 @@ function Paymentmethod() {
             const address = document.querySelector('.payment__add-detail').textContent
             const total = (context.total*1000)
             const paymentmethod = context.paymentmethod
+            const bill = (JSON.parse(localStorage.getItem('bill')))
 
             const newOrder = {
                 orderID: orderID,
@@ -115,6 +116,7 @@ function Paymentmethod() {
                 method: method,
                 address: address,
                 addressNote: addressNote,
+                bill: bill,
                 billNote: billNote,
                 total: total,
                 paymentmethod: paymentmethod,
@@ -125,6 +127,8 @@ function Paymentmethod() {
             const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
             getOrder.push(newOrder)
             localStorage.setItem('orders', JSON.stringify(getOrder))
+
+            console.log(newOrder.bill);
 
             if (paymentmethod === 'cash'){
                 navigate("/receipt");
