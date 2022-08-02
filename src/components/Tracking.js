@@ -1,15 +1,15 @@
 import React from 'react';
+import { useParams } from "react-router-dom";
+
 
 function Tracking() {
-    return <main>
-    <section className='menu section'>
-      <div className='title'>
-        <h2 className='brand'>Tracking</h2>
-        <div className='underline'></div>
-      </div>
+  const params = useParams()
 
-    </section>
-  </main>;
+  console.log(Object.keys(params).length === 0);
+
+  return <div className='tracking'>
+
+  </div>
 }
 
 export default Tracking;

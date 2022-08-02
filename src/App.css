@@ -636,7 +636,7 @@ HOME PAGE
  font-size: 4rem;
  cursor: pointer;
  z-index: 2;
- text-shadow: 2px 2px 15px rgb(255, 255, 255);
+ text-shadow: 2px 2px 3px rgb(255, 255, 255);
 }
 
 .left-btn{
@@ -1764,6 +1764,7 @@ RECEIPT
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 50vh;
 }
 
 .receipt__contain{
@@ -1773,6 +1774,9 @@ RECEIPT
   border: 2px solid var(--clr-green-dark);
   padding: 10px;
   border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
 }
 
 .receipt__contain-heading{
@@ -1780,16 +1784,29 @@ RECEIPT
   text-transform: uppercase;
   color: var(--clr-green-dark);
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .receipt__contain-text{
 
 }
 
-.receipt__contain-link a{
+.receipt__contain-link span{
   text-decoration: underline;
+  color: var(--clr-main);
+  cursor: pointer;
 }
 
+/* 
+==============
+TRACKING
+============ */
+
+.tracking{
+  margin-top: 100px;
+}
 
 /* 
 =============
