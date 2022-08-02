@@ -46,6 +46,7 @@ function Paymentmethod() {
 
     const handleActive = (index, method) => {
         context.setPaymentmethod(method)
+        console.log(index, method);
         setActive(index)
     }
 
@@ -132,7 +133,7 @@ function Paymentmethod() {
             getOrder.push(newOrder)
             localStorage.setItem('orders', JSON.stringify(getOrder))
 
-            console.log(newOrder.bill);
+            console.log(paymentmethod);
 
             if (paymentmethod === 'cash'){
                 navigate(`/receipt/${orderID}`);
@@ -152,7 +153,7 @@ function Paymentmethod() {
                         <div className="payment__method-list" >
 
                             {paymethod.map((item, index) => {
-                            return <div className={isActive === index ? "payment__method-item active" : "payment__method-item"} key={index} onClick = {() => handleActive(index, item.method)}>
+                            return <div className={isActive === index ? "payment__method-item active" : "payment__method-item"} key={index} onClick ={() => handleActive(index, item.method)}>
                                         <div className="payment__method-img-contain">
                                             <img src={item.img} className="payment__method-img" alt="momopaymentpzh"></img>
                                         </div>
@@ -187,13 +188,13 @@ function Paymentmethod() {
                             {paymethod.map((item, index) => 
                                 {
                                     return (item.method === 'MOMO' ? <div key={index}></div> : 
-                                    <div className={isActive === index ? "payment__method-item active" : "payment__method-item"} key={index} onClick = {() => handleActive(index)}>
+                                    <div className={isActive === index ? "payment__method-item active" : "payment__method-item"} key={index} onClick = {() => handleActive(index, item.method)}>
                                         <div className="payment__method-img-contain">
                                             <img src={item.img} className="payment__method-img" alt="momopaymentpzh"></img>
                                         </div>
                                         <div className="payment__method-info">
-                                            <div className="payment__method-name"> {item.discount === 0 ? `Thanh toán bằng ${item.method} ` : 
-                                                                                                                `Thanh toán bằng ${item.method} - Giảm : ${item.discount}%` } </div>
+                                            <div className="payment__method-name"> {item.discount === 0 ? `Thanh toán bằng ${item.name} ` : 
+                                                                                                                `Thanh toán bằng ${item.name} - Giảm : ${item.discount}%` } </div>
                                             {isActive === index ? <div className="payment__method-price">{((context.total*1000)*(100 - item.discount)/100).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</div> :
                                             <div className="payment__method-price">0 VND</div> }
                                         </div>

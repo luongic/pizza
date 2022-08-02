@@ -12,6 +12,8 @@ function Tracking() {
   const [orderID, setOrderID] = useState(id)
   const [haveID, setHaveID] = useState(false)
 
+  console.log(haveID);
+
   // console.log(Object.keys(params).length === 0);
 
   console.log(orderID);
@@ -43,7 +45,7 @@ function Tracking() {
       setHaveID(true)
     }
   }
-  ,[id, order])
+  ,[id, order, params.id])
 
 
   const handleCheck = () => {
