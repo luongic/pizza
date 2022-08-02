@@ -136,7 +136,7 @@ function Footer() {
                         </p>
                         <ul className="footer__policy-list">
                             <li className="footer__policy-item">
-                                <img src="./img/bocongthuong.png" className="footer__policy-img" alt="" />
+                                <img src="/img/bocongthuong.png" className="footer__policy-img" alt="" />
                             </li>
                         </ul>
                     </div>

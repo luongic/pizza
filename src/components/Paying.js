@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import QRCode from "react-qr-code";
 import toast from "../functions/toast";
 
@@ -37,6 +37,7 @@ const paymethod = [
 
 function Paying() {
     const {method , id } = useParams()
+    const navigate = useNavigate();
     const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
     const order = getOrder.find(item => (item.orderID === Number(id) ) );
 
@@ -54,6 +55,9 @@ function Paying() {
                 type: "success",
                 duration: 3000
             })
+            setTimeout(() => {
+                navigate(`/receipt/${id}`)
+            }, 1000);
         }
         else{
             toast({

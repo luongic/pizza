@@ -107,6 +107,8 @@ function Paymentmethod() {
             const total = (context.total*1000)
             const paymentmethod = context.paymentmethod
             const bill = (JSON.parse(localStorage.getItem('bill')))
+            const paymentstatus = (paymentmethod === 'cash' ? 'unpaid' : 'paid')
+            const voucher = (document.querySelector('#voucher').value === '' ? 'novoucher' : document.querySelector('#voucher').value)
 
             const newOrder = {
                 orderID: orderID,
@@ -118,8 +120,10 @@ function Paymentmethod() {
                 addressNote: addressNote,
                 bill: bill,
                 billNote: billNote,
+                voucher: voucher,
                 total: total,
                 paymentmethod: paymentmethod,
+                paymentstatus: paymentstatus,
                 state: 'order', //order -> confirm -> preparing -> delivery -> done : SUCCESS
                                 //order -> confirm -> delete                        : CANCEL
             }
@@ -131,7 +135,7 @@ function Paymentmethod() {
             console.log(newOrder.bill);
 
             if (paymentmethod === 'cash'){
-                navigate("/receipt");
+                navigate(`/receipt/${orderID}`);
             }
             else {
                 navigate(`/paying/${paymentmethod}/${orderID}`)

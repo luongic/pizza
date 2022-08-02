@@ -38,7 +38,7 @@ function App() {
           <Route path='/tracking' element={<Tracking />} />
           <Route path='/member' element={<Meber />} />
           <Route path='/payment' element={<Payment />} />
-          <Route path='/receipt' element={<Receipt />} />
+          <Route path='/receipt/:id' element={<Receipt />} />
           <Route path='/paying/:method/:id' element={<Paying />} />
         </Routes>
       </Scrolltop>
