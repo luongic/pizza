@@ -62,6 +62,7 @@ function Paying() {
                 type: "warning",
                 duration: 3000
             })
+            document.getElementById("inputvalue").value = '';
             document.getElementById("inputvalue").focus();
         }
     }
@@ -71,7 +72,7 @@ function Paying() {
                     
                     <div className="paying-qr__content">
                         <div className="paying-qr__code">
-                            <div style={{ background: 'white'}}>
+                            <div style={{ background: 'white', width: '256px', height: '256px'}}>
                                 <QRCode value={randomCODE} />
                             </div>
                         </div>

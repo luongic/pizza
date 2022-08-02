@@ -126,11 +126,10 @@ function Paymentmethod() {
             getOrder.push(newOrder)
             localStorage.setItem('orders', JSON.stringify(getOrder))
 
-            if (method === 'cash'){
+            if (paymentmethod === 'cash'){
                 navigate("/receipt");
             }
             else {
-                console.log(orderID);
                 navigate(`/paying/${paymentmethod}/${orderID}`)
             }
         }

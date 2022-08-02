@@ -64,7 +64,7 @@ function Footer() {
 
                             <div className="footer__pay-row">
                                 <img src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" alt="" className="footer__pay-item" />
-                                <img src="https://media.glassdoor.com/sqll/3324319/vnpay-squarelogo-1646214550713.png" alt="" className="footer__pay-item" />
+                                <img src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/81b3674ef3ebe867598d2640a8cab5bd.jpg"  alt="" className="footer__pay-item" />
                                 <img src="/img/cash.png" alt="" className="footer__pay-item" />
                             </div>
                         </div>
