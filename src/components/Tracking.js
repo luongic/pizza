@@ -9,22 +9,19 @@ function Tracking() {
   const params = useParams()
   const id = Number(params.id)
   const navigate = useNavigate()
-  const [orderID, setOrderID] = useState(id)
-  // const [haveID, setHaveID] = useState(false)
-
-
+  const [orderID, setOrderID] = useState(id) 
+  
   let order = getOrderByID(orderID)
 
   
   useEffect(() => {
+    
     if (order === undefined || isNaN(id)){
       if (id === 0){
         return
       }
       else {
         setOrderID(0)
-        console.log('false');
-        // setHaveID(false)
         toast({
           title: "Mã không chính xác",
           message: `Mã đơn hàng ${params.id} không hợp lệ`,
@@ -34,25 +31,28 @@ function Tracking() {
       }
     }
     else{
-      console.log('true');
+      const id = Number(params.id)
       setOrderID(id)
-      // setHaveID(true)
     }
   }
   ,[id, order, params.id])
 
 
-  const handleCheck = () => {
-    const inputID = Number(document.querySelector('#inputorderID').value)
-    setOrderID(inputID)
-    navigate(`/tracking/${inputID}`)
-
-  }
+  
 
 
   const orderFind = (JSON.parse(localStorage.getItem('orders')) ?? [])
 
   if (orderFind.length === 0 ){
+    const handleCheck = () => {
+      toast({
+        title: "Chưa có đơn hàng nào được tạo",
+        message: `Tạo mới và hoàn tất một đơn hàng để kiểm tra`,
+        type: "warning",
+        duration: 6000
+      })
+  
+    }
     return <div className='tracking'>
               <div className='tracking__heading'>Kiểm tra đơn hàng</div>
               <div className='tracking__contain'>
@@ -63,13 +63,13 @@ function Tracking() {
                     <div className='tracking__contain-input-label'>Nhập mã đơn hàng: </div>
                     <input type='text' id='inputorderID' />
                   </div>
-                  <div className='tracking__contain-btn'  >
+                  <div className='tracking__contain-btn' onClick={() => handleCheck()} >
                     Kiểm tra
                   </div>
                 </div>
 
                 <div className='tracking__contain-display'>
-                  Trạng thái hiện tại: ...
+                  Trạng thái hiện tại: CHƯA CÓ ĐƠN HÀNG NÀO ĐƯỢC TẠO
                 </div>
 
               </div>
@@ -77,31 +77,34 @@ function Tracking() {
   }
   else {
 
+    const handleCheck = () => {
+      const inputID = Number(document.querySelector('#inputorderID').value)
+      setOrderID(inputID)
+      navigate(`/tracking/${inputID}`)
   
+    }
 
-  
+    return  <div className='tracking'>
+              <div className='tracking__heading'>Kiểm tra đơn hàng</div>
+              <div className='tracking__contain'>
+              
+                <div className='tracking__contain-check'>
 
-  return  <div className='tracking'>
-            <div className='tracking__heading'>Kiểm tra đơn hàng</div>
-            <div className='tracking__contain'>
-            
-              <div className='tracking__contain-check'>
-
-                <div className='tracking__contain-input'>
-                  <div className='tracking__contain-input-label'>Nhập mã đơn hàng: </div>
-                  <input type='text' id='inputorderID' defaultValue={orderID.toString()} />
+                  <div className='tracking__contain-input'>
+                    <div className='tracking__contain-input-label'>Nhập mã đơn hàng: </div>
+                    <input type='text' id='inputorderID' defaultValue={orderID.toString()} />
+                  </div>
+                  <div className='tracking__contain-btn' onClick={() => handleCheck()} >
+                    Kiểm tra
+                  </div>
                 </div>
-                <div className='tracking__contain-btn' onClick={() => handleCheck()} >
-                  Kiểm tra
-                </div>
+
+                { !(order === undefined || isNaN(id)) ? <div className='tracking__contain-display'>
+                  Trạng thái hiện tại: {(order.state)}
+                </div> : <></> }
+
               </div>
-
-              { !(order === undefined || isNaN(id)) ? <div className='tracking__contain-display'>
-                Trạng thái hiện tại: {(order.state)}
-              </div> : <></> }
-
             </div>
-          </div>
   }
 }
 

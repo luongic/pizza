@@ -46,7 +46,6 @@ function Paymentmethod() {
 
     const handleActive = (index, method) => {
         context.setPaymentmethod(method)
-        console.log(index, method);
         setActive(index)
     }
 
@@ -132,8 +131,6 @@ function Paymentmethod() {
             const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
             getOrder.push(newOrder)
             localStorage.setItem('orders', JSON.stringify(getOrder))
-
-            console.log(paymentmethod);
 
             if (paymentmethod === 'cash'){
                 navigate(`/receipt/${orderID}`);
