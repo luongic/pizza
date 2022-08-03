@@ -10,17 +10,11 @@ function Tracking() {
   const id = Number(params.id)
   const navigate = useNavigate()
   const [orderID, setOrderID] = useState(id)
-  const [haveID, setHaveID] = useState(false)
+  // const [haveID, setHaveID] = useState(false)
 
-  console.log(haveID);
-
-  // console.log(Object.keys(params).length === 0);
-
-  console.log(orderID);
 
   let order = getOrderByID(orderID)
 
-  console.log(order);
   
   useEffect(() => {
     if (order === undefined || isNaN(id)){
@@ -30,7 +24,7 @@ function Tracking() {
       else {
         setOrderID(0)
         console.log('false');
-        setHaveID(false)
+        // setHaveID(false)
         toast({
           title: "Mã không chính xác",
           message: `Mã đơn hàng ${params.id} không hợp lệ`,
@@ -42,7 +36,7 @@ function Tracking() {
     else{
       console.log('true');
       setOrderID(id)
-      setHaveID(true)
+      // setHaveID(true)
     }
   }
   ,[id, order, params.id])
@@ -54,6 +48,38 @@ function Tracking() {
     navigate(`/tracking/${inputID}`)
 
   }
+
+
+  const orderFind = (JSON.parse(localStorage.getItem('orders')) ?? [])
+
+  if (orderFind.length === 0 ){
+    return <div className='tracking'>
+              <div className='tracking__heading'>Kiểm tra đơn hàng</div>
+              <div className='tracking__contain'>
+              
+                <div className='tracking__contain-check'>
+
+                  <div className='tracking__contain-input'>
+                    <div className='tracking__contain-input-label'>Nhập mã đơn hàng: </div>
+                    <input type='text' id='inputorderID' />
+                  </div>
+                  <div className='tracking__contain-btn'  >
+                    Kiểm tra
+                  </div>
+                </div>
+
+                <div className='tracking__contain-display'>
+                  Trạng thái hiện tại: ...
+                </div>
+
+              </div>
+            </div>
+  }
+  else {
+
+  
+
+  
 
   return  <div className='tracking'>
             <div className='tracking__heading'>Kiểm tra đơn hàng</div>
@@ -76,6 +102,7 @@ function Tracking() {
 
             </div>
           </div>
+  }
 }
 
 export default Tracking;
