@@ -1925,6 +1925,10 @@ TRACKING
   margin-bottom: 20px;
 }
 
+.tracking__item:last-child {
+  margin-bottom: 0;
+}
+
 .tracking__item.active{
   filter: grayscale(0);
 }

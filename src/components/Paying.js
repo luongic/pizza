@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { CartContext } from "./CartContext";
 import QRCode from "react-qr-code";
 import toast from "../functions/toast";
+
 
 const paymethod = [
     {
@@ -36,6 +39,7 @@ const paymethod = [
 ]
 
 function Paying() {
+    const context = useContext(CartContext)
     const {method , id } = useParams()
     const navigate = useNavigate();
     const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
@@ -55,6 +59,8 @@ function Paying() {
                 type: "success",
                 duration: 3000
             })
+            localStorage.removeItem('bill');
+            context.setLengthCart(0)
             setTimeout(() => {
                 navigate(`/receipt/${id}`)
             }, 1000);

@@ -1,6 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
 
-import getOrderByID from "../functions/getOrderByID";
 
 function Receipt () {
   const params = useParams()
@@ -8,10 +7,6 @@ function Receipt () {
   const navigate = useNavigate()
 
   const id = Number(params.id)
-
-  const receipt = getOrderByID(id)
-  
-  console.log(receipt);
 
     return <div className="receipt">
       <div className="receipt__contain">

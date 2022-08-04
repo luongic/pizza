@@ -134,6 +134,8 @@ function Paymentmethod() {
 
             if (paymentmethod === 'cash'){
                 navigate(`/receipt/${orderID}`);
+                localStorage.removeItem('bill');
+                context.setLengthCart(0)
             }
             else {
                 navigate(`/paying/${paymentmethod}/${orderID}`)

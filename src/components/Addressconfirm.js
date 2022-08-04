@@ -38,6 +38,7 @@ function Addressconfirm() {
                     <div className='payment__add-btn' onClick={() =>setActiveChange(true)}>Thay đổi</div>
                 
                 {activeChange && <Addresschange close={close}></Addresschange>} 
+                <Quotetime />
                 <div className='method-content__subdistrict' >
                     <div className='method-label'>Ghi chú cho người giao hàng: </div>
                     <input type="text" id='addressnote' className='method-content__address-number' placeholder='Ví dụ: Đối diện Tòa nhà ABC...'/>
