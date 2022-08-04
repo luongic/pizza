@@ -35,7 +35,7 @@ function Trackingstate({state}) {
 
 
                         {stateList.map((item, index) => {
-                            return  <div className={item.id <= state ? 'tracking__item active' : 'tracking__item'} key={index}>
+                            return  <div className={ item.id <= state ? (item.id === state ? 'tracking__item active curent' : 'tracking__item active' ) : 'tracking__item'} key={index}>
                                         <div className="tracking__item-icon">
                                             <i className={item.icon}></i>
                                         </div>

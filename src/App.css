@@ -1933,6 +1933,10 @@ TRACKING
   filter: grayscale(0);
 }
 
+
+
+
+
 .tracking__item-icon{
   margin-right: 4px;
   width: 80px;
@@ -1949,6 +1953,12 @@ TRACKING
 .tracking__item-icon > i{
   font-size: 40px;
 }
+
+.tracking__item.active.curent > .tracking__item-icon > i{
+  animation: phone linear 4s infinite;
+}
+
+
 
 .tracking__item.active .tracking__item-text{
   font-size: 1.6rem;
