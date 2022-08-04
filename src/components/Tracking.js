@@ -18,7 +18,7 @@ function Tracking() {
   useEffect(() => {
     
     if (order === undefined || isNaN(id)){
-      if (id === 0){
+      if (id === 0 || params.id === ':id'){
         return
       }
       else {

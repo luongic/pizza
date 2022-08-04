@@ -20,7 +20,7 @@ function Navbar () {
             <li className='navbar-item'>
                 <img src='/img/logo.png' alt='logoPizzaHut'/>
             </li>
-            <ActiveNavbar to="/tracking/0"><i className="fa-solid fa-magnifying-glass"></i> Theo dõi đơn hàng</ActiveNavbar>
+            <ActiveNavbar to="/tracking/:id"><i className="fa-solid fa-magnifying-glass"></i> Theo dõi đơn hàng</ActiveNavbar>
             <ActiveNavbar to="/member"><i className="fa-solid fa-user"></i> Thành viên</ActiveNavbar>
         </ul>
         <div className='navbar-cart' >

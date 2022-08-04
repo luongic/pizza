@@ -1822,7 +1822,8 @@ TRACKING
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  min-height: 90vh;
 }
 
 .tracking__contain{
@@ -1894,13 +1895,21 @@ TRACKING
   margin-top: 20px;
 }
 
-.tracking__heading{
-
+.tracking__state-heading{
+  font-size: 1.8rem;
+  color: var(--clr-green-dark);
+  font-weight: 700;
+  margin-bottom: 40px;
 }
 
 .tracking__list{
   display: flex;
   flex-direction: column;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgb(103, 103, 103);
+  margin: 0 auto 40px ;
 }
 
 .tracking__item{
@@ -1940,8 +1949,9 @@ TRACKING
 .tracking__item-text{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-left: 20px;
+  flex: 1;
 }
 
 

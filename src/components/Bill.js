@@ -125,7 +125,7 @@ function Bill() {
                                     </div>
 
                                     <div className="cart__total">
-                                        <div className="cart__total-text">Giảm giá:</div>
+                                        <div className="cart__total-text">Giảm giá Voucher/Coupon:</div>
                                         <div className="cart__total-number">- {((context.voucher)*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</div>
                                     </div>
 

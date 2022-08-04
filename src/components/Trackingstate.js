@@ -17,7 +17,7 @@ const stateList = [
     },
     {
         id: 3,
-        name: 'Đơn hàng đang được giao',
+        name: 'Món ăn đang được giao',
         icon: 'fa-solid fa-truck-fast',
     },
     {
@@ -30,12 +30,12 @@ const stateList = [
 function Trackingstate({state}) {
     return  <div className='tracking__contain-display'>
                 <div className="tracking__state">
-                    <div className="tracking__heading">Trạng thái đơn hàng</div>
+                    <div className="tracking__state-heading">Trạng thái đơn hàng</div>
                     <div className="tracking__list">
 
 
                         {stateList.map((item, index) => {
-                            return  <div className={item.id <= state ? 'tracking__item active' : 'tracking__item'} >
+                            return  <div className={item.id <= state ? 'tracking__item active' : 'tracking__item'} key={index}>
                                         <div className="tracking__item-icon">
                                             <i className={item.icon}></i>
                                         </div>
