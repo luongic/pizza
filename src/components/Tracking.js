@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
 import toast from '../functions/toast';
 
+import Trackingstate from './Trackingstate';
 import getOrderByID from '../functions/getOrderByID';
 
 
@@ -99,9 +100,7 @@ function Tracking() {
                   </div>
                 </div>
 
-                { !(order === undefined || isNaN(id)) ? <div className='tracking__contain-display'>
-                  Trạng thái hiện tại: {(order.state)}
-                </div> : <></> }
+                { !(order === undefined || isNaN(id)) ? <Trackingstate state = {(order.state)} /> : <></> }
 
               </div>
             </div>

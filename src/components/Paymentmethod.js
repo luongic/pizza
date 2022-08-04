@@ -124,7 +124,7 @@ function Paymentmethod() {
                 total: total,
                 paymentmethod: paymentmethod,
                 paymentstatus: paymentstatus,
-                state: (paymentmethod === 'cash' ? 'order' : 'confirm'), //order -> confirm -> preparing -> delivery -> done : SUCCESS
+                state: (paymentmethod === 'cash' ? 0 : 1), //order -> confirm -> preparing -> delivery -> done : SUCCESS
                                 //order -> confirm -> cancel                        : CANCEL
             }
 

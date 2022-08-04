@@ -223,11 +223,11 @@ Navbar
 }
 
 .navbar-item{
-  
   display: flex;
   align-items: center;
   flex: 1;
   justify-content: center;
+  height: 100%;
 }
 
 .navbar-item a:hover{
@@ -238,6 +238,15 @@ Navbar
 .navbar-item a{
   cursor: pointer;
   color: var(--clr-white);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.navbar-item i{
+  margin-right: 4px;
 }
 
 .navbar-item.active{
@@ -1876,6 +1885,65 @@ TRACKING
 .tracking__contain-display{
 
 }
+
+.tracking__state{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.tracking__heading{
+
+}
+
+.tracking__list{
+  display: flex;
+  flex-direction: column;
+}
+
+.tracking__item{
+  display: flex;
+  font-size: 1.5rem;
+  filter: grayscale(100);
+  margin-bottom: 20px;
+}
+
+.tracking__item.active{
+  filter: grayscale(0);
+}
+
+.tracking__item-icon{
+  margin-right: 4px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--clr-green-dark);
+  color: var(--clr-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.tracking__item-icon > i{
+  font-size: 40px;
+}
+
+.tracking__item.active .tracking__item-text{
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--clr-green-dark);
+}
+
+.tracking__item-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
 
 
 /* 
