@@ -1955,13 +1955,22 @@ TRACKING
 }
 
 .tracking__item.active.curent > .tracking__item-icon > i{
-  animation: phone linear 4s infinite;
+  transition: all linear;
+  animation: zoomSize linear 3s infinite;
+}
+
+@keyframes zoomSize {
+  0%, 100%{
+    transform: scale(.8);
+  }
+  50%{
+    transform: scale(1.2);
+  }
 }
 
 
-
 .tracking__item.active .tracking__item-text{
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--clr-green-dark);
 }
@@ -1973,7 +1982,6 @@ TRACKING
   margin-left: 20px;
   flex: 1;
 }
-
 
 
 /* 

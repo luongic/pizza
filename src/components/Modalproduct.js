@@ -296,7 +296,7 @@ function Modalproduct({id, close}) {
                     </div>
                     
                     <button className='modal-product__btn' onClick={ () => handleModalbtn( selectItem[0].title, sizeget, crustget, price )} >
-                        <span>{price}.000₫</span>
+                        <span>Giá: {price}.000₫</span>
                         
                         <span>Thêm vào giỏ hàng</span>
                     </button>
