@@ -14,7 +14,6 @@ function Tracking() {
   
   let order = getOrderByID(orderID)
 
-  
   useEffect(() => {
     
     if (order === undefined || isNaN(id)){
@@ -22,10 +21,10 @@ function Tracking() {
         return
       }
       else {
-        setOrderID(0)
+        setOrderID(id)
         toast({
           title: "Mã không chính xác",
-          message: `Mã đơn hàng ${params.id} không hợp lệ`,
+          message: `Mã đơn hàng nhập vào không hợp lệ`,
           type: "warning",
           duration: 3000
         })
@@ -37,10 +36,6 @@ function Tracking() {
     }
   }
   ,[id, order, params.id])
-
-
-  
-
 
   const orderFind = (JSON.parse(localStorage.getItem('orders')) ?? [])
 
@@ -82,7 +77,6 @@ function Tracking() {
       const inputID = Number(document.querySelector('#inputorderID').value)
       setOrderID(inputID)
       navigate(`/tracking/${inputID}`)
-  
     }
 
     return  <div className='tracking'>
@@ -93,7 +87,7 @@ function Tracking() {
 
                   <div className='tracking__contain-input'>
                     <div className='tracking__contain-input-label'>Nhập mã đơn hàng: </div>
-                    <input type='text' id='inputorderID' defaultValue={orderID.toString()} />
+                    <input type='text' id='inputorderID' defaultValue={ (params.id !== ':id') ? orderID.toString() : ''} />
                   </div>
                   <div className='tracking__contain-btn' onClick={() => handleCheck()} >
                     Kiểm tra
