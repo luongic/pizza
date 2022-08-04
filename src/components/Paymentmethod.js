@@ -8,7 +8,6 @@ import generateOrderID from "../functions/generateOrderID";
 function Paymentmethod() {
     const context = useContext(CartContext)
 
-
     const [isActive,setActive] = useState(0)
 
     const paymethod = [
