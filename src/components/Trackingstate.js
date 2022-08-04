@@ -33,7 +33,6 @@ function Trackingstate({state}) {
                     <div className="tracking__state-heading">Trạng thái đơn hàng</div>
                     <div className="tracking__list">
 
-
                         {stateList.map((item, index) => {
                             return  <div className={ item.id <= state ? (item.id === state ? 'tracking__item active curent' : 'tracking__item active' ) : 'tracking__item'} key={index}>
                                         <div className="tracking__item-icon">

@@ -3,7 +3,6 @@ import Products from './Products'
 import Category from './Category'
 import items from '../data/menu'
 
-
 const Menu = () => {
 
   const [menuItem, setMenuItem] = useState(items);
