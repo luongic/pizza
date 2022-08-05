@@ -6,13 +6,22 @@ function Loginsignup() {
 
     const [isLeft, setIsleft] = useState(false)
 
+    const [hidden, setHidden] = useState(true)
+
+    const handleHiden = () => {
+        setHidden(!hidden)
+    }
+
     Validator({
         form: '#form-1',
         formGroupSelector: '.form-group',
         errorSelector: '.form-message',
         rules: [
           Validator.isRequired('#name', 'Vui lòng nhập tên đầy đủ của bạn'),
+          Validator.isRequired('#birthday', 'Chọn ngày sinh'),
+          Validator.isOver16('#birthday'),
           Validator.isRequired('#phone', 'Vui lòng nhập SĐT'),
+          Validator.isPhone('#phone'),
           Validator.isEmail('#email'),
           Validator.minLength('#password', 6),
           Validator.isRequired('#password_confirmation'),
@@ -39,12 +48,12 @@ function Loginsignup() {
 
                             <div className='login__content-input' >
                                 <div className='login__content-label'>Email: * </div>
-                                <input type="text" id='username' className='method-content__address-number form-control' placeholder=''/>
+                                <input type="text" name="username" id='username' className='method-content__address-number form-control' placeholder=''/>
                             </div>
 
                             <div className='login__content-input' >
                                 <div className='login__content-label'>Mật khẩu: * </div>
-                                <input type="password" id='password' className='method-content__address-number form-control' placeholder=''/>
+                                <input type="password" name="password" id='password' className='method-content__address-number form-control' placeholder=''/>
                             </div>
 
                             <div className="login__content-btn">Đăng nhập</div>
@@ -63,13 +72,13 @@ function Loginsignup() {
                             <form action="" method="POST" className="form" id="form-1">
                                 <div className='login__content-input form-group' >
                                     <div className='login__content-label'>Tên: * <span className ="form-message"></span> </div> 
-                                    <input type="text" id='name' className='method-content__address-number form-control' placeholder=''/>
+                                    <input type="text" id='name' name="fullname" className='method-content__address-number form-control' placeholder=''/>
                                 </div>
 
                                 <div className='login__content-input-2' >
                                     <div className="login__content-input-wrap form-group" >
                                         <div className='login__content-label'>Ngày sinh: * <span className ="form-message"></span> </div> 
-                                        <input type="date" id='birthday' className='method-content__address-number form-control' placeholder=''/>
+                                        <input type="date" name="birtday" id='birthday' className='method-content__address-number form-control' placeholder=''/>
                                     </div>
 
                                     <div className="login__content-input-wrap" >
@@ -86,25 +95,32 @@ function Loginsignup() {
                                 <div className='login__content-input-2' >
                                     <div className="login__content-input-wrap form-group" >
                                         <div className='login__content-label'>Điện thoại: * <span className ="form-message"></span> </div> 
-                                        <input type="text" id='phone' className='method-content__address-number form-control' placeholder=''/>
+                                        <input type="text" id='phone' name="phone" className='method-content__address-number form-control' placeholder=''/>
                                     </div>
 
                                     <div className="login__content-input-wrap form-group" >
                                         <div className='login__content-label'>Email: * <span className ="form-message"></span></div>
-                                        <input type="text" id='email' className='method-content__address-number form-control' placeholder=''/>
+                                        <input type="text" id='email' name="email" className='method-content__address-number form-control' placeholder=''/>
                                     </div>
                                     
                                 </div>
 
                                 <div className='login__content-input form-group' >
                                     <div className='login__content-label'>Mật khẩu: * <span className ="form-message"></span></div>
-                                    <input type="password" id='password' className='method-content__address-number form-control' placeholder=''/>
+                                    <input type={hidden ? 'password' : 'text'} id='password' name="password" className='method-content__address-number form-control' placeholder=''/>
+                                    <div className="login__content-hiden" onClick={() => handleHiden()}>
+                                        <i className={hidden ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} ></i>
+                                    </div>
                                 </div>
 
                                 <div className='login__content-input form-group' >
                                     <div className='login__content-label'>Nhập lại mật khẩu: * <span className ="form-message"></span></div>
-                                    <input type="password" id='password_confirmation' className='method-content__address-number form-control' placeholder=''/>
+                                    <input type={hidden ? 'password' : 'text'} id='password_confirmation' className='method-content__address-number form-control' placeholder=''/>
+                                    <div className="login__content-hiden" onClick={() => handleHiden()}>
+                                        <i className={hidden ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} ></i>
+                                    </div>
                                 </div>
+ 
 
                                 <button className="login__content-btn form-submit">Đăng ký</button>
                             </form>

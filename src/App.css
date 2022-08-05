@@ -1994,13 +1994,13 @@ LOGIN & SIGN UP
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 480px;
+  height: 500px;
   margin-bottom: 100px;
 }
 
 .login-container{
   width: 960px;
-  height: 480px;
+  height: 500px;
   display: flex;
   /* border: 1px solid var(--clr-main); */
   border-radius: 10px;
@@ -2035,6 +2035,18 @@ LOGIN & SIGN UP
   position: relative;
   margin-bottom: 16px;
   height: 40px;
+}
+
+.login__content-hiden{
+  width: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .login__content-input-2{

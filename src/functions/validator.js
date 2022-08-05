@@ -1,4 +1,5 @@
 
+
 // Đối tượng `Validator`
 function Validator(options) {
     function getParent(element, selector) {
@@ -154,6 +155,28 @@ Validator.isEmail = function (selector, message) {
         test: function (value) {
             var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; //eslint-disable-line
             return regex.test(value) ? undefined :  message || 'Email không hợp lệ';
+        }
+    };
+}
+
+Validator.isPhone = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            var regex = /([\+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/; //eslint-disable-line
+            return regex.test(value) ? undefined :  message || 'SĐT không hợp lệ';
+        }
+    };
+}
+
+Validator.isOver16 = function (selector, message) {
+    return {
+        selector: selector,
+        test: function (value) {
+            const date16YrsAgo = new Date();
+            const DOB = new Date(value)
+            date16YrsAgo.setFullYear(date16YrsAgo.getFullYear() - 16)
+            return (DOB <= date16YrsAgo) ? undefined :  message || 'Chưa đủ 16 tuổi';
         }
     };
 }
