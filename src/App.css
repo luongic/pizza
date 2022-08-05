@@ -2002,10 +2002,11 @@ LOGIN & SIGN UP
   width: 960px;
   height: 480px;
   display: flex;
-  border: 1px solid var(--clr-main);
+  /* border: 1px solid var(--clr-main); */
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 0 15px rgb(103, 103, 103);
 }
 
 .login-login{
@@ -2076,6 +2077,7 @@ LOGIN & SIGN UP
   border-radius: 12px;
   text-align: center;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .login__bottom{
