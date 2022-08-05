@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Menu from './components/Menu';
-import Meber from './components/Member';
+import Member from './components/Member';
 import Home from './components/Home';
 import Tracking from './components/Tracking';
 import Scrolltop from './components/Scrolltop';
@@ -36,7 +36,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/menu' element={<Menu />} />
           <Route path='/tracking/:id' element={<Tracking />} />
-          <Route path='/member' element={<Meber />} />
+          <Route path='/member' element={<Member />} />
           <Route path='/payment' element={<Payment />} />
           <Route path='/receipt/:id' element={<Receipt />} />
           <Route path='/paying/:method/:id' element={<Paying />} />
