@@ -2070,6 +2070,7 @@ LOGIN & SIGN UP
 
 .login__content-btn{
   width: 100%;
+  height: 40px;
   color: var(--clr-white);
   background-color: var(--clr-green-dark);
   padding: 8px 12px;
@@ -2078,6 +2079,7 @@ LOGIN & SIGN UP
   text-align: center;
   cursor: pointer;
   font-weight: 500;
+  border: none;
 }
 
 .login__bottom{
@@ -2127,6 +2129,24 @@ LOGIN & SIGN UP
 
 
 
+.form-group.invalid .form-control {
+  border: 2px solid;
+  border-color: var(--clr-main);
+}
+
+.form-group.invalid .login__content-label {
+  color: var(--clr-main);
+  font-weight: 500;
+}
+
+.form-group.invalid .form-message {
+  color: var(--clr-main);
+}
+
+.form-message{
+  font-size: .8rem;
+  color: var(--clr-main);
+}
 
 
 /* 

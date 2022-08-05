@@ -141,7 +141,6 @@ function Paymentmethod() {
             }
         }
         
-
     }
 
     if (context.method === 'deli') {
