@@ -51,7 +51,7 @@ function Loginsignup() {
                                 <div className="login__content-input-wrap" >
                                     <div className='login__content-label'>Giới tính: * </div>
                                     {/* <input type="text" id='gender' className='method-content__address-number' placeholder=''/> */}
-                                    <select name="gender" className='login__content-input-selected'>
+                                    <select name="gender" className='login__content-input-selected' defaultValue={'male'}>
                                         <option value="male">Nam</option>
                                         <option value="female">Nữ</option>
                                     </select>
