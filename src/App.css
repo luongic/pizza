@@ -2017,7 +2017,7 @@ LOGIN & SIGN UP
 }
 
 .login__heading{
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: var(--clr-main);
   font-weight: 700;
   margin: 10px 0;
@@ -2033,6 +2033,27 @@ LOGIN & SIGN UP
   display: flex;
   position: relative;
   margin-bottom: 16px;
+  height: 40px;
+}
+
+.login__content-input-2{
+  width: 100%;
+  display: flex;
+  margin-bottom: 16px;
+  height: 40px;
+  justify-content: space-between;
+}
+
+.login__content-input-wrap{
+  position: relative;
+  width: 47%;
+}
+
+.login__content-input-selected{
+  width: 100%;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  padding-left: 10px;
   height: 40px;
 }
 

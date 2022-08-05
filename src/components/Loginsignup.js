@@ -21,7 +21,7 @@ function Loginsignup() {
 
                             <div className='login__content-input' >
                                 <div className='login__content-label'>Mật khẩu: * </div>
-                                <input type="text" id='password' className='method-content__address-number' placeholder=''/>
+                                <input type="password" id='password' className='method-content__address-number' placeholder=''/>
                             </div>
 
                             <div className="login__content-btn">Đăng nhập</div>
@@ -38,13 +38,48 @@ function Loginsignup() {
                         <div className="login__content">
 
                             <div className='login__content-input' >
-                                <div className='login__content-label'>Email: * </div>
-                                <input type="text" id='username' className='method-content__address-number' placeholder=''/>
+                                <div className='login__content-label'>Tên: * </div>
+                                <input type="text" id='name' className='method-content__address-number' placeholder=''/>
+                            </div>
+
+                            <div className='login__content-input-2' >
+                                <div className="login__content-input-wrap" >
+                                    <div className='login__content-label'>Ngày sinh: * </div>
+                                    <input type="date" id='birthday' className='method-content__address-number' placeholder=''/>
+                                </div>
+
+                                <div className="login__content-input-wrap" >
+                                    <div className='login__content-label'>Giới tính: * </div>
+                                    {/* <input type="text" id='gender' className='method-content__address-number' placeholder=''/> */}
+                                    <select name="gender" className='login__content-input-selected'>
+                                        <option value="male">Nam</option>
+                                        <option value="female">Nữ</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+
+                            <div className='login__content-input-2' >
+                                <div className="login__content-input-wrap" >
+                                    <div className='login__content-label'>Số điện thoại: * </div>
+                                    <input type="text" id='phone' className='method-content__address-number' placeholder=''/>
+                                </div>
+
+                                <div className="login__content-input-wrap" >
+                                    <div className='login__content-label'>Email: * </div>
+                                    <input type="text" id='email' className='method-content__address-number' placeholder=''/>
+                                </div>
+                                
                             </div>
 
                             <div className='login__content-input' >
                                 <div className='login__content-label'>Mật khẩu: * </div>
-                                <input type="text" id='password' className='method-content__address-number' placeholder=''/>
+                                <input type="password" id='password' className='method-content__address-number' placeholder=''/>
+                            </div>
+
+                            <div className='login__content-input' >
+                                <div className='login__content-label'>Nhập lại mật khẩu: * </div>
+                                <input type="password" id='password' className='method-content__address-number' placeholder=''/>
                             </div>
 
                             <div className="login__content-btn">Đăng ký</div>
