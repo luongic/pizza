@@ -18,9 +18,9 @@ function Loginsignup() {
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
-                Validator.isRequired('#email', 'Vui lòng nhập tên đầy đủ của bạn'),
+                Validator.isRequired('#email', 'Vui lòng nhập email'),
                 Validator.isEmail('#email'),
-                Validator.isRequired('#password', 'Nhập mật khẩu'),
+                Validator.isRequired('#password', 'Vui lòng nhập mật khẩu'),
                 Validator.minLength('#password', 6),
             ],
             onSubmit: function (data) {
