@@ -38,7 +38,9 @@ function Delivery({close}) {
 
     const handleOldclick = () => {
       localStorage.setItem('method', 'deli')
-      close()
+      if (getpath === '/payment'){
+        close()
+      }
       context.setMethod('deli')
       context.setDelifee(22)
     }
