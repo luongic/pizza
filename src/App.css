@@ -1990,12 +1990,12 @@ LOGIN & SIGN UP
 */
 
 .login{
-  margin-top: 100px;
+  margin-top: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 500px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 .login-container{

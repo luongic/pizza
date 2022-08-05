@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Validator from "../functions/validator";
 
@@ -12,28 +12,47 @@ function Loginsignup() {
         setHidden(!hidden)
     }
 
-    Validator({
-        form: '#form-1',
-        formGroupSelector: '.form-group',
-        errorSelector: '.form-message',
-        rules: [
-          Validator.isRequired('#name', 'Vui lòng nhập tên đầy đủ của bạn'),
-          Validator.isRequired('#birthday', 'Chọn ngày sinh'),
-          Validator.isOver16('#birthday'),
-          Validator.isRequired('#phone', 'Vui lòng nhập SĐT'),
-          Validator.isPhone('#phone'),
-          Validator.isEmail('#email'),
-          Validator.minLength('#password', 6),
-          Validator.isRequired('#password_confirmation'),
-          Validator.isConfirmed('#password_confirmation', function () {
-            return document.querySelector('#form-1 #password').value;
-          }, 'Mật khẩu không khớp')
-        ],
-        onSubmit: function (data) {
-            // Call API
-            console.log(data);
-        }
-      });
+    useEffect(()=>{
+        Validator({
+            form: '#form-2',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#email', 'Vui lòng nhập tên đầy đủ của bạn'),
+                Validator.isEmail('#email'),
+                Validator.isRequired('#password', 'Nhập mật khẩu'),
+                Validator.minLength('#password', 6),
+            ],
+            onSubmit: function (data) {
+                // Call API
+                console.log(data);
+            }
+        });
+    
+        Validator({
+            form: '#form-1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+              Validator.isRequired('#name', 'Vui lòng nhập tên đầy đủ của bạn'),
+              Validator.isRequired('#birthday', 'Chọn ngày sinh'),
+              Validator.isOver16('#birthday'),
+              Validator.isRequired('#phone', 'Vui lòng nhập SĐT'),
+              Validator.isPhone('#phone'),
+              Validator.isEmail('#email'),
+              Validator.minLength('#password', 6),
+              Validator.isRequired('#password_confirmation'),
+              Validator.isConfirmed('#password_confirmation', function () {
+                return document.querySelector('#form-1 #password').value;
+              }, 'Mật khẩu không khớp')
+            ],
+            onSubmit: function (data) {
+                // Call API
+                console.log(data);
+            }
+        });
+    }, [])
+
 
 
     return  <div className="login">
@@ -44,21 +63,27 @@ function Loginsignup() {
                         <div className="login__heading">🍕 ĐĂNG NHẬP 🍕</div>
                         <div className="login__content">
 
-                            
+                            <form action="" method="POST" className="form" id="form-2" >
 
-                            <div className='login__content-input' >
-                                <div className='login__content-label'>Email: * </div>
-                                <input type="text" name="username" id='username' className='method-content__address-number form-control' placeholder=''/>
-                            </div>
+                                <div className='login__content-input form-group' >
+                                    <div className='login__content-label'>Email: * <span className ="form-message"></span></div>
+                                    <input type="text" name="email" id='email' className='method-content__address-number form-control' placeholder=''/>
+                                </div>
 
-                            <div className='login__content-input' >
-                                <div className='login__content-label'>Mật khẩu: * </div>
-                                <input type="password" name="password" id='password' className='method-content__address-number form-control' placeholder=''/>
-                            </div>
+                                <div className='login__content-input form-group' >
+                                    <div className='login__content-label'>Mật khẩu: * <span className ="form-message"></span></div>
+                                    <input type={hidden ? 'password' : 'text'} name="password" id='password' className='method-content__address-number form-control' placeholder=''/>
+                                    <div className="login__content-hiden" onClick={() => handleHiden()}>
+                                        <i className={hidden ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} ></i>
+                                    </div>
+                                </div>
 
-                            <div className="login__content-btn">Đăng nhập</div>
+                                <button className="login__content-btn form-submit" type="submit">Đăng nhập</button>
+
+                            </form>
 
                         </div>
+
                         <div className="login__bottom">
                             <div >Bạn chưa có tài khoản ?</div>
                             <div className="signup__link" onClick={() => setIsleft(!(isLeft))} >Đăng ký ngay</div>
