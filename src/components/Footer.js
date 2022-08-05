@@ -6,16 +6,16 @@ function Footer() {
                         <h3 className="footer__heading">Về chúng tôi</h3>
                         <ul className="footer__list">
                             <li className="footer__list-item">
-                                <a href="https://pizzahut.vn/info?introduction" className="footer__list-item-link">Giới thiệu</a>
+                                <a href="https://pizzahut.vn/info?introduction" className="footer__list-item-link" target='_blank' rel="noreferrer" >Giới thiệu</a>
                             </li>
                             <li className="footer__list-item">
-                                <a href="https://pizzahut.vn/info?vision" className="footer__list-item-link">Tầm nhìn của chúng tôi</a>
+                                <a href="https://pizzahut.vn/info?vision" className="footer__list-item-link"  target='_blank' rel="noreferrer" >Tầm nhìn của chúng tôi</a>
                             </li>
                             <li className="footer__list-item">
-                                <a href="https://pizzahut.vn/info?corevalues" className="footer__list-item-link">Giá trị cốt lõi</a>
+                                <a href="https://pizzahut.vn/info?corevalues" className="footer__list-item-link"  target='_blank' rel="noreferrer" >Giá trị cốt lõi</a>
                             </li>
                             <li className="footer__list-item">
-                                <a href="https://pizzahut.vn/info?foodsafety" className="footer__list-item-link">Vệ Sinh An Toàn Thực Phẩm</a>
+                                <a href="https://pizzahut.vn/info?foodsafety" className="footer__list-item-link"  target='_blank' rel="noreferrer" >Vệ Sinh An Toàn Thực Phẩm</a>
                             </li>
                         </ul>
 
@@ -30,26 +30,26 @@ function Footer() {
                         <h3 className="footer__heading">Tìm Cửa Hàng</h3>
                         <ul className="footer__list">
                             <li className="footer__list-item">
-                                <a href="https://pizzahut.vn/StoreLocation?area=north" className="footer__list-item-link">Miền Bắc</a>
+                                <a href="https://pizzahut.vn/StoreLocation?area=north" className="footer__list-item-link"  target='_blank' rel="noreferrer" >Miền Bắc</a>
                             </li>
                             <li className="footer__list-item">
-                                <a href="https://pizzahut.vn/StoreLocation?area=central" className="footer__list-item-link">Miền Trung</a>
+                                <a href="https://pizzahut.vn/StoreLocation?area=central" className="footer__list-item-link"  target='_blank' rel="noreferrer" >Miền Trung</a>
                             </li>
                             <li className="footer__list-item"> 
-                                <a href="https://pizzahut.vn/StoreLocation?area=south" className="footer__list-item-link">Miền Nam</a>
+                                <a href="https://pizzahut.vn/StoreLocation?area=south" className="footer__list-item-link"  target='_blank' rel="noreferrer" >Miền Nam</a>
                             </li>
                         </ul>
 
                         <h3 className="footer__heading mt-16">Thông tin tuyển dụng</h3>
                         <ul className="footer__list">
                             <li className="footer__list-item">
-                                <a href="https://pizzahut.talent.vn/" className="footer__list-item-link">Làm việc tại pizza hut</a>
+                                <a href="https://pizzahut.talent.vn/" className="footer__list-item-link"  target='_blank' rel="noreferrer" >Làm việc tại pizza hut</a>
                             </li>
                             <li className="footer__list-item">
-                                <a href="https://pizzahut.vn/info?environment" className="footer__list-item-link">Môi trường làm việc</a>
+                                <a href="https://pizzahut.vn/info?environment" className="footer__list-item-link"  target='_blank' rel="noreferrer" >Môi trường làm việc</a>
                             </li>
                             <li className="footer__list-item"> 
-                                <a href="https://pizzahut.vn/info?career" className="footer__list-item-link">Cơ hội nghề nghiệp</a>
+                                <a href="https://pizzahut.vn/info?career" className="footer__list-item-link"  target='_blank' rel="noreferrer" >Cơ hội nghề nghiệp</a>
                             </li>
                         </ul>
                     </div>
@@ -87,19 +87,19 @@ function Footer() {
                         <h3 className="footer__heading">liên hệ với pizza hut</h3>
                         <ul className="footer__list">
                             <li className="footer__list-item">
-                                <a href="https://www.facebook.com/VietnamPizzaHut" className="footer__list-item-link">
+                                <a href="https://www.facebook.com/VietnamPizzaHut" className="footer__list-item-link"  target='_blank' rel="noreferrer" >
                                     <i className="footer__list-item-icon fa-brands fa-facebook-square"></i>
                                     Facebook
                                 </a>
                             </li>
                             <li className="footer__list-item">
-                                <a href="https://www.youtube.com/channel/UCyqyAPpM7hbYhrRKi1kv0vg" className="footer__list-item-link">
+                                <a href="https://www.youtube.com/channel/UCyqyAPpM7hbYhrRKi1kv0vg" className="footer__list-item-link"  target='_blank' rel="noreferrer" >
                                     <i className="footer__list-item-icon fa-brands fa-youtube-square"></i>
                                     Youtube
                                 </a>
                             </li>
                             <li className="footer__list-item">
-                                <a href="mailto:customerservice@pizzahut.vn" className="footer__list-item-link">
+                                <a href="mailto:customerservice@pizzahut.vn" className="footer__list-item-link"  target='_blank' rel="noreferrer" >
                                     <i className="footer__list-item-icon fa-solid fa-square-envelope"></i>
                                     Gmail
                                 </a>

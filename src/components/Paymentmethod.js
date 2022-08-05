@@ -171,7 +171,7 @@ function Paymentmethod() {
                     <div className="payment__method-provision">
                         <input type="checkbox" id="accept" name="provision" value="provision" onChange={e => handleInputCheck(e)} required/>
                         <div htmlFor="provision"> 
-                            <a href="https://pizzahut.vn/info?TNC" target="_blank" rel="noopener noreferrer">Tôi đồng ý với các điều khoản và điều kiện</a>
+                            <a href="https://pizzahut.vn/info?TNC" target='_blank' rel="noreferrer" >Tôi đồng ý với các điều khoản và điều kiện</a>
                         </div>
                     </div>
                     {isChecked === true ? <button className="payment__method-btn" onClick={() => handleSubmit()} >Đặt hàng</button> : <button className="payment__method-btn-disable" disabled >Đặt hàng</button> }
