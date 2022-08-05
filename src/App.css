@@ -2047,7 +2047,7 @@ LOGIN & SIGN UP
 
 .login__content-input-wrap{
   position: relative;
-  width: 47%;
+  width: calc(50% - 8px);
 }
 
 .login__content-input-selected{
