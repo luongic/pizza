@@ -1984,6 +1984,129 @@ TRACKING
 }
 
 /* 
+==============
+LOGIN & SIGN UP
+==============
+*/
+
+.login{
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 480px;
+  margin-bottom: 100px;
+}
+
+.login-container{
+  width: 960px;
+  height: 480px;
+  display: flex;
+  border: 1px solid var(--clr-main);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.login-login{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__heading{
+  font-size: 1.3rem;
+  color: var(--clr-main);
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.login__content{
+  width: 100%;
+  padding: 20px;
+}
+
+.login__content-input{
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin-bottom: 16px;
+  height: 40px;
+}
+
+.login__content-label{
+  width: unset;
+  position: absolute;
+  top: -10px;
+  left: 8px;
+  height: 16px;
+  line-height: 16px;
+  background-color: var(--clr-white);
+}
+
+.login__content-btn{
+  width: 100%;
+  color: var(--clr-white);
+  background-color: var(--clr-green-dark);
+  padding: 8px 12px;
+  text-transform: uppercase;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.login__bottom{
+  display: flex;
+}
+
+.signup__link{
+  margin-left: 6px;
+  cursor: pointer;
+  /* text-decoration: underline; */
+  color: var(--clr-green-dark);
+}
+
+
+.login-signup{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-slide__right,
+.login-slide__left{
+  width: 480px;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  /* display: none; */
+  transition: all ease .8s;
+}
+
+.login-slide__right{
+  transform: translateX(100%);
+}
+
+.login-slide__left{
+  transform: translateX(0%);
+}
+
+.login-slide__right img,
+.login-slide__left img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+/* 
 =============
 Confirm Deleted Dish
 =============
