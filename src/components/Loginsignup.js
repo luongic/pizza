@@ -52,7 +52,6 @@ function Loginsignup() {
     }, [])
 
 
-
     return  <div className="login">
 
                 <div className="login-container">
@@ -73,6 +72,18 @@ function Loginsignup() {
                                     <input type={hiddenLogin ? 'password' : 'text'} name="password" id='password' className='method-content__address-number form-control' placeholder=''/>
                                     <div className="login__content-hiden" onClick={() => setHiddenLogin(!hiddenLogin)}>
                                         <i className={hiddenLogin ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} ></i>
+                                    </div>
+                                </div>
+
+                                <div className='login__content-passwordoption' >
+                                    <div className="login__content-passwordsave">
+                                        <div className="login__content-passwordsave-checkbox">
+                                            <input type="checkbox" id="savepass" />
+                                        </div>
+                                        <label htmlFor='savepass' className="login__content-passwordoption-text">Lưu mật khẩu</label>
+                                    </div>
+                                    <div className="login__content-forgotpass">
+                                        <div className="login__content-passwordoption-text">Quên mật khẩu ?</div>
                                     </div>
                                 </div>
 

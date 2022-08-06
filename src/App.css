@@ -2160,6 +2160,42 @@ LOGIN & SIGN UP
   color: var(--clr-main);
 }
 
+.login__content-passwordoption{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.login__content-passwordsave-checkbox{
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+.login__content-passwordsave{
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.login__content-passwordoption-text{
+  cursor: pointer;
+}
+
+.login__content-passwordsave .login__content-passwordoption-text::selection {
+  color: #111;
+  background: var(--clr-white);
+}
+
+
+.login__content-forgotpass{
+  text-transform: capitalize;
+  color: var(--clr-green-dark);
+  cursor: pointer;
+}
+
+
 
 /* 
 =============
