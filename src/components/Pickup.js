@@ -89,6 +89,7 @@ function Pickup({close}) {
       localStorage.setItem('method', 'pickup')
       context.setMethod('pickup')
       context.setDelifee(0)
+      
       close()
     }
 
