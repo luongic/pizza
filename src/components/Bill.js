@@ -10,10 +10,6 @@ function Bill() {
     const [bills, setBill] = useState((JSON.parse(localStorage.getItem('bill'))) ?? [])
 
     const getmethod = (((localStorage.getItem('method'))) ?? [])
-
-
-
-    
     
     const [isActive, setActive] = useState(false)
     const [index, setIndex] = useState()
@@ -35,7 +31,8 @@ function Bill() {
 
     useEffect(() => {
         setBill((JSON.parse(localStorage.getItem('bill'))))
-        context.setMethod(((localStorage.getItem('method'))) ?? [])
+
+        // context.setMethod(((localStorage.getItem('method'))) ?? [])
 
         const voucher = document.querySelector('#voucher').value
         

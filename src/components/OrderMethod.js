@@ -31,7 +31,6 @@ function OrderMethod ({close}) {
   
           {methods.map((item, index) => {
             return <div className={method === item.setMethod ? 'method-top__item active' : 'method-top__item'} onClick={() => setMethod(item.setMethod)} key={index} >
-              {/* <i className={item.icon}></i>  */}
               <img src={method === item.setMethod ? item.img : item.imgDisable} className='method-top__item-img' alt='pizzahut'/>
               <div className='method-top__item-text'>{item.type}</div>
             </div>
