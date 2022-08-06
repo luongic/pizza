@@ -10,7 +10,7 @@ function Addresschange({close}) {
 
     return  <Overlay >
                 <div className="payment__modal-container">
-                    <div className="payment__modal-close" onClick={() => handleOnclick()} >X</div>
+                    <div className="payment__modal-close" onClick={() => handleOnclick()} >!</div>
                     
                         <OrderMethod close={close} > </OrderMethod>
                     
