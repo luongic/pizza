@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import stores from '../data/stores';
 import Addresschange from './Addresschange';
 import Quotetime from './Quotetime';
 
+import { CartContext } from './CartContext';
 
 function Addressconfirm() {
+    const context = useContext(CartContext)
 
     const [activeChange, setActiveChange] = useState(false)
 
@@ -12,7 +14,12 @@ function Addressconfirm() {
         setActiveChange(false)
     }
 
-    const method = (localStorage.getItem('method') ?? [])
+    const [method, setMethod] = useState(localStorage.getItem('method') ?? [])
+
+    useEffect(() => {
+        setMethod(context.method)
+    }
+    ,[context.method])
 
     if (method === 'pickup'){
         const add = (JSON.parse(localStorage.getItem(method) ))
@@ -49,7 +56,6 @@ function Addressconfirm() {
         </>;
     }
     else {
-        console.log('chưa có địa chỉ');
         return <Addresschange close={close}></Addresschange>;
     }
 

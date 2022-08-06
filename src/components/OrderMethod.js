@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
-
+import React, { useState, useContext, useEffect } from 'react';
+import { CartContext } from './CartContext';
 import Delivery from './Delivery';
 import Pickup from './Pickup';
 
 function OrderMethod ({close}) {
-    const [method, setMethod] = useState('pickup')
+  const context = useContext(CartContext)
+
+  const [method, setMethod] = useState('pickup')
+
+  useEffect(() => {
+    setMethod(context.method)
+  }
+  ,[context.method])
+  
   
     const methods = [
       {

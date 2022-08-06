@@ -83,14 +83,13 @@ function Pickup({close}) {
       const getsubdis = document.querySelector('#subdis').value
       const getstore = document.querySelector('#store').value
 
-      if (getpath === '/payment'){
-        window.location.reload()
-      }
+      
 
       saveAddress('pickup', getcity, getdistrict, getsubdis, getstore, '')
       localStorage.setItem('method', 'pickup')
       context.setMethod('pickup')
       context.setDelifee(0)
+      close()
     }
 
     const handleMethod = () => {
