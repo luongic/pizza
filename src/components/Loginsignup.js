@@ -51,7 +51,6 @@ function Loginsignup() {
         });
     }, [])
 
-
     return  <div className="login">
 
                 <div className="login-container">
@@ -171,8 +170,6 @@ function Loginsignup() {
                     </div>
                     
                 </div>
-
-                
             </div>
 }
 
