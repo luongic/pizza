@@ -6,11 +6,9 @@ function Loginsignup() {
 
     const [isLeft, setIsleft] = useState(false)
 
-    const [hidden, setHidden] = useState(true)
-
-    const handleHiden = () => {
-        setHidden(!hidden)
-    }
+    const [hiddenLogin, setHiddenLogin] = useState(true)
+    const [hiddenSignup, setHiddenSignup] = useState(true)
+    const [hiddenRepeat, setHiddenRepeat] = useState(true)
 
     useEffect(()=>{
         Validator({
@@ -72,9 +70,9 @@ function Loginsignup() {
 
                                 <div className='login__content-input form-group' >
                                     <div className='login__content-label'>Mật khẩu: * <span className ="form-message"></span></div>
-                                    <input type={hidden ? 'password' : 'text'} name="password" id='password' className='method-content__address-number form-control' placeholder=''/>
-                                    <div className="login__content-hiden" onClick={() => handleHiden()}>
-                                        <i className={hidden ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} ></i>
+                                    <input type={hiddenLogin ? 'password' : 'text'} name="password" id='password' className='method-content__address-number form-control' placeholder=''/>
+                                    <div className="login__content-hiden" onClick={() => setHiddenLogin(!hiddenLogin)}>
+                                        <i className={hiddenLogin ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} ></i>
                                     </div>
                                 </div>
 
@@ -132,17 +130,17 @@ function Loginsignup() {
 
                                 <div className='login__content-input form-group' >
                                     <div className='login__content-label'>Mật khẩu: * <span className ="form-message"></span></div>
-                                    <input type={hidden ? 'password' : 'text'} id='password' name="password" className='method-content__address-number form-control' placeholder=''/>
-                                    <div className="login__content-hiden" onClick={() => handleHiden()}>
-                                        <i className={hidden ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} ></i>
+                                    <input type={hiddenSignup ? 'password' : 'text'} id='password' name="password" className='method-content__address-number form-control' placeholder=''/>
+                                    <div className="login__content-hiden" onClick={() => setHiddenSignup(!hiddenSignup)}>
+                                        <i className={hiddenSignup ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} ></i>
                                     </div>
                                 </div>
 
                                 <div className='login__content-input form-group' >
                                     <div className='login__content-label'>Nhập lại mật khẩu: * <span className ="form-message"></span></div>
-                                    <input type={hidden ? 'password' : 'text'} id='password_confirmation' className='method-content__address-number form-control' placeholder=''/>
-                                    <div className="login__content-hiden" onClick={() => handleHiden()}>
-                                        <i className={hidden ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} ></i>
+                                    <input type={hiddenRepeat ? 'password' : 'text'} id='password_confirmation' className='method-content__address-number form-control' placeholder=''/>
+                                    <div className="login__content-hiden" onClick={() => setHiddenRepeat(!hiddenRepeat)}>
+                                        <i className={hiddenRepeat ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'} ></i>
                                     </div>
                                 </div>
  
