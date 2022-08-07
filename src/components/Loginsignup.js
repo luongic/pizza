@@ -53,9 +53,9 @@ function Loginsignup() {
 
     return  <div className="login">
 
-                <div className={isLeft ? 'login-container isLeft' : 'login-container '}>
+                <div className='login-container'>
 
-                    <div className="login-login">
+                    <div className={isLeft ? 'login-login isLeft' : 'login-login '}>
                         <div className="login__heading">🍕 ĐĂNG NHẬP 🍕</div>
                         <div className="login__content">
 
@@ -98,7 +98,7 @@ function Loginsignup() {
                         </div>
                     </div>
 
-                    <div className="login-signup">
+                    <div className={isLeft ? 'login-signup' : 'login-signup  isLeft'}>
                         <div className="login__heading">🍕 ĐĂNG KÝ 🍕</div>
                         <div className="login__content">
 
