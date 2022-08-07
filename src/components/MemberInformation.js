@@ -29,6 +29,7 @@ function MemberInformation () {
     return <div className="member">
         <div className="member__contain">
             <div className="member__heading">Thông tin thành viên</div>
+
             <div className="member__content">
                 <div className="member__content-name">Tên: {user.fullname}</div>
                 <div className="member__content-birth">Ngày sinh: {DOB}</div>
@@ -58,7 +59,7 @@ function MemberInformation () {
                                         <td> #{item.orderID}</td>
                                         <td>{item.total.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</td>
                                         <td>{item.paymentstatus === 'paid' ? 'Đã thanh toán' : 'Chưa thanh toán'}</td>
-                                        <td>{item.paymentmethod}</td>
+                                        <td>{item.paymentmethod === 'cash' ? 'Tiền mặt' : item.paymentmethod}</td>
                                         <td>{item.voucher === 'novoucher' ? '' : item.voucher}</td>
                                         <td><span className="member__history-link" onClick={() => navigate(`/tracking/${item.orderID}`)}  >Xem tại đây</span></td>
                                     </tr>
