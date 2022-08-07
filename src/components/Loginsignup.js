@@ -22,7 +22,7 @@ function Loginsignup() {
                 Validator.minLength('#password', 6),
             ],
             onSubmit: function (data) {
-                // Call API
+                
                 console.log(data);
             }
         });
@@ -45,7 +45,7 @@ function Loginsignup() {
               }, 'Mật khẩu không khớp')
             ],
             onSubmit: function (data) {
-                // Call API
+                
                 console.log(data);
             }
         });
@@ -77,7 +77,7 @@ function Loginsignup() {
                                 <div className='login__content-passwordoption' >
                                     <div className="login__content-passwordsave">
                                         <div className="login__content-passwordsave-checkbox">
-                                            <input type="checkbox" id="savepass" />
+                                            <input type="checkbox" id="savepass" name="savepass"/>
                                         </div>
                                         <label htmlFor='savepass' className="login__content-passwordoption-text">Lưu mật khẩu</label>
                                     </div>
