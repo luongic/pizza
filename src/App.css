@@ -2239,9 +2239,106 @@ MEMBER INFORMATION
 
 .member{
   margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.member__contain{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 480px;
+}
+
+.member__heading{
+  font-size: 1.6rem;
+  color: var(--clr-green-dark);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.member__content{
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  justify-self: flex-start;
+}
+
+.member__content-name,
+.member__content-birth,
+.member__content-gender,.member__content-phone,
+.member__content-email{
+  margin: 4px 0;
   
 }
 
+
+.member__history{
+  margin-top: 16px;
+  max-width: 1060px;
+}
+
+.member__history-heading{
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--clr-green-dark);
+  text-transform: uppercase;
+}
+
+.member__history-list{
+  border-collapse: collapse;
+  width: 100%;
+}
+.member__history-item{
+
+}
+.member__history-item-code{
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.member__history-link{
+  color: var(--clr-green-dark);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*
+LOGOUT 
+*/
+
+.logout{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout__button{
+  padding: 10px 12px;
+  color: var(--clr-white);
+  background-color: var(--clr-main);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 12px;
+}
 
 
 /* 
