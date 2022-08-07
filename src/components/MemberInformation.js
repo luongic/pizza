@@ -16,7 +16,6 @@ function MemberInformation () {
 
     const userOrders = orders.filter(order => order.phone === user.phone)
 
-
     return <div className="member">
         <div className="member__contain">
             <div className="member__heading">Thông tin thành viên</div>

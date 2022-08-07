@@ -9,11 +9,15 @@ function Member() {
 
     const [ isLoged, setIsLoged ] = useState(logincontext.isLogin)
 
+    const handleLogout =() =>{
+        setIsLoged(false)
+        logincontext.setCurrentID(0)
+    }
     return <>
         {isLoged ? <></> : <Loginsignup setIsLoged={setIsLoged} />}
         {isLoged ? <MemberInformation /> : <></> }
         {isLoged ? <div className='logout'>
-            <div className='logout__button' onClick={() => setIsLoged(false)}>Đăng xuất</div>
+            <div className='logout__button' onClick={() => handleLogout()}>Đăng xuất</div>
         </div> : <></> }
     </>
 }

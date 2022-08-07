@@ -56,11 +56,10 @@ function Loginsignup({setIsLoged}) {
               }, 'Mật khẩu không khớp')
             ],
             onSubmit: function (data) {
-                
-                console.log(data);
+
                 addNewUser(data)
             }
-        });
+        });// eslint-disable-next-line
     }, [])
 
     return  <div className="login">
