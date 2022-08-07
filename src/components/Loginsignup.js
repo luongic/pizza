@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
 import Validator from "../functions/validator";
+import addNewUser from "../functions/addNewUser";
+import login from "../functions/login";
 
 function Loginsignup() {
 
@@ -23,7 +25,7 @@ function Loginsignup() {
             ],
             onSubmit: function (data) {
                 
-                console.log(data);
+                login(data);
             }
         });
     
@@ -47,6 +49,7 @@ function Loginsignup() {
             onSubmit: function (data) {
                 
                 console.log(data);
+                addNewUser(data)
             }
         });
     }, [])
