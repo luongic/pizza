@@ -10,8 +10,8 @@ function login(data) {
 
     if (user){
         toast({
-            title: "Đăng nhập thành công thành công",
-            message: `Chúc mừng bạn đã đăng ký tài khoản thành công`,
+            title: "Đăng nhập thành công",
+            message: `Đăng nhập thành công vào tài khoản của: ${user.fullname}`,
             type: "success",
             duration: 3000
         })
