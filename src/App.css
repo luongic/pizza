@@ -1999,22 +1999,61 @@ LOGIN & SIGN UP
 }
 
 .login-container{
-  width: 960px;
+  width: 480px;
   height: 480px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   /* border: 1px solid var(--clr-main); */
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   box-shadow: 0 0 15px rgb(103, 103, 103);
+
+  position: relative;
+  transform: rotateY(0deg);
+  transition: all .25s linear;
+  transform-style: preserve-3d;
+}
+
+.login-container.isLeft {
+  transform: rotateY(90deg) translateZ(0px);
 }
 
 .login-login{
-  width: 50%;
+  background-color: var(--clr-white);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateZ(-240px);
+}
+
+.login-signup{
+  background-color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgb(103, 103, 103);
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: rotateY(-90deg) translateZ(-240px);
 }
 
 .login__heading{
@@ -2106,13 +2145,7 @@ LOGIN & SIGN UP
 }
 
 
-.login-signup{
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .login-slide__right,
 .login-slide__left{

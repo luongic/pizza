@@ -53,7 +53,7 @@ function Loginsignup() {
 
     return  <div className="login">
 
-                <div className="login-container">
+                <div className={isLeft ? 'login-container isLeft' : 'login-container '}>
 
                     <div className="login-login">
                         <div className="login__heading">🍕 ĐĂNG NHẬP 🍕</div>
@@ -165,9 +165,9 @@ function Loginsignup() {
                         </div>
                     </div>
 
-                    <div className={isLeft ? 'login-slide__left' : 'login-slide__right'} >
+                    {/* <div className={isLeft ? 'login-slide__left' : 'login-slide__right'} >
                         <img src="/img/loginPoster.jpg" alt="Đăng ký thành viên tích điểm cùng pizza hut" />
-                    </div>
+                    </div> */}
                     
                 </div>
             </div>
