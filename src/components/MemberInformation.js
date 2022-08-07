@@ -16,12 +16,22 @@ function MemberInformation () {
 
     const userOrders = orders.filter(order => order.phone === user.phone)
 
+    function formatDate (input) {
+        var datePart = input.match(/\d+/g),
+        year = datePart[0].substring(), // get only two digits
+        month = datePart[1], day = datePart[2];
+      
+        return day+'/'+month+'/'+year;
+    }
+
+    const DOB = formatDate(user.birtday)
+
     return <div className="member">
         <div className="member__contain">
             <div className="member__heading">Thông tin thành viên</div>
             <div className="member__content">
                 <div className="member__content-name">Tên: {user.fullname}</div>
-                <div className="member__content-birth">Ngày sinh: {user.birtday}</div>
+                <div className="member__content-birth">Ngày sinh: {DOB}</div>
                 <div className="member__content-gender">Giới tính: {user.gender === 'male' ? 'Nam' : 'Nữ'}</div>
                 <div className="member__content-phone">Số điện thoại: {user.phone}</div>
                 <div className="member__content-email">Email: {user.email}</div>
