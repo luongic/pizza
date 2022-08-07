@@ -6,15 +6,18 @@ import './style/grid.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { LoginProvider } from './components/LoginContext';
 import { CartProvider } from './components/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <CartProvider>
-        <App />
-      </CartProvider>
+      <LoginProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </LoginProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

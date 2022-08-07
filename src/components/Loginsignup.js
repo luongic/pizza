@@ -1,16 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Validator from "../functions/validator";
 import addNewUser from "../functions/addNewUser";
 import login from "../functions/login";
+import getIDbyEmail from "../functions/getIDbyEmail";
 
-function Loginsignup() {
+import { LoginContext } from "./LoginContext";
+
+function Loginsignup({setIsLoged}) {
+
+    const logincontext = useContext(LoginContext)
 
     const [isLeft, setIsleft] = useState(false)
 
     const [hiddenLogin, setHiddenLogin] = useState(true)
     const [hiddenSignup, setHiddenSignup] = useState(true)
     const [hiddenRepeat, setHiddenRepeat] = useState(true)
+
 
     useEffect(()=>{
         Validator({
@@ -24,8 +30,11 @@ function Loginsignup() {
                 Validator.minLength('#password', 6),
             ],
             onSubmit: function (data) {
-                
-                login(data);
+                if (login(data)){
+                    logincontext.setIsLogin(true)
+                    setIsLoged(true)
+                    logincontext.setCurrentID(getIDbyEmail(data.email))
+                }
             }
         });
     
@@ -102,7 +111,7 @@ function Loginsignup() {
                     </div>
 
                     <div className={isLeft ? 'login-signup' : 'login-signup  isLeft'}>
-                        <div className="login__heading">🍕 ĐĂNG KÝ 🍕</div>
+                        <div className="login__heading">🍕 ĐĂNG KÝ THÀNH VIÊN 🍕</div>
                         <div className="login__content">
 
                             <form action="" method="POST" className="form" id="form-1">

@@ -1,10 +1,9 @@
 import toast from "./toast";
 
+
 function login(data) {
     
     const getUsers = ((JSON.parse(localStorage.getItem('users'))) ?? [])
-
-    console.log( data.email,  data.password);
 
     const user = getUsers.find(exits => ( exits.email === data.email && exits.password === data.password) );
 
@@ -15,6 +14,7 @@ function login(data) {
             type: "success",
             duration: 3000
         })
+        return true
     }
     else {
 
@@ -24,6 +24,7 @@ function login(data) {
             type: "error",
             duration: 3000
         })
+        return
     }
 
     
