@@ -6,7 +6,10 @@ function Sidebar({sideON, openSide}) {
 
     const hanldeOnclick = (link) => {
         openSide()
-        navigate(`/${link}`)
+        setTimeout(() => {
+            navigate(`/${link}`)
+        }, 500)
+        
     }
 
     return <div className={sideON ? "sidebar isOn hideonPC hideonTablet" : "sidebar hideonPC hideonTablet"}>
