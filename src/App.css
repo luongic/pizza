@@ -2337,7 +2337,7 @@ MEMBER INFORMATION
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 480px;
+  max-width: 480px;
 }
 
 .member__heading{
