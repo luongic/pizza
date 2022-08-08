@@ -8,8 +8,6 @@ import generateOrderID from "../functions/generateOrderID";
 function Paymentmethod() {
     const context = useContext(CartContext)
 
-    const [isActive,setActive] = useState(0)
-
     const paymethod = [
         {
             name: 'tiền mặt',
@@ -42,6 +40,10 @@ function Paymentmethod() {
             method: 'momo',
         },
     ]
+
+    const indexMethod = paymethod.findIndex(item => item.method === context.paymentmethod)
+
+    const [isActive,setActive] = useState(indexMethod ?? 0)
 
     const handleActive = (index, method) => {
         context.setPaymentmethod(method)
