@@ -58,6 +58,7 @@ function Loginsignup({setIsLoged}) {
             onSubmit: function (data) {
 
                 addNewUser(data)
+                setIsleft(false)
             }
         });// eslint-disable-next-line
     }, [])
