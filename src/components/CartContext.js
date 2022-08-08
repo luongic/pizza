@@ -18,6 +18,8 @@ function CartProvider({children}) {
 
     const [paymentmethod, setPaymentmethod] = useState('cash')
 
+    const [ newOrder, setNewOrder ] = useState([])
+
 
     const cartValue = {
         lengthCart,
@@ -31,7 +33,9 @@ function CartProvider({children}) {
         delifee,
         setDelifee,
         paymentmethod,
-        setPaymentmethod
+        setPaymentmethod,
+        newOrder, 
+        setNewOrder
     }
 
     return (

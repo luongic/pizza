@@ -100,6 +100,7 @@ function Paymentmethod() {
         }
 
         else {
+
             const orderID = generateOrderID()
             const addressNote = ((document.querySelector('#addressnote')) ? document.querySelector('#addressnote').value : '')
             const billNote = document.querySelector('#billnote').value
@@ -129,16 +130,19 @@ function Paymentmethod() {
                                 //order -> confirm -> cancel                        : CANCEL
             }
 
-            const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
-            getOrder.push(newOrder)
-            localStorage.setItem('orders', JSON.stringify(getOrder))
 
             if (paymentmethod === 'cash'){
+                // Them mot don hang moi
+                const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
+                getOrder.push(newOrder)
+                localStorage.setItem('orders', JSON.stringify(getOrder))
+
                 navigate(`/receipt/${orderID}`);
                 localStorage.removeItem('bill');
                 context.setLengthCart(0)
             }
             else {
+                context.setNewOrder(newOrder)
                 navigate(`/paying/${paymentmethod}/${orderID}`)
             }
         }

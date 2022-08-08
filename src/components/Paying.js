@@ -41,9 +41,13 @@ const paymethod = [
 function Paying() {
     const context = useContext(CartContext)
     const {method , id } = useParams()
+
     const navigate = useNavigate();
-    const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
-    const order = getOrder.find(item => (item.orderID === Number(id) ) );
+
+    // const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
+    // const order = getOrder.find(item => (item.orderID === Number(id) ) );
+
+    const order = context.newOrder;
 
     const payname = paymethod.find(item => item.method === method).name
 
@@ -59,11 +63,21 @@ function Paying() {
                 type: "success",
                 duration: 3000
             })
+            // Them mot don hang moi
+            const getOrder = ((JSON.parse(localStorage.getItem('orders'))) ?? [])
+            getOrder.push(context.newOrder)
+            localStorage.setItem('orders', JSON.stringify(getOrder))
+
+            // reset context order
+            context.setNewOrder([])
+
+            // Xoa don hang
             localStorage.removeItem('bill');
             context.setLengthCart(0)
-            setTimeout(() => {
-                navigate(`/receipt/${id}`)
-            }, 1000);
+            navigate(`/receipt/${id}`)
+            // setTimeout(() => {
+            //     navigate(`/receipt/${id}`)
+            // }, 1000);
         }
         else{
             toast({
