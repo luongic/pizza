@@ -36,7 +36,7 @@ function App() {
     <div className='App'>
       <Navbar openSide={openSide} />
 
-      <Sidebar sideON={sideON} />
+      <Sidebar sideON={sideON} openSide={openSide} />
 
       {(isActive && getpath === '/'  ) && <Overlay  > <Modalpromotion close={close}></Modalpromotion> </Overlay> }
 
