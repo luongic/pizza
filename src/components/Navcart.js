@@ -81,7 +81,7 @@ function Navcart() {
     return  <><div className='navbar-cart__text'>
                     <i className="fa-solid fa-cart-shopping" id="iconcart">
                         <div className="navbar-cart__number-count">{context.lengthCart}</div>
-                    </i> Giỏ Hàng 
+                    </i> <span className='hideonTablet hideonMobile '> Giỏ Hàng  </span>
                 </div>
     
                 <div className='navbar-cart__display'>

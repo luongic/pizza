@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar';
 import Footer from './components/Footer'
 import Menu from './components/Menu';
 import Member from './components/Member';
@@ -22,12 +23,20 @@ function App() {
     setActive(false)
   }
 
+  const [sideON, setSideOn] = useState(false)
+
+  const openSide = () => {
+    setSideOn(!sideON)
+  }
+
   const location = useLocation()
   const getpath = location.pathname
 
   return (
     <div className='App'>
-      <Navbar />
+      <Navbar openSide={openSide} />
+
+      <Sidebar sideON={sideON} />
 
       {(isActive && getpath === '/'  ) && <Overlay  > <Modalpromotion close={close}></Modalpromotion> </Overlay> }
 
@@ -42,6 +51,8 @@ function App() {
           <Route path='/paying/:method/:id' element={<Paying />} />
         </Routes>
       </Scrolltop>
+
+
 
       <Footer />
       <div id="toast"></div>

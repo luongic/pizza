@@ -58,7 +58,7 @@ function Modalproduct({id, close}) {
         <div className='modal-product__content'>
             <div className='modal-product__close' onClick={() => close()}>X</div>
             <div key={id} className='modal-product__item'>
-                <div className='modal-product__photo'>
+                <div className='modal-product__photo hideonMobile hideonTablet'>
                      <img className='modal-product__photo-img' src={selectItem[0].img} alt={selectItem[0].title} />
                 </div>
                 <div className='modal-product__info'>

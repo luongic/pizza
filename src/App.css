@@ -44,6 +44,8 @@
   --fixed-width: 620px;
 
   --container-grid: 1060px;
+
+  --payment-width: 512px;
 }
 /*
 =============== 
@@ -161,6 +163,7 @@ p {
   }
 }
 
+
 /* 
 =============
 Navbar
@@ -179,6 +182,15 @@ Navbar
 }
 
 .navbar-phone{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
+.navbar-bar{
   flex: 1;
   display: flex;
   align-items: center;
@@ -495,6 +507,65 @@ Navbar
   margin-right: 10px;
 }
 
+/* 
+==============
+SIDEBAR
+==============
+*/
+
+.sidebar{
+  background-color: var(--clr-main);
+  color: var(--clr-white);
+  z-index: 99999;
+  position: fixed;
+  top: 80px;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  transform: translateX(-100%);
+  transition: transform ease .4s;
+}
+
+.sidebar.isOn{
+  transform: translateX(0);
+}
+
+.sidebar__list{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: calc(100% - 80px);
+}
+
+.sidebar__item{
+  width: 100%;
+  display: flex;  
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sidebar__item a{
+  color: var(--clr-white);
+  width: 100%;
+  height: 80px;
+  font-size: 2rem;
+  padding: 10px;
+  margin-bottom: 8px;
+  /* border: 1px solid var(--clr-white); */
+  box-shadow: 0 0 3px;
+  border-radius: 10px;
+
+  display: flex;  
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sidebar__item a i{
+  margin-right: 8px;
+}
+
+
 
 /* 
 ==============
@@ -534,6 +605,9 @@ OVERLAY
   text-align: center;
   cursor: pointer;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-img{
@@ -1016,12 +1090,13 @@ Menu
 }
 @media screen and (max-width: 500px) {
   .btn-container {
-    overflow: auto;
+    overflow: scroll;
+    width: 100%;
     justify-content: flex-start;
   }
 
   .filter-btn {
-    width: 100px;
+    flex: 1;
   }
 }
 
@@ -1075,7 +1150,9 @@ MODAL PRODUCT
   border-radius: 50%;
   background-color: var(--clr-white);
   color: var(--clr-main);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   font-weight: 700;
  }
@@ -1273,7 +1350,7 @@ PAYMENT
 }
 
 .payment__add{
-  width: 512px;
+  width: var(--payment-width);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -1369,6 +1446,10 @@ PAYMENT
   text-align: center;
   cursor: pointer;
   font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .method-btn-modal{
@@ -1379,7 +1460,7 @@ PAYMENT
 }
 
 .payment-bill{
-  width: 512px;
+  width: var(--payment-width);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1407,7 +1488,7 @@ PAYMENT
 }
 
 .payment__recive{
-  width: 512px;
+  width: var(--payment-width);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -1572,7 +1653,7 @@ PAYMENT
 }
 
 .payment__method{
-  width: 512px;
+  width: var(--payment-width);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -2581,39 +2662,6 @@ FOOTER
   margin-top: 10px;
 }
 
-/* responsive */
-
-@media screen and (min-width: 768px) {
-  .menu-item {
-    grid-template-columns: 225px 1fr;
-    gap: 0 1.25rem;
-    max-width: 40rem;
-  }
-  .photo {
-    height: 175px;
-  }
-  .section-center{
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  
-  .section-center{
-    justify-content: center;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .section-center {
-    width: 95vw;
-    grid-template-columns: 1fr 1fr;
-  }
-  .photo {
-    height: 150px;
-  }
-}
-
 
 
 /* Animation */
@@ -2744,3 +2792,159 @@ Toast message
   color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
+
+
+
+/* responsive */
+
+@media screen and (min-width: 740px ) {
+  .menu-item {
+    grid-template-columns: 225px 1fr;
+    gap: 0 1.25rem;
+    max-width: 40rem;
+  }
+  .photo {
+    height: 175px;
+  }
+  .section-center{
+    justify-content: center;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1023px){
+  .hideonTablet{
+    display: none;
+  }
+
+  .btn-container{
+    overflow: scroll;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .modal-product__content{
+    width: 600px;
+  }
+}
+
+
+@media screen and (max-width: 739px) {
+
+  :root{
+    --payment-width: calc(100% - 20px)
+  }
+  
+  .section-center{
+    justify-content: center;
+  }
+
+
+  .btn-container {
+      overflow: scroll;
+      width: 100%;
+      justify-content: flex-start;
+  }
+
+  .navbar-cart__display{
+      position: absolute;
+      width: 100vw;
+      height: 50vh;
+      top: 80px;
+      right: 0;
+      padding: 12px;
+      background-color: #fff;
+      color: #111;
+      border-radius: 10px;
+      display: none;
+      box-shadow: 0 0 15px rgb(110 110 110);
+      z-index: 99;
+  }
+
+  .modal-product__content {
+    background-color: var(--clr-white);
+    padding: 10px;
+    border-radius: var(--radius);
+    position: relative;
+    width: 380px;
+    height: 590px;
+    animation: slideTop .4s ease;
+    transition: all ease .4s;
+}
+
+.modal-product__name{
+  font-size: 1.6rem;
+}
+
+.size-list__size-contain {
+  width: 110px;
+  height: 110px;
+}
+
+.modal-product__close{
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  border-top: 2px solid var(--clr-main);
+  border-right: 2px solid var(--clr-main);
+  z-index: 9999;
+}
+
+.crust-list__text{
+  margin-top: 24px;
+}
+
+.login-container {
+  width: 400px;
+  height: auto;
+}
+
+.login__content{
+  padding: 10px;
+}
+
+.tracking__contain-check{
+  width: 80%;
+}
+
+.cart__display{
+  width: calc(100vw - 20px);
+}
+
+.method{
+  width: 365px;
+}
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .hideonMobile{
+    display: none !important;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  .hideonPC{
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+
+  .hideonPC{
+    display: none;
+  }
+
+  .section-center {
+    width: 95vw;
+    grid-template-columns: 1fr 1fr;
+  }
+  .photo {
+    height: 150px;
+  }
+}
+
