@@ -1799,7 +1799,8 @@ PAYING ONLINE
 
 .paying-qr{
   margin: 100px auto 0;
-  width: 900px;
+  width: calc(100% - 300px);
+  min-width: 700px;
   border: 1px solid black;
 }
 
@@ -2917,6 +2918,25 @@ Toast message
 
 .method{
   width: 365px;
+}
+
+.paying-qr{
+  margin: 100px auto 0;
+  width: calc(100% - 40px);
+  border: 1px solid black;
+}
+
+.paying-qr__code{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paying-qr__content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
 }
 
 
