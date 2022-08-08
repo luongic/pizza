@@ -2922,7 +2922,7 @@ Toast message
 
 .paying-qr{
   margin: 100px auto 0;
-  width: calc(100% - 40px);
+  min-width: calc(100% - 40px);
   border: 1px solid black;
 }
 
@@ -2946,6 +2946,29 @@ Toast message
 
   .hideonMobile{
     display: none !important;
+  }
+
+  .paying-qr{
+    margin: 100px auto 0;
+    min-width: 100% ;
+    border: 1px solid black;
+  }
+  
+  .paying-qr__code{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .paying-qr__content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .paying-qr__confirm {
+    padding-left: 0;
   }
 
 }
