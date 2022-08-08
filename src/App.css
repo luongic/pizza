@@ -2111,7 +2111,7 @@ LOGIN & SIGN UP
   align-items: center;
   transition: all .1s ease;
   flex: 1;
-  animation: Fade .3s ease;
+  animation: FadeLeft .3s ease;
 }
 
 .login-login.isLeft{  
@@ -2127,17 +2127,28 @@ LOGIN & SIGN UP
   width: 480px;
   height: 480px;
   flex: 1;
-  animation: Fade .3s ease;
+  animation: FadeRight .3s ease;
 }
 
 .login-signup.isLeft{  
   display: none;
 }
 
-@keyframes Fade {
+@keyframes FadeLeft {
   from {
     opacity: 0;
     transform: translateX(-100%) scale(.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes FadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(.5);
   }
   to {
     opacity: 1;
