@@ -18,7 +18,7 @@ function Navbar ({openSide}) {
         </div>
 
         <div className='navbar-bar hideonPC hideonTablet' onClick={() => openSide()}>
-                <i class="fa-solid fa-bars hideonPC"></i>
+                <i className="fa-solid fa-bars hideonPC"></i>
         </div>
 
 
