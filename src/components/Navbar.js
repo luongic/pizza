@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navcart from './Navcart';
+
+import Sidebar from './Sidebar';
+
 
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 
-function Navbar ({openSide, sideON}) {
+function ActiveNavbar({ to, children, ...props }) {
+    const resolvedPath = useResolvedPath(to)
+    const isActive = useMatch({ path: resolvedPath.pathname, end:true})
+    return (
+        <li className={isActive ? 'navbar-item active hideonMobile' : 'navbar-item hideonMobile'}>
+            <Link to={to} {...props}>{children}</Link>
+        </li>
+    )
+}
+
+function Navbar () {
+
+
+    const [sideON, setSideOn] = useState(false)
+
+    const openSide = () => {
+        setSideOn(!sideON)
+    }
     
-    return <div className='navbar'>
+    return <>
+    <div className='navbar'>
         <div className='navbar-phone  hideonMobile'>
             <div className='navbar-phone__icon'>
                 <i className="fa-solid fa-phone "></i>
@@ -38,17 +59,12 @@ function Navbar ({openSide, sideON}) {
             <Navcart />
         </div>
     </div>;
+
+    <Sidebar sideON={sideON} openSide={openSide} />
+    </> 
 }
 
-function ActiveNavbar({ to, children, ...props }) {
-    const resolvedPath = useResolvedPath(to)
-    const isActive = useMatch({ path: resolvedPath.pathname, end:true})
-    return (
-        <li className={isActive ? 'navbar-item active hideonMobile' : 'navbar-item hideonMobile'}>
-            <Link to={to} {...props}>{children}</Link>
-        </li>
-    )
-}
+
 
 
 export default Navbar;

@@ -35,7 +35,6 @@ function addNewUser(data) {
         return true
     }
     else {
-        console.log(newBill);
         getUsers.push(newBill)
         localStorage.setItem('users', JSON.stringify(getUsers))
         toast({
