@@ -16,19 +16,19 @@ function Sidebar({sideON, openSide}) {
         <ul className="sidebar__list">
 
             <li className="sidebar__item" onClick={() => hanldeOnclick('')}>
-                <i className="fa-solid fa-house"></i> <span>Trang chủ</span> 
+                <i className="fa-solid fa-house"></i> <span className="sidebar__item-text">Trang chủ</span> 
             </li>
 
             <li className="sidebar__item" onClick={() => hanldeOnclick('menu')}>
-                <i className="fa-solid fa-list"></i> <span> Menu </span> 
+                <i className="fa-solid fa-list"></i> <span className="sidebar__item-text"> Menu </span> 
             </li>
 
             <li className="sidebar__item" onClick={() => hanldeOnclick('tracking/:id')}>
-                <i className="fa-solid fa-magnifying-glass"></i> <span>Theo dõi đơn hàng</span> 
+                <i className="fa-solid fa-magnifying-glass"></i> <span className="sidebar__item-text">Theo dõi đơn hàng</span> 
             </li>
 
             <li className="sidebar__item" onClick={() => hanldeOnclick('member')}>
-                <i className="fa-solid fa-user"></i> <span>Thành viên</span> 
+                <i className="fa-solid fa-user"></i> <span className="sidebar__item-text">Thành viên</span> 
             </li>
 
         </ul>
