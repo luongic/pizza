@@ -4,7 +4,7 @@ import Navcart from './Navcart';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 
-function Navbar ({openSide}) {
+function Navbar ({openSide, sideON}) {
     
     return <div className='navbar'>
         <div className='navbar-phone  hideonMobile'>
@@ -18,7 +18,7 @@ function Navbar ({openSide}) {
         </div>
 
         <div className='navbar-bar hideonPC hideonTablet' onClick={() => openSide()}>
-                <i className="fa-solid fa-bars hideonPC"></i>
+            <i className={sideON ? 'fa-solid fa-xmark hideonPC' : 'fa-solid fa-bars hideonPC'}></i>
         </div>
 
 

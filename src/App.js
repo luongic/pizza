@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Navbar openSide={openSide} />
+      <Navbar openSide={openSide} sideON={sideON}/>
 
       <Sidebar sideON={sideON} openSide={openSide} />
 
