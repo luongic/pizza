@@ -520,7 +520,11 @@ SIDEBAR
   position: fixed;
   top: 80px;
   width: 100vw;
-  height: 50vh;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 20px;
   transform: translateX(-100%);
   transition: transform ease .4s;
@@ -536,17 +540,8 @@ SIDEBAR
 .sidebar__list{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  height: 100%;
-  
-}
-
-.sidebar__item{
+  justify-content: space-between;
   width: 100%;
-  display: flex;  
-  align-items: center;
-  justify-content: flex-start;
 }
 
 .sidebar__item{
@@ -555,23 +550,18 @@ SIDEBAR
   height: 80px;
   font-size: 2rem;
   padding: 10px;
-  margin-bottom: 8px;
-  /* border: 1px solid var(--clr-white); */
+  margin-bottom: 24px;
   box-shadow: 0 0 3px;
   border-radius: 10px;
-
   display: flex;  
   align-items: center;
   justify-content: flex-start;
   cursor: pointer;
 }
 
-.sidebar__item a i{
-  margin-right: 8px;
+.sidebar__item i{
+  margin-right: 16px;
 }
-
-
-
 /* 
 ==============
 OVERLAY
