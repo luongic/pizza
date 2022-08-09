@@ -16,22 +16,6 @@ import Paying from './components/Paying';
 
 
 function App() {
-  // const [isActive, setActive] = useState(true)
-
-  // const close = () =>{
-  //   setActive(false)
-  // }
-
-  // const [sideON, setSideOn] = useState(false)
-
-  // const openSide = () => {
-  //   setSideOn(!sideON)
-  // }
-
-  // const location = useLocation()
-  // const getpath = location.pathname
-
-  console.log('re-renderapp');
 
   return (
     <div className='App'>
