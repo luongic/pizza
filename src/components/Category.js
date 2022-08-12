@@ -36,14 +36,7 @@ const Categories = ({filterItems}) => {
     filterItems(payload)
   }
 
-
   return <div className='btn-container'>
-    {/* <button className='filter-btn' onClick={(e) => handleClick(e, 'all')} >Tất cả</button>
-    <button className='filter-btn' onClick={(e) => handleClick(e, 'Promotion')} >Khuyến mãi</button>
-    <button className='filter-btn' onClick={(e) => handleClick(e, 'Pizza')} >Pizza</button>
-    <button className='filter-btn' onClick={(e) => handleClick(e, 'Noodle')} >Mì Ý và Cơm</button>
-    <button className='filter-btn' onClick={(e) => handleClick(e, 'Snack')} >Khai Vị</button>
-    <button className='filter-btn' onClick={(e) => handleClick(e, 'Drink')} >Nước uống</button> */}
 
     {categoriesList.map((cate, index) =>{
       const {type, name} = cate;
