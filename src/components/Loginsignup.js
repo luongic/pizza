@@ -177,9 +177,6 @@ function Loginsignup({setIsLoged}) {
                         </div>
                     </div>
 
-                    {/* <div className={isLeft ? 'login-slide__left' : 'login-slide__right'} >
-                        <img src="/img/loginPoster.jpg" alt="Đăng ký thành viên tích điểm cùng pizza hut" />
-                    </div> */}
                     
                 </div>
             </div>

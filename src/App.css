@@ -2268,6 +2268,12 @@ LOGIN & SIGN UP
 .form-group.invalid .form-control {
   border: 2px solid;
   border-color: var(--clr-main);
+  border-radius: 10px;
+    font-size: 16px;
+    height: 40px;
+    outline: none;
+    padding-left: 10px;
+    width: 100%;
 }
 
 .form-group.invalid .login__content-label {
