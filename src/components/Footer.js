@@ -124,7 +124,7 @@ function Footer() {
                         <p className="footer__copyright-text">Công ty TNHH Pizza Việt Nam | Số ĐKKD: 0303902751</p>
                         <p className="footer__copyright-text">Địa chỉ: Số 1-3-5 đường D2 Khu dân cư phức hợp sông Sài Gòn, số 92 Nguyễn Hữu Cảnh, phường 22, quận Bình Thạnh, TP. Hồ Chí Minh.</p>
                         <p className="footer__copyright-text">Tổng đài hỗ trợ: 19001822 - Email: customerservice@pizzahut.vn. © 2022 - Bản quyền thuộc về Công ty TNHH Pizza Việt Nam</p>
-                        <p className="footer__copyright-text">Develop by  <a target="_blank" rel="noopener noreferrer" href="http://luongic.epizy.com/" style={{float: 'inherit', color: "#c8102e"}} >luongleee</a></p>
+                        <p className="footer__copyright-text">Develop by  <a target="_blank" rel="noopener noreferrer" href="https://luongic.github.io/mever/" style={{float: 'inherit', color: "#c8102e"}} >luongleee</a></p>
                     </div>
 
 
